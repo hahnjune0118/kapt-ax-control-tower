@@ -12,10 +12,10 @@ __pycache__/
 !.env.example
 
 # Raw and generated data
-data/raw/*
-data/interim/*
-data/curated/*
-logs/*
+data/raw/
+data/interim/
+data/processed/
+logs/
 
 # Keep demo data
 !data/demo/
