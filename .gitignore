@@ -37,3 +37,7 @@ logs/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Power BI Project local cache
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
