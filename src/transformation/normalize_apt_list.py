@@ -13,7 +13,7 @@ INPUT_FILE = (
     / "data"
     / "raw"
     / "kapt"
-    / "apt_list_seoul_sample.json"
+    / "apt_list_seoul_full.json"
 )
 
 OUTPUT_FILE = (
@@ -21,7 +21,7 @@ OUTPUT_FILE = (
     / "data"
     / "processed"
     / "powerbi"
-    / "dim_apartment_sample.csv"
+    / "dim_apartment.csv"
 )
 
 if not INPUT_FILE.exists():
