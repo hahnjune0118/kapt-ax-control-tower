@@ -1,0 +1,39 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Raw and generated data
+data/raw/*
+data/interim/*
+data/curated/*
+logs/*
+
+# Keep demo data
+!data/demo/
+
+# Model artifacts
+*.joblib
+*.pkl
+*.onnx
+
+# Power BI local cache
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# PBIX binary backups
+*.pbix
+
+# Editors and OS
+.vscode/settings.json
+.DS_Store
+Thumbs.db
+desktop.ini
