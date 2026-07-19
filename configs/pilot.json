@@ -1,0 +1,24 @@
+{
+  "project": "K-APT AX Control Tower",
+  "generated_at_kst": "2026-07-20T08:55:51+09:00",
+  "target": {
+    "apartment_id": "A15784601",
+    "apartment_name": "마곡현대아파트",
+    "city_district": "강서구",
+    "household_count": 202,
+    "approval_year": 1999,
+    "heating_type": "개별난방",
+    "management_type": "위탁관리"
+  },
+  "cohort": {
+    "target_count": 1,
+    "peer_count": 49,
+    "total_count": 50
+  },
+  "selection_policy": {
+    "primary_household_tolerance": 0.3,
+    "primary_approval_year_tolerance": 7,
+    "fallback_tiers_enabled": true,
+    "ranking_direction": "lower_peer_distance_is_better"
+  }
+}
