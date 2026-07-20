@@ -407,13 +407,14 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
           properties: {
             show: bool(true),
             fontFamily: text(FONT),
-            fontSize: number(20),
+            fontSize: number(17),
             bold: bool(true),
             fontColor: color(accent),
             horizontalAlignment: text("left"),
             textWrap: bool(false),
-            labelDisplayUnits: number(-1),
+            labelDisplayUnits: number(0),
             labelPrecision: integer(1),
+            showBlankAs: text("0"),
           },
           selector: { id: "default" },
         },
@@ -424,11 +425,11 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
             show: bool(true),
             text: text(label),
             fontFamily: text(FONT),
-            fontSize: number(9),
+            fontSize: number(8),
             bold: bool(false),
             fontColor: color(COLORS.textSecondary),
             position: text("belowValue"),
-            textWrap: bool(true),
+            textWrap: bool(false),
             horizontalAlignment: text("left"),
           },
           selector: { id: "default" },
@@ -451,6 +452,36 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
             tileShape: text("rectangleRoundedByPixel"),
             rectangleRoundedCurve: integer(8),
           },
+          selector: { id: "default" },
+        },
+      ],
+      layout: [
+        {
+          properties: {
+            customizePadding: bool(true),
+            rowPadding: integer(0),
+            columnPadding: integer(0),
+            leftOuterMargin: integer(6),
+            rightOuterMargin: integer(6),
+            topOuterMargin: integer(2),
+            bottomOuterMargin: integer(2),
+          },
+          selector: { id: "default" },
+        },
+      ],
+      padding: [
+        {
+          properties: {
+            paddingSelection: text("Custom"),
+            paddingUniform: integer(4),
+            paddingIndividual: bool(false),
+          },
+          selector: { id: "default" },
+        },
+      ],
+      spacing: [
+        {
+          properties: { verticalSpacing: integer(0) },
           selector: { id: "default" },
         },
       ],
@@ -602,6 +633,7 @@ function chartVisual({
   colors = [],
   filters = [],
   showLegend = true,
+  showAxisTitles = false,
   line = false,
 }) {
   const query = { queryState: roles };
@@ -623,6 +655,12 @@ function chartVisual({
           labelColor: color(COLORS.textSecondary),
         },
       },
+    ],
+    categoryAxis: [
+      { properties: { showAxisTitle: bool(showAxisTitles) } },
+    ],
+    valueAxis: [
+      { properties: { showAxisTitle: bool(showAxisTitles) } },
     ],
     dataPoint: [
       {
@@ -1068,6 +1106,7 @@ function buildPeerBenchmark() {
         },
       },
       colors: [{ color: COLORS.blue }],
+      showAxisTitles: true,
       filters: [
         categoricalFilter(
           pageKey,
@@ -1344,11 +1383,11 @@ function buildAnomalyExplorer() {
       position: { x: 24, y: 520, z: 130, height: 180, width: 1232 },
       title: "월별 이상징후 상세 근거",
       fields: [
-        { table: "FactAnomalyMonthly", property: "search_month", displayName: "기준월" },
+        { table: "FactAnomalyMonthly", property: "month_start_date", displayName: "기준월" },
         { table: "FactAnomalyMonthly", property: "cost_category_name_ko", displayName: "비용항목" },
         { table: "FactAnomalyMonthly", property: "target_cost_per_household_krw", displayName: "대상 세대당 비용" },
         { table: "FactAnomalyMonthly", property: "peer_median_krw", displayName: "비교군 중앙값" },
-        { table: "FactAnomalyMonthly", property: "gap_pct", displayName: "격차율" },
+        { table: "FactAnomalyMonthly", property: "gap_pct", displayName: "격차율(%)" },
         { table: "FactAnomalyMonthly", property: "anomaly_score", displayName: "이상징후 점수" },
         { table: "FactAnomalyMonthly", property: "anomaly_severity", displayName: "심각도" },
         { table: "FactAnomalyMonthly", property: "is_alert", displayName: "경보" },
@@ -1411,7 +1450,7 @@ function buildActionCenter() {
         { table: "FactAdvisoryAssessment", property: "advisory_priority", displayName: "우선순위" },
         { table: "FactAdvisoryAssessment", property: "advisory_priority_score", displayName: "점수" },
         { table: "FactAdvisoryAssessment", property: "cost_category_name_ko", displayName: "비용항목" },
-        { table: "FactAdvisoryAssessment", property: "screened_pain_point", displayName: "Screened Pain Point" },
+        { table: "FactAdvisoryAssessment", property: "screened_pain_point", displayName: "검토 Pain Point" },
         { table: "FactAdvisoryAssessment", property: "primary_recommended_action", displayName: "권고 조치" },
         { table: "FactAdvisoryAssessment", property: "indicative_annual_opportunity_krw", displayName: "지표상 기회금액" },
         { table: "FactAdvisoryAssessment", property: "confidence_level", displayName: "신뢰수준" },

@@ -72,8 +72,8 @@
                 }
               },
               "queryRef": "FactAdvisoryAssessment.screened_pain_point",
-              "nativeQueryRef": "Screened Pain Point",
-              "displayName": "Screened Pain Point"
+              "nativeQueryRef": "검토 Pain Point",
+              "displayName": "검토 Pain Point"
             },
             {
               "field": {

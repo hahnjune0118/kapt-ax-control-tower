@@ -23,10 +23,10 @@
                       "Entity": "FactAnomalyMonthly"
                     }
                   },
-                  "Property": "search_month"
+                  "Property": "month_start_date"
                 }
               },
-              "queryRef": "FactAnomalyMonthly.search_month",
+              "queryRef": "FactAnomalyMonthly.month_start_date",
               "nativeQueryRef": "기준월",
               "displayName": "기준월"
             },
@@ -87,8 +87,8 @@
                 }
               },
               "queryRef": "FactAnomalyMonthly.gap_pct",
-              "nativeQueryRef": "격차율",
-              "displayName": "격차율"
+              "nativeQueryRef": "격차율(%)",
+              "displayName": "격차율(%)"
             },
             {
               "field": {

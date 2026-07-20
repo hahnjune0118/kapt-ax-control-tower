@@ -82,15 +82,18 @@ table _Measures
 
 	measure 'P1 P2 항목 수' =
 			
-			CALCULATE(
-			    DISTINCTCOUNT(
-			        FactAdvisoryAssessment[cost_category]
+			COALESCE(
+			    CALCULATE(
+			        DISTINCTCOUNT(
+			            FactAdvisoryAssessment[cost_category]
+			        ),
+			        FactAdvisoryAssessment[advisory_priority]
+			            IN {
+			                "P1_CRITICAL",
+			                "P2_HIGH"
+			            }
 			    ),
-			    FactAdvisoryAssessment[advisory_priority]
-			        IN {
-			            "P1_CRITICAL",
-			            "P2_HIGH"
-			        }
+			    0
 			)
 		formatString: 0
 		lineageTag: 80a24a02-12d3-4874-8e61-e1363e9d90f4

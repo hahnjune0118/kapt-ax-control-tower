@@ -55,7 +55,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "17D"
                 }
               }
             },
@@ -94,7 +94,7 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "-1D"
+                  "Value": "0D"
                 }
               }
             },
@@ -102,6 +102,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1L"
+                }
+              }
+            },
+            "showBlankAs": {
+              "expr": {
+                "Literal": {
+                  "Value": "'0'"
                 }
               }
             }
@@ -138,7 +145,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "8D"
                 }
               }
             },
@@ -170,7 +177,7 @@
             "textWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -242,6 +249,110 @@
               "expr": {
                 "Literal": {
                   "Value": "8L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "customizePadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "columnPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "leftOuterMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            },
+            "rightOuterMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            },
+            "topOuterMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "bottomOuterMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "paddingUniform": {
+              "expr": {
+                "Literal": {
+                  "Value": "4L"
+                }
+              }
+            },
+            "paddingIndividual": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             }

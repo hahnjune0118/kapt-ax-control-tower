@@ -242,6 +242,32 @@
           }
         }
       ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "dataPoint": [
         {
           "properties": {
