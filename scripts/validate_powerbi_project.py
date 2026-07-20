@@ -248,6 +248,36 @@ def validate_snapshot(qa: QA) -> None:
                f"Unexpected monthly coverage: {months}")
     qa.stats["snapshot_months"] = len(months)
 
+    anomaly_path = DATA / "model_anomaly_scores_monthly.csv"
+    with anomaly_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        anomaly_rows = list(csv.DictReader(handle))
+    invalid_target_costs: list[tuple[int, str]] = []
+    blank_target_costs = 0
+    for row_number, row in enumerate(anomaly_rows, start=2):
+        value = row.get("target_cost_per_household_krw", "").strip()
+        if not value:
+            blank_target_costs += 1
+            continue
+        try:
+            float(value)
+        except ValueError:
+            invalid_target_costs.append((row_number, value))
+    qa.require(
+        not invalid_target_costs,
+        "Non-numeric anomaly target cost values: "
+        f"{invalid_target_costs[:5]}",
+    )
+    qa.stats["nullable_anomaly_target_costs"] = blank_target_costs
+
+    anomaly_tmdl = (
+        MODEL / "tables" / "FactAnomalyMonthly.tmdl"
+    ).read_text(encoding="utf-8-sig")
+    qa.require(
+        'try Number.FromText(Text.From(_), "en-US") otherwise null'
+        in anomaly_tmdl,
+        "FactAnomalyMonthly must safely convert blank target costs to null",
+    )
+
 
 def main() -> int:
     qa = QA()
