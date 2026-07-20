@@ -2,7 +2,18 @@
 
 공동주택 관리비 공개데이터를 **비교 가능한 지표 → 이상징후 → 검토 가설 → 실행 과제 → 증빙 요청**으로 전환하는 AX Advisory 포트폴리오 프로젝트입니다. Python 분석 파이프라인과 Power BI 의사결정 대시보드를 결합했습니다.
 
-> 이 저장소는 개인 포트폴리오이며 삼일PwC, 한국부동산원 또는 공공기관의 공식 프로젝트가 아닙니다. 화면의 기회금액과 권고는 공개데이터 기반의 검토 신호이며 감사의견·부정 판정·확정 절감액이 아닙니다.
+## 바로 보기
+
+**[▶ Power BI 인터랙티브 대시보드 실행](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)**
+
+[![K-APT AX Control Tower Executive Overview](docs/assets/powerbi/01_executive_overview.png)](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
+
+> 공개 데모는 로그인 없이 사용할 수 있습니다. 이미지 또는 위 링크를 클릭하면 비교단지, 비용 추이, 이상징후 및 AX 조치 과제를 직접 탐색할 수 있습니다.
+
+- [AX Advisory 프로젝트 브리프](docs/reports/pilot_ax_advisory_brief.md)
+- [Power BI 검증 체크리스트](docs/powerbi_validation_checklist.md)
+- [비교단지 모델 카드](docs/model_cards/peer_group_model.md)
+- [이상징후 모델 카드](docs/model_cards/anomaly_detection_model.md)
 
 ## 1. 해결하려는 문제
 
@@ -33,6 +44,20 @@ flowchart LR
 | 숫자만 있고 다음 행동이 없음 | 규칙 기반 Advisory 추천 엔진 | 담당자·기간·KPI가 포함된 조치 과제 |
 | 근거 없는 비용 절감 주장 | 계약서·원장·운영이력 등 증빙 요청 | 검증 가능한 evidence request |
 | AI 권고의 무통제 실행 | Human-in-the-loop와 자동실행 금지 | 사람 승인 필요 여부와 책임 추적 |
+
+### 개인 구현 범위
+
+본 프로젝트는 문제 정의부터 공개 데모 배포까지 전 과정을 개인 프로젝트로 수행했습니다.
+
+- K-APT 기반 AX Advisory use case 및 통제 원칙 설계
+- 공공데이터 API 수집, 정규화 및 재시도 파이프라인 구현
+- 구조 유사도 기반 비교단지 선정 모델 구현
+- 기대범위 및 복합 이상징후 탐지 모델 구현
+- 검토 가설, 권고 조치 및 증빙 요청 생성
+- Power BI 스타 스키마, DAX 측정값 및 6개 보고서 페이지 설계
+- PBIP/PBIR/TMDL 기반 Git 버전 관리
+- Python 및 Microsoft CLI 기반 Power BI 프로젝트 QA
+- Power BI Service 공개 데모 게시
 
 ## 3. 현재 분석 스냅샷
 
@@ -98,6 +123,43 @@ flowchart TB
 5. 5개 사용자 페이지와 숨김 QA 페이지의 카드·차트·필터를 확인한 뒤 저장합니다.
 
 Power BI Desktop의 로컬 사용자 설정 파일은 저장소에 포함하지 않습니다. 상세 확인 항목은 [Power BI 검증 체크리스트](docs/powerbi_validation_checklist.md)를 참고하세요.
+
+### 주요 화면
+
+<details>
+<summary>01 Executive Overview</summary>
+
+![Executive Overview](docs/assets/powerbi/01_executive_overview.png)
+
+</details>
+
+<details>
+<summary>02 Peer Benchmark</summary>
+
+![Peer Benchmark](docs/assets/powerbi/02_peer_benchmark.png)
+
+</details>
+
+<details>
+<summary>03 Cost Driver & Trend</summary>
+
+![Cost Driver and Trend](docs/assets/powerbi/03_cost_driver_trend.png)
+
+</details>
+
+<details>
+<summary>04 Anomaly Explorer</summary>
+
+![Anomaly Explorer](docs/assets/powerbi/04_anomaly_explorer.png)
+
+</details>
+
+<details>
+<summary>05 Advisory Action Center</summary>
+
+![Advisory Action Center](docs/assets/powerbi/05_advisory_action_center.png)
+
+</details>
 
 ## 6. 개발 환경
 
@@ -185,4 +247,5 @@ src/                       수집·변환·feature·model·reporting 코드
 - 현재 파일럿은 서울 단일 대상 단지와 6개 관리비 항목에 초점을 둡니다.
 - K-APT 공개데이터만으로 계약조건, 서비스 수준, 시설상태를 직접 관측할 수 없습니다.
 - 이상징후 점수는 검토 우선순위이며 인과관계나 책임을 증명하지 않습니다.
-- 다음 단계는 Power BI Service 게시, 예약 새로고침, 증빙 워크플로, 사용자 피드백에 기반한 모델 모니터링입니다.
+- Power BI Service 게시와 공개 인터랙티브 데모 구축까지 완료했습니다.
+- 다음 확장은 예약 데이터 갱신, 실제 증빙 수집 워크플로, 권고 과제 상태관리 및 사용자 피드백 기반 모델 모니터링입니다.
