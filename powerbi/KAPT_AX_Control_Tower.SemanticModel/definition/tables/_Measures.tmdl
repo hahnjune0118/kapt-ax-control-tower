@@ -61,7 +61,7 @@ table _Measures
 			    ),
 			    FactAnomalyMonthly[is_alert] = TRUE()
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 231893ad-5ad1-43c2-83e1-adff6237255e
 
 	measure '최대 이상징후 점수' =
@@ -111,7 +111,7 @@ table _Measures
 			    ),
 			    0
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 80a24a02-12d3-4874-8e61-e1363e9d90f4
 
 	measure '데이터 관측률' =
@@ -154,7 +154,7 @@ table _Measures
 			    ),
 			    ModelPeerWeights[model_selected] = TRUE()
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 32b60f85-64d1-4702-b808-eae643c01de8
 
 	measure '가중 평균 유사도' =
@@ -269,7 +269,7 @@ table _Measures
 			COUNTROWS(
 			    FactMonthlyCost
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 58bba3a5-7eb3-44cb-a490-51aa4d76b753
 
 	measure '비용항목 수' =
@@ -277,7 +277,7 @@ table _Measures
 			DISTINCTCOUNT(
 			    DimCostCategory[cost_category]
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 36dbd107-bf7f-448c-8ea7-f0203e6c9678
 
 	measure '대상 관리비 총액' =
@@ -318,7 +318,7 @@ table _Measures
 			COUNTROWS(
 			    FactActionRegister
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 31469f94-1ac0-4d8b-96f3-30f748ca0905
 
 	measure '증빙 요청 수' =
@@ -326,7 +326,7 @@ table _Measures
 			COUNTROWS(
 			    FactEvidenceRequest
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: ea0117ea-53ef-4f8f-8ed0-104dee08a652
 
 	measure '사람 승인 필요 과제 수' =
@@ -335,7 +335,7 @@ table _Measures
 			    COUNTROWS(FactActionRegister),
 			    FactActionRegister[human_approval_required] = TRUE()
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 86fc763c-6c33-4918-b03b-ae94403d7639
 
 	measure '미요청 증빙 수' =
@@ -344,7 +344,7 @@ table _Measures
 			    COUNTROWS(FactEvidenceRequest),
 			    FactEvidenceRequest[request_status] = "NOT_REQUESTED"
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 53020fe8-1e8c-48a7-bc02-d61b881bf0c1
 
 	column Placeholder

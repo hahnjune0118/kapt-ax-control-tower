@@ -58,6 +58,25 @@ const COLORS = {
 
 const FONT = "Segoe UI";
 
+const CARD_AUTO_UNIT_MEASURES = new Set([
+  "대상단지 연환산 관리비",
+  "지표상 연간 기회금액",
+  "대상 관리비 총액",
+  "대상 월평균 세대당 항목비",
+  "비교군 월평균 세대당 항목비",
+]);
+
+const CARD_INTEGER_MEASURES = new Set([
+  "월별 팩트 행 수",
+  "비용항목 수",
+  "선정 비교단지 수",
+  "P1 P2 항목 수",
+  "경보 월 수",
+  "조치 과제 수",
+  "증빙 요청 수",
+  "사람 승인 필요 과제 수",
+]);
+
 function stableHex(value, length = 20) {
   return crypto.createHash("sha1").update(value).digest("hex").slice(0, length);
 }
@@ -393,6 +412,8 @@ function textboxVisual(pageKey, key, position, runs, options = {}) {
 }
 
 function cardVisual(pageKey, key, position, measureName, label, accent) {
+  const displayUnits = CARD_AUTO_UNIT_MEASURES.has(measureName) ? 0 : -1;
+  const precision = CARD_INTEGER_MEASURES.has(measureName) ? 0 : 1;
   const p = projection({
     table: "_Measures",
     property: measureName,
@@ -412,8 +433,8 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
             fontColor: color(accent),
             horizontalAlignment: text("left"),
             textWrap: bool(false),
-            labelDisplayUnits: number(0),
-            labelPrecision: integer(1),
+            labelDisplayUnits: number(displayUnits),
+            labelPrecision: integer(precision),
             showBlankAs: text("0"),
           },
           selector: { id: "default" },

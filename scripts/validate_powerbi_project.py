@@ -52,6 +52,19 @@ GRAINS = {
     "model_peer_weights.csv": ("apartment_id",),
 }
 
+INTEGER_CARD_MEASURES = {
+    ("DimApartmentMaster", "Apartment Count"),
+    ("DimApartmentMaster", "District Count"),
+    ("_Measures", "월별 팩트 행 수"),
+    ("_Measures", "비용항목 수"),
+    ("_Measures", "선정 비교단지 수"),
+    ("_Measures", "P1 P2 항목 수"),
+    ("_Measures", "경보 월 수"),
+    ("_Measures", "조치 과제 수"),
+    ("_Measures", "증빙 요청 수"),
+    ("_Measures", "사람 승인 필요 과제 수"),
+}
+
 
 class QA:
     def __init__(self) -> None:
@@ -116,6 +129,14 @@ def iter_field_refs(value: object):
             yield from iter_field_refs(child)
 
 
+def literal_value(value: object) -> str | None:
+    if not isinstance(value, dict):
+        return None
+    literal = value.get("expr", {}).get("Literal", {})
+    result = literal.get("Value")
+    return result if isinstance(result, str) else None
+
+
 def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
     metadata = json.loads(
         (REPORT / "definition" / "pages" / "pages.json").read_text(encoding="utf-8")
@@ -168,6 +189,35 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
                     bucket = "columns" if kind == "Column" else "measures"
                     qa.require(prop in entities[entity][bucket],
                                f"Unknown {kind.lower()} {entity}[{prop}]: {path}")
+
+            visual_definition = visual.get("visual", {})
+            if visual_definition.get("visualType") == "cardVisual":
+                projections = (
+                    visual_definition.get("query", {})
+                    .get("queryState", {})
+                    .get("Data", {})
+                    .get("projections", [])
+                )
+                values = visual_definition.get("objects", {}).get("value", [])
+                if projections and values:
+                    measure = projections[0].get("field", {}).get("Measure", {})
+                    entity = (
+                        measure.get("Expression", {})
+                        .get("SourceRef", {})
+                        .get("Entity")
+                    )
+                    prop = measure.get("Property")
+                    if (entity, prop) in INTEGER_CARD_MEASURES:
+                        properties = values[0].get("properties", {})
+                        qa.require(
+                            literal_value(properties.get("labelDisplayUnits")) == "-1D",
+                            f"Integer card must not abbreviate units: {entity}[{prop}] {path}",
+                        )
+                        qa.require(
+                            literal_value(properties.get("labelPrecision")) == "0L",
+                            f"Integer card must use zero decimals: {entity}[{prop}] {path}",
+                        )
+                        qa.stats["integer_cards"] += 1
 
     qa.require(page_names == EXPECTED_PAGES,
                f"Unexpected page order/names: {page_names}")

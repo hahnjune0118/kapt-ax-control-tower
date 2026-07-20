@@ -88,6 +88,7 @@ npx --yes @microsoft/powerbi-report-authoring-cli@latest validate powerbi\KAPT_A
 
 - 페이지를 우클릭해 **Unhide page**로 일시 확인 가능
 - 서울 단지 3,384 / 월별 Fact 3,600 / 비용항목 6
+- 개수 카드는 `3.4K`, `3,384.0`처럼 축약하거나 소수로 표시하지 않고 정수 전체값으로 표시
 - 데이터 관측률과 모델 분석 가능률이 비정상 공백이 아님
 - 확인 후 다시 **Hide page**
 
