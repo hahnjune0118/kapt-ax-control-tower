@@ -52,5 +52,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a7aa63cb862df3cdcbc1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimApartmentMaster"
+              }
+            },
+            "Property": "District Count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

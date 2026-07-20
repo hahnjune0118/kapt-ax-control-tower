@@ -1,8 +1,3 @@
-relationship 587f1770-b3c3-469f-bbaf-81252c331947
-	joinOnDateBehavior: datePartOnly
-	fromColumn: DimApartmentMaster.approval_date
-	toColumn: LocalDateTable_f359ab7e-fadb-4e4d-aa05-87c1458c7ddb.Date
-
 relationship AutoDetected_92a7a190-247d-43fc-9a4d-f7b3f40e4540
 	fromColumn: FactMonthlyCost.cost_category
 	toColumn: DimCostCategory.cost_category

@@ -52,5 +52,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "950c249f04daa66a3478",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimApartmentMaster"
+              }
+            },
+            "Property": "Apartment Count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

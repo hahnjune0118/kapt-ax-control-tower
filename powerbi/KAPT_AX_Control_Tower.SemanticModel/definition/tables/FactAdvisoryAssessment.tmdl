@@ -2,9 +2,10 @@ table FactAdvisoryAssessment
 	lineageTag: 72cafd1a-f9ad-4034-a8cc-9581c64d4bbd
 
 	column advisory_priority_rank
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 3e2064ac-96d0-4548-ba65-0fcc1f80f1f9
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: advisory_priority_rank
 
 		annotation SummarizationSetBy = Automatic
@@ -64,12 +65,14 @@ table FactAdvisoryAssessment
 		annotation SummarizationSetBy = Automatic
 
 	column advisory_priority_score
-		dataType: string
+		dataType: double
 		lineageTag: f16e9737-65d2-4eae-8cfd-d42d24abf7c1
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: advisory_priority_score
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column advisory_priority
 		dataType: string
@@ -144,12 +147,14 @@ table FactAdvisoryAssessment
 		annotation SummarizationSetBy = Automatic
 
 	column anomaly_summary_score
-		dataType: string
+		dataType: double
 		lineageTag: 3460ff6e-20aa-46d9-9ca9-c8ef60e2d3b8
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: anomaly_summary_score
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column summary_severity
 		dataType: string
@@ -160,20 +165,23 @@ table FactAdvisoryAssessment
 		annotation SummarizationSetBy = Automatic
 
 	column alert_month_count
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 5b3ee4e9-0e20-4b33-a8eb-f8dc98fdf3ef
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: alert_month_count
 
 		annotation SummarizationSetBy = Automatic
 
 	column annual_gap_pct
-		dataType: string
+		dataType: double
 		lineageTag: bbc08e76-4a82-4d2c-bf26-932361204490
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: annual_gap_pct
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column annual_range_position
 		dataType: string
@@ -194,20 +202,23 @@ table FactAdvisoryAssessment
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column model_peer_count
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 9871a06e-ded0-4b03-969f-1e3cb3d3d572
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: model_peer_count
 
 		annotation SummarizationSetBy = Automatic
 
 	column effective_sample_size
-		dataType: string
+		dataType: double
 		lineageTag: a6a29f88-3ce9-47fb-83d1-4cde8732080b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: effective_sample_size
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column confidence_level
 		dataType: string
@@ -234,7 +245,8 @@ table FactAdvisoryAssessment
 		annotation SummarizationSetBy = Automatic
 
 	column human_validation_required
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 3eb6312e-c500-4a26-8970-b013c6b83216
 		summarizeBy: none
 		sourceColumn: human_validation_required
@@ -242,7 +254,8 @@ table FactAdvisoryAssessment
 		annotation SummarizationSetBy = Automatic
 
 	column auto_execution_allowed
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 0eda7346-d947-4891-a461-3754eb3c88ed
 		summarizeBy: none
 		sourceColumn: auto_execution_allowed
@@ -265,7 +278,7 @@ table FactAdvisoryAssessment
 				        fnLoadCsv(
 				            "advisory_category_assessment.csv"
 				        ),
-				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"indicative_annual_opportunity_krw", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"indicative_annual_opportunity_krw", Int64.Type}, {"advisory_priority_score", type number}, {"advisory_priority_rank", Int64.Type}, {"anomaly_summary_score", type number}, {"alert_month_count", Int64.Type}, {"annual_gap_pct", type number}, {"model_peer_count", Int64.Type}, {"effective_sample_size", type number}, {"human_validation_required", type logical}, {"auto_execution_allowed", type logical}})
 				in
 				    #"Changed Type"
 
