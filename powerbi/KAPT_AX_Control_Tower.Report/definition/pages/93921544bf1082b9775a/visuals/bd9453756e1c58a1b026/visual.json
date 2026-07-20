@@ -28,40 +28,8 @@
               },
               "queryRef": "DimCostCategory.cost_category_name_ko",
               "nativeQueryRef": "비용항목",
-              "displayName": "비용항목",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "대상 연간 세대당 비용"
-                }
-              },
-              "queryRef": "_Measures.대상 연간 세대당 비용",
-              "nativeQueryRef": "대상 연간 세대당 비용"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "기대 중앙값 세대당 비용"
-                }
-              },
-              "queryRef": "_Measures.기대 중앙값 세대당 비용",
-              "nativeQueryRef": "기대 중앙값 세대당 비용"
+              "active": true,
+              "displayName": "비용항목"
             }
           ]
         },
@@ -110,6 +78,38 @@
               "nativeQueryRef": "연간 비교군 격차율"
             }
           ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "대상 연간 세대당 비용"
+                }
+              },
+              "queryRef": "_Measures.대상 연간 세대당 비용",
+              "nativeQueryRef": "대상 연간 세대당 비용"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "기대 중앙값 세대당 비용"
+                }
+              },
+              "queryRef": "_Measures.기대 중앙값 세대당 비용",
+              "nativeQueryRef": "기대 중앙값 세대당 비용"
+            }
+          ]
         }
       },
       "sortDefinition": {
@@ -127,8 +127,7 @@
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {

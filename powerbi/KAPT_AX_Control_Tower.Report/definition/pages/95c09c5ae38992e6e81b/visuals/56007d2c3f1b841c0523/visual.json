@@ -13,25 +13,6 @@
     "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Rows": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DimCostCategory"
-                    }
-                  },
-                  "Property": "cost_category_name_ko"
-                }
-              },
-              "queryRef": "DimCostCategory.cost_category_name_ko",
-              "nativeQueryRef": "비용항목",
-              "displayName": "비용항목"
-            }
-          ]
-        },
         "Columns": {
           "projections": [
             {
@@ -47,7 +28,28 @@
               },
               "queryRef": "DimDate.YearMonth",
               "nativeQueryRef": "기준월",
+              "active": true,
               "displayName": "기준월"
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimCostCategory"
+                    }
+                  },
+                  "Property": "cost_category_name_ko"
+                }
+              },
+              "queryRef": "DimCostCategory.cost_category_name_ko",
+              "nativeQueryRef": "비용항목",
+              "active": true,
+              "displayName": "비용항목"
             }
           ]
         },

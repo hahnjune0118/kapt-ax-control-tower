@@ -81,7 +81,7 @@ table _Measures
 		lineageTag: 9b875166-15dd-4e1a-883f-87323cd4a757
 
 	measure '대상 월 세대당 비용' =
-
+			
 			VAR RawValue =
 			    SELECTEDVALUE(
 			        FactAnomalyMonthly[target_cost_per_household_krw]
@@ -348,7 +348,7 @@ table _Measures
 		lineageTag: 53020fe8-1e8c-48a7-bc02-d61b881bf0c1
 
 	measure '서울 단지 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([Apartment Count], 0),
 			    "#,0"
@@ -356,7 +356,7 @@ table _Measures
 		lineageTag: 9013855d-dd0e-4762-a3dd-810c92927d3d
 
 	measure '자치구 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([District Count], 0),
 			    "#,0"
@@ -364,7 +364,7 @@ table _Measures
 		lineageTag: b2ffca8a-c73e-4f63-9b60-3ca90490dc1e
 
 	measure '월별 팩트 행 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([월별 팩트 행 수], 0),
 			    "#,0"
@@ -372,7 +372,7 @@ table _Measures
 		lineageTag: d20c25cb-e7c4-4b05-86e2-27978f6346d5
 
 	measure '비용항목 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([비용항목 수], 0),
 			    "#,0"
@@ -380,7 +380,7 @@ table _Measures
 		lineageTag: 728caab6-c0dd-4a1f-b5b0-9944972a432f
 
 	measure '선정 비교단지 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([선정 비교단지 수], 0),
 			    "#,0"
@@ -388,7 +388,7 @@ table _Measures
 		lineageTag: 36d79b1d-45bd-4d8a-bbfd-f8afcc27b75e
 
 	measure 'P1 P2 항목 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([P1 P2 항목 수], 0),
 			    "#,0"
@@ -396,7 +396,7 @@ table _Measures
 		lineageTag: e09a1465-70c5-4adb-8cf8-fe3ce20d66d5
 
 	measure '경보 월 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([경보 월 수], 0),
 			    "#,0"
@@ -404,7 +404,7 @@ table _Measures
 		lineageTag: 12a971b6-2643-4a0d-8536-ce8f504436f1
 
 	measure '조치 과제 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([조치 과제 수], 0),
 			    "#,0"
@@ -412,7 +412,7 @@ table _Measures
 		lineageTag: fbd11937-78ee-47d6-9883-28d95f948b95
 
 	measure '증빙 요청 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([증빙 요청 수], 0),
 			    "#,0"
@@ -420,7 +420,7 @@ table _Measures
 		lineageTag: f688540b-82bd-4cac-a61f-e06615af40fe
 
 	measure '사람 승인 필요 과제 수 표시' =
-
+			
 			FORMAT(
 			    COALESCE([사람 승인 필요 과제 수], 0),
 			    "#,0"
@@ -443,3 +443,4 @@ table _Measures
 	annotation PBI_Id = 4acce5ec702e4f68b14db6e46e1c2c0b
 
 	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

@@ -28,8 +28,8 @@
               },
               "queryRef": "DimDate.YearMonth",
               "nativeQueryRef": "기준월",
-              "displayName": "기준월",
-              "active": true
+              "active": true,
+              "displayName": "기준월"
             }
           ]
         },
@@ -48,8 +48,8 @@
               },
               "queryRef": "DimCostCategory.cost_category_name_ko",
               "nativeQueryRef": "비용항목",
-              "displayName": "비용항목",
-              "active": true
+              "active": true,
+              "displayName": "비용항목"
             }
           ]
         },
@@ -87,8 +87,7 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {

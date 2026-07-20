@@ -28,8 +28,8 @@
               },
               "queryRef": "DimDate.YearMonth",
               "nativeQueryRef": "기준월",
-              "displayName": "기준월",
-              "active": true
+              "active": true,
+              "displayName": "기준월"
             }
           ]
         },
@@ -86,8 +86,7 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {

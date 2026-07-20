@@ -28,6 +28,7 @@
               },
               "queryRef": "ModelPeerWeights.apartment_name",
               "nativeQueryRef": "비교단지",
+              "active": true,
               "displayName": "비교단지"
             }
           ]
@@ -48,54 +49,6 @@
               "queryRef": "ModelPeerWeights.peer_group_class",
               "nativeQueryRef": "Peer Group",
               "displayName": "Peer Group"
-            }
-          ]
-        },
-        "X": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "ModelPeerWeights"
-                        }
-                      },
-                      "Property": "structural_similarity_score"
-                    }
-                  },
-                  "Function": 4
-                }
-              },
-              "queryRef": "Max(ModelPeerWeights.structural_similarity_score)",
-              "nativeQueryRef": "구조 유사도",
-              "displayName": "구조 유사도"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "ModelPeerWeights"
-                        }
-                      },
-                      "Property": "peer_suitability_score"
-                    }
-                  },
-                  "Function": 4
-                }
-              },
-              "queryRef": "Max(ModelPeerWeights.peer_suitability_score)",
-              "nativeQueryRef": "비교 적합도",
-              "displayName": "비교 적합도"
             }
           ]
         },
@@ -184,6 +137,55 @@
               "queryRef": "Max(ModelPeerWeights.model_weight)",
               "nativeQueryRef": "모델 가중치",
               "displayName": "모델 가중치"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ModelPeerWeights"
+                        }
+                      },
+                      "Property": "structural_similarity_score"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Max(ModelPeerWeights.structural_similarity_score)",
+              "nativeQueryRef": "구조 유사도",
+              "active": true,
+              "displayName": "구조 유사도"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ModelPeerWeights"
+                        }
+                      },
+                      "Property": "peer_suitability_score"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Max(ModelPeerWeights.peer_suitability_score)",
+              "nativeQueryRef": "비교 적합도",
+              "displayName": "비교 적합도"
             }
           ]
         }

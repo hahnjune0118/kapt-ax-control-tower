@@ -326,3 +326,4 @@ table DimApartmentMaster
 	annotation PBI_NavigationStepName = 탐색
 
 	annotation PBI_ResultType = Table
+

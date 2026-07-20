@@ -28,6 +28,7 @@
               },
               "queryRef": "DimCostCategory.cost_category_name_ko",
               "nativeQueryRef": "비용항목",
+              "active": true,
               "displayName": "비용항목"
             }
           ]
