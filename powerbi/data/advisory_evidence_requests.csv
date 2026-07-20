@@ -1,0 +1,25 @@
+﻿evidence_request_id,recommendation_id,apartment_id,cost_category,cost_category_name_ko,evidence_priority,document_name,request_purpose,expected_provider,request_status,contains_personal_data_review
+EVD-01-01,REC-01,A15784601,elevator,승강기유지비,MEDIUM,승강기 대수·모델·설치연도 현황,승강기 유지보수 계약 또는 고장대응 비용이 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-01-02,REC-01,A15784601,elevator,승강기유지비,MEDIUM,승강기 유지보수 계약서,승강기 유지보수 계약 또는 고장대응 비용이 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-01-03,REC-01,A15784601,elevator,승강기유지비,MEDIUM,최근 12개월 고장·출동·부품교체 이력,승강기 유지보수 계약 또는 고장대응 비용이 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-01-04,REC-01,A15784601,elevator,승강기유지비,MEDIUM,유지보수료 지급내역과 비교견적,승강기 유지보수 계약 또는 고장대응 비용이 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-02-01,REC-02,A15784601,guard,경비비,MEDIUM,경비용역 계약서와 과업지시서,경비인력과 교대방식 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-02-02,REC-02,A15784601,guard,경비비,MEDIUM,경비인원·초소·교대표 및 근무시간표,경비인력과 교대방식 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-02-03,REC-02,A15784601,guard,경비비,MEDIUM,최근 입찰 및 비교견적 자료,경비인력과 교대방식 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-02-04,REC-02,A15784601,guard,경비비,MEDIUM,경비비 원장과 월별 지급내역,경비인력과 교대방식 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-03-01,REC-03,A15784601,facility,시설유지비,LOW,주요 설비 목록·연식·상태 현황,공용시설 유지보수 범위 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-03-02,REC-03,A15784601,facility,시설유지비,LOW,시설유지보수 계약서와 과업범위,공용시설 유지보수 범위 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-03-03,REC-03,A15784601,facility,시설유지비,LOW,고장·점검·수리 이력,공용시설 유지보수 범위 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-03-04,REC-03,A15784601,facility,시설유지비,LOW,시설유지비 원장과 업체별 지급내역,공용시설 유지보수 범위 또는 계약단가가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-04-01,REC-04,A15784601,repairs,수선비,LOW,최근 12개월 수선비 원장과 증빙,수선비가 특정 월에 집중되거나 비용분류·업체선정 검토가 필요할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-04-02,REC-04,A15784601,repairs,수선비,LOW,공사계약서·견적서·검수조서,수선비가 특정 월에 집중되거나 비용분류·업체선정 검토가 필요할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-04-03,REC-04,A15784601,repairs,수선비,LOW,장기수선계획과 장기수선충당금 사용내역,수선비가 특정 월에 집중되거나 비용분류·업체선정 검토가 필요할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-04-04,REC-04,A15784601,repairs,수선비,LOW,입찰공고·업체평가·의결자료,수선비가 특정 월에 집중되거나 비용분류·업체선정 검토가 필요할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-05-01,REC-05,A15784601,labor,인건비,LOW,최근 12개월 인건비 원장 및 예산 대비 실적,인건비가 유사단지 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-05-02,REC-05,A15784601,labor,인건비,LOW,관리인원 명부와 직무·근무시간·교대표,인건비가 유사단지 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-05-03,REC-05,A15784601,labor,인건비,LOW,관리업체 위수탁계약서와 인력 산정기준,인건비가 유사단지 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-05-04,REC-05,A15784601,labor,인건비,LOW,급여·수당·상여·보험료 항목별 집계표,인건비가 유사단지 기대수준을 상회할 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-06-01,REC-06,A15784601,cleaning,청소비,LOW,청소용역 계약서와 과업지시서,청소용역 단가 또는 서비스 범위가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-06-02,REC-06,A15784601,cleaning,청소비,LOW,청소인원·근무시간·작업구역 현황,청소용역 단가 또는 서비스 범위가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-06-03,REC-06,A15784601,cleaning,청소비,LOW,최근 입찰서류와 업체별 견적 비교표,청소용역 단가 또는 서비스 범위가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True
+EVD-06-04,REC-06,A15784601,cleaning,청소비,LOW,월별 검수조서 및 용역비 지급내역,청소용역 단가 또는 서비스 범위가 유사단지 대비 높을 가능성 가설 검증,관리사무소 또는 입주자대표회의,NOT_REQUESTED,True

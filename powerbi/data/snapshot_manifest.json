@@ -1,0 +1,65 @@
+{
+  "project": "K-APT AX Control Tower",
+  "snapshot_type": "PUBLIC_PORTFOLIO_DATA",
+  "generated_at_kst": "2026-07-20T13:31:38+09:00",
+  "contains_api_key": false,
+  "contains_raw_api_response": false,
+  "contains_personal_information": false,
+  "files": [
+    {
+      "file_name": "dim_apartment_profile_base.csv",
+      "row_count": 3384,
+      "sha256": "aef3feae61cbc10ccb5518ca2aac3ec31beccd5771f64718c0d3d9d45e40c2fd"
+    },
+    {
+      "file_name": "pilot_cohort.csv",
+      "row_count": 50,
+      "sha256": "5de9015295c1ea917926043a961838a6705249615693c121e59808c111689ebf"
+    },
+    {
+      "file_name": "dim_cost_category.csv",
+      "row_count": 6,
+      "sha256": "c7c59433a1e50724ca38753f9a7bac84dbd2329e72fdc1c3e874060ff8c429a2"
+    },
+    {
+      "file_name": "fact_cost_features_monthly.csv",
+      "row_count": 3600,
+      "sha256": "02d00d238a8f7d930270f5a3596bbf06c9835d81b9455d2d5631177ebea34aaa"
+    },
+    {
+      "file_name": "fact_apartment_cost_annual.csv",
+      "row_count": 300,
+      "sha256": "ab6fd9f9f31386c95d141a7258731715e64872bd88b476e39866615ba2dca291"
+    },
+    {
+      "file_name": "model_anomaly_scores_monthly.csv",
+      "row_count": 72,
+      "sha256": "3d8f1d1400ba0374d41282d906265370f6f02ce5a6e5a76177910cabadc410c5"
+    },
+    {
+      "file_name": "model_expected_cost_range.csv",
+      "row_count": 6,
+      "sha256": "2a308b1f20f519aa09ce308e54919b3336d5221d77cc845bdfc26cb6be62c6b4"
+    },
+    {
+      "file_name": "advisory_category_assessment.csv",
+      "row_count": 6,
+      "sha256": "70718781a61cf5dab9e4dacde79f454959637e271c28f33804c21d9ef77fe8ec"
+    },
+    {
+      "file_name": "advisory_action_register.csv",
+      "row_count": 18,
+      "sha256": "bd266dd60cdb324854a3b53d41a5bb5567dab887795d067d8f07ec101435cdc9"
+    },
+    {
+      "file_name": "advisory_evidence_requests.csv",
+      "row_count": 24,
+      "sha256": "19af4275af7cef0f8e43f47dd20b67d31c145650fdf691e2b0b0daaa2173d107"
+    },
+    {
+      "file_name": "model_peer_weights.csv",
+      "row_count": 49,
+      "sha256": "058a8e3da9eb5394ec6b51ad3f18fff1217b07a037e7854ec719c5a9296992f0"
+    }
+  ]
+}

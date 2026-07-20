@@ -1,0 +1,19 @@
+﻿action_id,recommendation_id,apartment_id,apartment_name,cost_category,cost_category_name_ko,category_priority_rank,advisory_priority,action_sequence,action_type,action_title,action_detail,business_owner,time_horizon,success_kpi,digital_enablement,indicative_opportunity_krw,action_status,human_approval_required,auto_execution_allowed
+ACT-01-01,REC-01,A15784601,마곡현대아파트,elevator,승강기유지비,1,P3_MEDIUM,1,VALIDATE,승강기 계약·고장이력 분석,"계약단가, 승강기 대수와 고장·출동 빈도를 연결해 검토한다.",시설관리 담당,0~30일,승강기당 유지비 및 고장빈도,고장이력·계약비용 통합 분석,,PROPOSED,True,False
+ACT-01-02,REC-01,A15784601,마곡현대아파트,elevator,승강기유지비,1,P3_MEDIUM,2,OPTIMIZE,유지보수 계약 재설계,단순유지·책임유지 계약방식과 복수업체 견적을 비교한다.,입주자대표회의,1~3개월,승강기당 계약단가,계약 시나리오 비용 비교,0.0,PROPOSED,True,False
+ACT-01-03,REC-01,A15784601,마곡현대아파트,elevator,승강기유지비,1,P3_MEDIUM,3,CONTROL_AUTOMATE,예방정비 모니터링,"고장빈도, 부품교체와 유지비 추세를 연계해 이상징후를 관리한다.",시설관리 담당,상시,반복고장률 및 예방정비 이행률,Power BI 설비상태 모니터링,,PROPOSED,True,False
+ACT-02-01,REC-02,A15784601,마곡현대아파트,guard,경비비,2,P3_MEDIUM,1,VALIDATE,경비인력·계약 대사,"계약인원, 실제 배치인원, 교대표와 월별 지급액을 대사한다.",관리사무소 계약담당,0~30일,계약 대비 실제 배치 일치율,근무표·지급액 자동 대사,,PROPOSED,True,False
+ACT-02-02,REC-02,A15784601,마곡현대아파트,guard,경비비,2,P3_MEDIUM,2,OPTIMIZE,경비 운영 시나리오 검토,"초소, 교대방식, 무인설비 활용과 서비스 수준을 함께 비교한다.",관리사무소장·입주자대표회의,1~3개월,세대당 경비비 및 초소당 인원,인력·무인화 비용 시나리오 분석,30991800.490296185,PROPOSED,True,False
+ACT-02-03,REC-02,A15784601,마곡현대아파트,guard,경비비,2,P3_MEDIUM,3,CONTROL_AUTOMATE,경비비 편차 월별 경보,비교군 범위와 예산을 초과하면 검토요청을 자동 생성한다.,관리사무소장,상시,경비비 예산 초과율,Power BI 이상징후 알림,,PROPOSED,True,False
+ACT-03-01,REC-03,A15784601,마곡현대아파트,facility,시설유지비,3,P4_MONITOR,1,VALIDATE,시설비 계약·설비이력 대사,"시설별 유지비, 고장빈도와 계약서비스 이행 여부를 검토한다.",시설관리 담당,0~30일,계약서비스 이행률,설비·계약·지급 데이터 통합,,PROPOSED,True,False
+ACT-03-02,REC-03,A15784601,마곡현대아파트,facility,시설유지비,3,P4_MONITOR,2,OPTIMIZE,예방정비·계약범위 최적화,반복고장 설비를 식별하고 예방정비와 교체 시나리오를 비교한다.,관리사무소장·입주자대표회의,1~3개월,반복고장률 및 설비당 유지비,수리·교체 생애주기 비용 분석,3447811.448863636,PROPOSED,True,False
+ACT-03-03,REC-03,A15784601,마곡현대아파트,facility,시설유지비,3,P4_MONITOR,3,CONTROL_AUTOMATE,시설 유지비 예측·경보,설비별 고장과 비용추세를 기반으로 예산초과 위험을 모니터링한다.,시설관리 담당,상시,예방정비율 및 예산 편차율,Power BI 설비비용 조기경보,,PROPOSED,True,False
+ACT-04-01,REC-04,A15784601,마곡현대아파트,repairs,수선비,4,P4_MONITOR,1,VALIDATE,수선비 발생원인·분류 검증,고액 수선비를 공사별로 분해하고 회계분류 및 승인근거를 확인한다.,관리사무소 회계·시설담당,0~30일,증빙완비율 및 분류오류 건수,고액거래 자동추출 및 증빙 연결,,PROPOSED,True,False
+ACT-04-02,REC-04,A15784601,마곡현대아파트,repairs,수선비,4,P4_MONITOR,2,OPTIMIZE,공사 조달·견적 절차 개선,"복수견적, 입찰, 업체평가와 공사단가 벤치마크를 표준화한다.",입주자대표회의,1~3개월,경쟁견적률 및 예정가 대비 낙찰률,견적비교 및 업체평가 워크플로,0.0,PROPOSED,True,False
+ACT-04-03,REC-04,A15784601,마곡현대아파트,repairs,수선비,4,P4_MONITOR,3,CONTROL_AUTOMATE,수선비 이상거래 통제,고액·반복·분할 거래를 탐지하고 승인자료 확인을 자동 요청한다.,관리사무소장,상시,이상거래 검토 완료율,규칙기반 이상거래 경보,,PROPOSED,True,False
+ACT-05-01,REC-05,A15784601,마곡현대아파트,labor,인건비,5,P4_MONITOR,1,VALIDATE,인건비 구성 및 인원 대사,"K-APT 공시금액을 인건비 원장, 급여대장 및 계약금액과 대사한다.",관리사무소 회계담당,0~30일,원장-공시 대사 차이율,Python 자동대사 및 Power BI 차이 알림,,PROPOSED,True,False
+ACT-05-02,REC-05,A15784601,마곡현대아파트,labor,인건비,5,P4_MONITOR,2,OPTIMIZE,인력·근무체계 적정성 검토,"세대수당 인원, 교대방식, 직무중복과 직영·위탁 시나리오를 비교한다.",관리사무소장·입주자대표회의,1~3개월,세대당 인건비 및 관리인원/1천세대,인력운영 시나리오 시뮬레이션,0.0,PROPOSED,True,False
+ACT-05-03,REC-05,A15784601,마곡현대아파트,labor,인건비,5,P4_MONITOR,3,CONTROL_AUTOMATE,인건비 월별 통제 대시보드,"예산, 실제, 비교군 중앙값과 편차를 매월 모니터링한다.",관리사무소장,상시,비교군 대비 인건비 편차율,Power BI 임계치 경보와 월별 보고 자동화,,PROPOSED,True,False
+ACT-06-01,REC-06,A15784601,마곡현대아파트,cleaning,청소비,6,P4_MONITOR,1,VALIDATE,청소계약 단가·범위 대사,계약서상 인원·시간·작업범위를 실제 운영 및 지급내역과 대사한다.,관리사무소 계약담당,0~30일,계약범위 미이행 건수,계약서 OCR 및 지급내역 자동대사,,PROPOSED,True,False
+ACT-06-02,REC-06,A15784601,마곡현대아파트,cleaning,청소비,6,P4_MONITOR,2,OPTIMIZE,청소용역 재견적·범위 최적화,비교견적을 확보하고 작업빈도와 구역별 서비스 수준을 재설계한다.,입주자대표회의,1~3개월,세대당 청소비 및 경쟁견적 수,입찰 견적 비교 및 단가 벤치마크,0.0,PROPOSED,True,False
+ACT-06-03,REC-06,A15784601,마곡현대아파트,cleaning,청소비,6,P4_MONITOR,3,CONTROL_AUTOMATE,청소용역 SLA 모니터링,"작업실적, 민원, 검수결과와 비용을 월별로 연결한다.",관리사무소장,상시,SLA 준수율 및 청소민원 건수,Power BI SLA·비용 통합 모니터링,,PROPOSED,True,False
