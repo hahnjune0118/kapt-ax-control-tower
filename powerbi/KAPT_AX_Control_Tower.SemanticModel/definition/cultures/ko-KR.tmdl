@@ -1,2 +1,1479 @@
 cultureInfo ko-KR
 
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dimcostcategory.cost_category_name_ko": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimCostCategory",
+			          "ConceptualProperty": "cost_category_name_ko"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비용항목": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.p1_p2___": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "P1 P2 항목 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "P1·P2 항목": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "기회금액률"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "기회금액률": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "경보 월 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "경보 월": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "대상단지 연환산 관리비"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "연환산 관리비": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "지표상 연간 기회금액"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "지표상 기회금액": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "기회금액": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column4": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "가중 평균 유사도"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "가중 평균 유사도": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column5": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "모델 분석 가능률"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "모델 분석 가능률": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column6": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "데이터 관측률"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "데이터 관측률": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column7": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "선정 비교단지 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "선정 비교단지": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column8": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "대상 관리비 총액"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "대상 관리비 총액": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column9": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "연간 비교군 격차율"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "연간 비교군 격차율": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column10": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "대상 월평균 세대당 항목비"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "대상 월평균 세대당": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column11": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "비교군 월평균 세대당 항목비"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비교군 월평균 세대당": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column12": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "최대 이상징후 점수"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "최대 이상징후": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column13": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "대상 월 세대당 비용"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "대상 세대당 비용": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column14": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "평균 이상징후 점수"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "평균 이상징후": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column15": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "사람 승인 필요 과제 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "사람 승인 필요": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column16": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "증빙 요청 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "증빙 요청": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column17": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "조치 과제 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "조치 과제": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column18": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "서울 단지 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "서울 단지 수": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column19": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "비용항목 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비용항목": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column20": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "자치구 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "자치구 수": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column21": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "월별 팩트 행 수 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "월별 Fact 행": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimdate.yearmonth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimDate",
+			          "ConceptualProperty": "YearMonth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "기준월": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.peer_rank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "peer_rank"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "순위": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.apartment_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "apartment_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비교단지": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.city_district": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "city_district"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "자치구": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.household_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "household_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "세대수": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.approval_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "approval_year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "사용승인연도": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.structural_similarity_score": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "structural_similarity_score"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "구조 유사도": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.peer_suitability_score": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "peer_suitability_score"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "적합도": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.model_weight": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "model_weight"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "모델 가중치": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.selection_policy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "selection_policy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "선정 정책": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.peer_group_class": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "peer_group_class"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Peer Group": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.month_start_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "month_start_date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "기준월": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.cost_category_name_ko": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "cost_category_name_ko"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비용항목": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.peer_median_krw": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "peer_median_krw"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비교군 중앙값": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.gap_pct": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "gap_pct"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "격차율(%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.anomaly_score": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "anomaly_score"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "이상징후 점수": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.anomaly_severity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "anomaly_severity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "심각도": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.is_alert": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "is_alert"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "경보": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "경보 여부": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factanomalymonthly.anomaly_reason": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAnomalyMonthly",
+			          "ConceptualProperty": "anomaly_reason"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "탐지 근거": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.advisory_priority": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "advisory_priority"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "우선순위": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.advisory_priority_score": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "advisory_priority_score"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "점수": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.cost_category_name_ko": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "cost_category_name_ko"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비용항목": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.screened_pain_point": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "screened_pain_point"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "검토 Pain Point": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.primary_recommended_action": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "primary_recommended_action"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "권고 조치": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.indicative_annual_opportunity_krw": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "indicative_annual_opportunity_krw"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "지표상 기회금액": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.confidence_level": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "confidence_level"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "신뢰수준": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factadvisoryassessment.human_validation_required": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAdvisoryAssessment",
+			          "ConceptualProperty": "human_validation_required"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "사람 검증": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factevidencerequest.request_status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactEvidenceRequest",
+			          "ConceptualProperty": "request_status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "증빙 상태": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "상태": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factevidencerequest.evidence_priority": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactEvidenceRequest",
+			          "ConceptualProperty": "evidence_priority"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "우선순위": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factevidencerequest.cost_category_name_ko": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactEvidenceRequest",
+			          "ConceptualProperty": "cost_category_name_ko"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비용항목": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factevidencerequest.document_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactEvidenceRequest",
+			          "ConceptualProperty": "document_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "요청 문서": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factevidencerequest.request_purpose": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactEvidenceRequest",
+			          "ConceptualProperty": "request_purpose"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "요청 목적": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factevidencerequest.expected_provider": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactEvidenceRequest",
+			          "ConceptualProperty": "expected_provider"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "제공 주체": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factevidencerequest.contains_personal_data_review": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactEvidenceRequest",
+			          "ConceptualProperty": "contains_personal_data_review"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "개인정보 검토": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.advisory_priority": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "advisory_priority"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "우선순위": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.action_sequence": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "action_sequence"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "순서": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.cost_category_name_ko": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "cost_category_name_ko"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비용항목": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.action_title": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "action_title"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "조치 과제": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.business_owner": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "business_owner"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "담당": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.time_horizon": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "time_horizon"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "기간": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.success_kpi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "success_kpi"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "성공 KPI": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.digital_enablement": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "digital_enablement"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Digital Enablement": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.action_status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "action_status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "상태": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "과제 상태": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factactionregister.human_approval_required": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactActionRegister",
+			          "ConceptualProperty": "human_approval_required"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "사람 승인": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

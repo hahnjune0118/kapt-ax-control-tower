@@ -4,19 +4,19 @@ table DimApartmentMaster
 	measure 'Apartment Count' =
 			
 			DISTINCTCOUNT(DimApartmentMaster[apartment_id])
-		formatString: 0
+		formatString: #,0
 		lineageTag: b81ae532-e59a-4f55-8d2b-3e8147f95f43
 
 	measure 'District Count' =
 			
 			DISTINCTCOUNT(DimApartmentMaster[city_district])
-		formatString: 0
+		formatString: #,0
 		lineageTag: e3a72197-c9dd-4df9-a70e-330164e06331
 
 	measure 'Town Count' =
 			
 			DISTINCTCOUNT(DimApartmentMaster[town])
-		formatString: 0
+		formatString: #,0
 		lineageTag: 80ac19da-a415-469e-b536-6311ffe80d72
 
 	column apartment_id

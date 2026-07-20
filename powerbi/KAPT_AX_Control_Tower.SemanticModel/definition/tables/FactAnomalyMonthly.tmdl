@@ -41,7 +41,7 @@ table FactAnomalyMonthly
 
 	column month_start_date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: yyyy-MM
 		lineageTag: 75aa93c5-a4bb-48f8-8769-f7c8c6937fa1
 		summarizeBy: none
 		sourceColumn: month_start_date
@@ -130,13 +130,14 @@ table FactAnomalyMonthly
 
 	column peer_median_krw
 		dataType: double
+		formatString: "₩"#,0;-"₩"#,0;"₩"#,0
 		lineageTag: 6ef8bcaf-af86-49f6-8ef0-820a306d1177
 		summarizeBy: sum
 		sourceColumn: peer_median_krw
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"ko-KR"}
 
 	column peer_q3_krw
 		dataType: double
@@ -174,6 +175,7 @@ table FactAnomalyMonthly
 
 	column gap_pct
 		dataType: double
+		formatString: 0.0
 		lineageTag: 2a6377ea-ff1b-4a04-b9e5-0a16f00c2df9
 		summarizeBy: sum
 		sourceColumn: gap_pct
@@ -296,6 +298,7 @@ table FactAnomalyMonthly
 
 	column anomaly_score
 		dataType: double
+		formatString: 0.0
 		lineageTag: 8e96ba1f-8608-4af4-91cf-4096d54a3f05
 		summarizeBy: sum
 		sourceColumn: anomaly_score

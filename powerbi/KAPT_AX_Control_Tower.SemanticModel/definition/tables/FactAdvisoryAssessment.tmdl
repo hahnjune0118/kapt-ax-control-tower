@@ -66,6 +66,7 @@ table FactAdvisoryAssessment
 
 	column advisory_priority_score
 		dataType: double
+		formatString: 0.0
 		lineageTag: f16e9737-65d2-4eae-8cfd-d42d24abf7c1
 		summarizeBy: sum
 		sourceColumn: advisory_priority_score
@@ -193,13 +194,14 @@ table FactAdvisoryAssessment
 
 	column indicative_annual_opportunity_krw
 		dataType: int64
+		formatString: "₩"#,0;-"₩"#,0;"₩"#,0
 		lineageTag: db71eee1-5373-4365-ab44-4690e20b1840
 		summarizeBy: sum
 		sourceColumn: indicative_annual_opportunity_krw
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"ko-KR"}
 
 	column model_peer_count
 		dataType: int64
