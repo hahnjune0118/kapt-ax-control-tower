@@ -5,7 +5,7 @@
     "x": 172,
     "y": 112,
     "z": 101,
-    "height": 84,
+    "height": 90,
     "width": 136,
     "tabOrder": 101
   },
@@ -23,10 +23,10 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "P1 P2 항목 수"
+                  "Property": "P1 P2 항목 수 표시"
                 }
               },
-              "queryRef": "_Measures.P1 P2 항목 수",
+              "queryRef": "_Measures.P1 P2 항목 수 표시",
               "nativeQueryRef": "P1·P2 항목",
               "displayName": "P1·P2 항목"
             }

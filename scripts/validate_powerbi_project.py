@@ -53,16 +53,16 @@ GRAINS = {
 }
 
 INTEGER_CARD_MEASURES = {
-    ("DimApartmentMaster", "Apartment Count"),
-    ("DimApartmentMaster", "District Count"),
-    ("_Measures", "월별 팩트 행 수"),
-    ("_Measures", "비용항목 수"),
-    ("_Measures", "선정 비교단지 수"),
-    ("_Measures", "P1 P2 항목 수"),
-    ("_Measures", "경보 월 수"),
-    ("_Measures", "조치 과제 수"),
-    ("_Measures", "증빙 요청 수"),
-    ("_Measures", "사람 승인 필요 과제 수"),
+    ("_Measures", "서울 단지 수 표시"),
+    ("_Measures", "자치구 수 표시"),
+    ("_Measures", "월별 팩트 행 수 표시"),
+    ("_Measures", "비용항목 수 표시"),
+    ("_Measures", "선정 비교단지 수 표시"),
+    ("_Measures", "P1 P2 항목 수 표시"),
+    ("_Measures", "경보 월 수 표시"),
+    ("_Measures", "조치 과제 수 표시"),
+    ("_Measures", "증빙 요청 수 표시"),
+    ("_Measures", "사람 승인 필요 과제 수 표시"),
 }
 
 
@@ -192,6 +192,10 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
 
             visual_definition = visual.get("visual", {})
             if visual_definition.get("visualType") == "cardVisual":
+                qa.require(
+                    height >= 90,
+                    f"Card height must leave room for value and label: {path}",
+                )
                 projections = (
                     visual_definition.get("query", {})
                     .get("queryState", {})
@@ -221,6 +225,10 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
 
     qa.require(page_names == EXPECTED_PAGES,
                f"Unexpected page order/names: {page_names}")
+    qa.require(
+        qa.stats["integer_cards"] == 14,
+        f"Expected 14 text-safe integer cards, found {qa.stats['integer_cards']}",
+    )
     qa.require(metadata.get("activePageName") == page_order[0],
                "The first page is not the active page")
     qa.require(

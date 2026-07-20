@@ -67,6 +67,8 @@ const CARD_AUTO_UNIT_MEASURES = new Set([
 ]);
 
 const CARD_INTEGER_MEASURES = new Set([
+  "서울 단지 수 표시",
+  "자치구 수 표시",
   "월별 팩트 행 수",
   "비용항목 수",
   "선정 비교단지 수",
@@ -75,6 +77,17 @@ const CARD_INTEGER_MEASURES = new Set([
   "조치 과제 수",
   "증빙 요청 수",
   "사람 승인 필요 과제 수",
+]);
+
+const CARD_DISPLAY_MEASURES = new Map([
+  ["월별 팩트 행 수", "월별 팩트 행 수 표시"],
+  ["비용항목 수", "비용항목 수 표시"],
+  ["선정 비교단지 수", "선정 비교단지 수 표시"],
+  ["P1 P2 항목 수", "P1 P2 항목 수 표시"],
+  ["경보 월 수", "경보 월 수 표시"],
+  ["조치 과제 수", "조치 과제 수 표시"],
+  ["증빙 요청 수", "증빙 요청 수 표시"],
+  ["사람 승인 필요 과제 수", "사람 승인 필요 과제 수 표시"],
 ]);
 
 function stableHex(value, length = 20) {
@@ -414,9 +427,10 @@ function textboxVisual(pageKey, key, position, runs, options = {}) {
 function cardVisual(pageKey, key, position, measureName, label, accent) {
   const displayUnits = CARD_AUTO_UNIT_MEASURES.has(measureName) ? 0 : -1;
   const precision = CARD_INTEGER_MEASURES.has(measureName) ? 0 : 1;
+  const visualMeasureName = CARD_DISPLAY_MEASURES.get(measureName) ?? measureName;
   const p = projection({
     table: "_Measures",
-    property: measureName,
+    property: visualMeasureName,
     kind: "measure",
     displayName: label,
   });
@@ -923,7 +937,7 @@ function buildExecutiveOverview() {
       cardVisual(
         pageKey,
         key,
-        { x: 24 + index * 196, y: cardY, z: 100 + index, height: 84, width: 184 },
+        { x: 24 + index * 196, y: cardY, z: 100 + index, height: 90, width: 184 },
         metric,
         label,
         accent,
@@ -934,7 +948,7 @@ function buildExecutiveOverview() {
     slicerVisual(
       pageKey,
       "category_filter",
-      { x: 1004, y: cardY, z: 106, height: 84, width: 252 },
+      { x: 1004, y: cardY, z: 106, height: 90, width: 252 },
       "DimCostCategory",
       "cost_category_name_ko",
       "비용항목",
@@ -1057,7 +1071,7 @@ function buildPeerBenchmark() {
       cardVisual(
         pageKey,
         key,
-        { x: 24 + index * 246, y: 112, z: 100 + index, height: 84, width: 234 },
+        { x: 24 + index * 246, y: 112, z: 100 + index, height: 90, width: 234 },
         metric,
         label,
         accent,
@@ -1068,7 +1082,7 @@ function buildPeerBenchmark() {
     slicerVisual(
       pageKey,
       "category_filter",
-      { x: 1008, y: 112, z: 105, height: 84, width: 248 },
+      { x: 1008, y: 112, z: 105, height: 90, width: 248 },
       "DimCostCategory",
       "cost_category_name_ko",
       "비용항목",
@@ -1212,7 +1226,7 @@ function buildCostDriverTrend() {
       cardVisual(
         pageKey,
         key,
-        { x: 24 + index * 224, y: 112, z: 100 + index, height: 84, width: 212 },
+        { x: 24 + index * 224, y: 112, z: 100 + index, height: 90, width: 212 },
         metric,
         label,
         accent,
@@ -1223,7 +1237,7 @@ function buildCostDriverTrend() {
     slicerVisual(
       pageKey,
       "month_filter",
-      { x: 920, y: 112, z: 105, height: 84, width: 158 },
+      { x: 920, y: 112, z: 105, height: 90, width: 158 },
       "DimDate",
       "YearMonth",
       "기준월",
@@ -1231,7 +1245,7 @@ function buildCostDriverTrend() {
     slicerVisual(
       pageKey,
       "category_filter",
-      { x: 1090, y: 112, z: 106, height: 84, width: 166 },
+      { x: 1090, y: 112, z: 106, height: 90, width: 166 },
       "DimCostCategory",
       "cost_category_name_ko",
       "비용항목",
@@ -1326,7 +1340,7 @@ function buildAnomalyExplorer() {
       cardVisual(
         pageKey,
         key,
-        { x: 24 + index * 206, y: 112, z: 100 + index, height: 84, width: 194 },
+        { x: 24 + index * 206, y: 112, z: 100 + index, height: 90, width: 194 },
         metric,
         label,
         accent,
@@ -1337,7 +1351,7 @@ function buildAnomalyExplorer() {
     slicerVisual(
       pageKey,
       "category_filter",
-      { x: 848, y: 112, z: 105, height: 84, width: 132 },
+      { x: 848, y: 112, z: 105, height: 90, width: 132 },
       "DimCostCategory",
       "cost_category_name_ko",
       "비용항목",
@@ -1345,7 +1359,7 @@ function buildAnomalyExplorer() {
     slicerVisual(
       pageKey,
       "severity_filter",
-      { x: 990, y: 112, z: 106, height: 84, width: 126 },
+      { x: 990, y: 112, z: 106, height: 90, width: 126 },
       "FactAnomalyMonthly",
       "anomaly_severity",
       "심각도",
@@ -1353,7 +1367,7 @@ function buildAnomalyExplorer() {
     slicerVisual(
       pageKey,
       "alert_filter",
-      { x: 1126, y: 112, z: 107, height: 84, width: 130 },
+      { x: 1126, y: 112, z: 107, height: 90, width: 130 },
       "FactAnomalyMonthly",
       "is_alert",
       "경보 여부",
@@ -1436,7 +1450,7 @@ function buildActionCenter() {
       cardVisual(
         pageKey,
         key,
-        { x: 24 + index * 148, y: 112, z: 100 + index, height: 84, width: 136 },
+        { x: 24 + index * 148, y: 112, z: 100 + index, height: 90, width: 136 },
         metric,
         label,
         accent,
@@ -1454,7 +1468,7 @@ function buildActionCenter() {
       slicerVisual(
         pageKey,
         key,
-        { x: 764 + index * 124, y: 112, z: 106 + index, height: 84, width: 112 },
+        { x: 764 + index * 124, y: 112, z: 106 + index, height: 90, width: 112 },
         table,
         property,
         label,
@@ -1537,8 +1551,8 @@ function buildModelQa() {
   const page = newPage(pageKey, "00 Model QA", { hidden: true });
   addHeader(page, pageKey, "00 Model QA", "데이터 커버리지·모델 입력·지표 정합성 검증", false);
   const cards = [
-    ["apartments", "Apartment Count", "서울 단지 수", COLORS.navy, "DimApartmentMaster"],
-    ["districts", "District Count", "자치구 수", COLORS.navy, "DimApartmentMaster"],
+    ["apartments", "서울 단지 수 표시", "서울 단지 수", COLORS.navy, "_Measures"],
+    ["districts", "자치구 수 표시", "자치구 수", COLORS.navy, "_Measures"],
     ["monthly_rows", "월별 팩트 행 수", "월별 Fact 행", COLORS.blue, "_Measures"],
     ["categories", "비용항목 수", "비용항목", COLORS.blue, "_Measures"],
     ["peers", "선정 비교단지 수", "선정 비교단지", COLORS.orange, "_Measures"],
@@ -1551,14 +1565,14 @@ function buildModelQa() {
     const y = 86 + Math.floor(index / 4) * 98;
     if (table === "_Measures") {
       page.visuals.push(
-        cardVisual(pageKey, key, { x, y, z: 100 + index, height: 84, width: 292 }, metric, label, accent),
+        cardVisual(pageKey, key, { x, y, z: 100 + index, height: 90, width: 292 }, metric, label, accent),
       );
     } else {
       const p = projection({ table, property: metric, kind: "measure", displayName: label });
       const card = cardVisual(
         pageKey,
         key,
-        { x, y, z: 100 + index, height: 84, width: 292 },
+        { x, y, z: 100 + index, height: 90, width: 292 },
         "월별 팩트 행 수",
         label,
         accent,

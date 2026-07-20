@@ -5,7 +5,7 @@
     "x": 640,
     "y": 86,
     "z": 102,
-    "height": 84,
+    "height": 90,
     "width": 292,
     "tabOrder": 102
   },
@@ -23,10 +23,10 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "월별 팩트 행 수"
+                  "Property": "월별 팩트 행 수 표시"
                 }
               },
-              "queryRef": "_Measures.월별 팩트 행 수",
+              "queryRef": "_Measures.월별 팩트 행 수 표시",
               "nativeQueryRef": "월별 Fact 행",
               "displayName": "월별 Fact 행"
             }

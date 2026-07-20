@@ -347,6 +347,86 @@ table _Measures
 		formatString: #,0
 		lineageTag: 53020fe8-1e8c-48a7-bc02-d61b881bf0c1
 
+	measure '서울 단지 수 표시' =
+
+			FORMAT(
+			    COALESCE([Apartment Count], 0),
+			    "#,0"
+			)
+		lineageTag: 9013855d-dd0e-4762-a3dd-810c92927d3d
+
+	measure '자치구 수 표시' =
+
+			FORMAT(
+			    COALESCE([District Count], 0),
+			    "#,0"
+			)
+		lineageTag: b2ffca8a-c73e-4f63-9b60-3ca90490dc1e
+
+	measure '월별 팩트 행 수 표시' =
+
+			FORMAT(
+			    COALESCE([월별 팩트 행 수], 0),
+			    "#,0"
+			)
+		lineageTag: d20c25cb-e7c4-4b05-86e2-27978f6346d5
+
+	measure '비용항목 수 표시' =
+
+			FORMAT(
+			    COALESCE([비용항목 수], 0),
+			    "#,0"
+			)
+		lineageTag: 728caab6-c0dd-4a1f-b5b0-9944972a432f
+
+	measure '선정 비교단지 수 표시' =
+
+			FORMAT(
+			    COALESCE([선정 비교단지 수], 0),
+			    "#,0"
+			)
+		lineageTag: 36d79b1d-45bd-4d8a-bbfd-f8afcc27b75e
+
+	measure 'P1 P2 항목 수 표시' =
+
+			FORMAT(
+			    COALESCE([P1 P2 항목 수], 0),
+			    "#,0"
+			)
+		lineageTag: e09a1465-70c5-4adb-8cf8-fe3ce20d66d5
+
+	measure '경보 월 수 표시' =
+
+			FORMAT(
+			    COALESCE([경보 월 수], 0),
+			    "#,0"
+			)
+		lineageTag: 12a971b6-2643-4a0d-8536-ce8f504436f1
+
+	measure '조치 과제 수 표시' =
+
+			FORMAT(
+			    COALESCE([조치 과제 수], 0),
+			    "#,0"
+			)
+		lineageTag: fbd11937-78ee-47d6-9883-28d95f948b95
+
+	measure '증빙 요청 수 표시' =
+
+			FORMAT(
+			    COALESCE([증빙 요청 수], 0),
+			    "#,0"
+			)
+		lineageTag: f688540b-82bd-4cac-a61f-e06615af40fe
+
+	measure '사람 승인 필요 과제 수 표시' =
+
+			FORMAT(
+			    COALESCE([사람 승인 필요 과제 수], 0),
+			    "#,0"
+			)
+		lineageTag: 5afc8787-b6fc-4098-9066-f3e482b2ea8c
+
 	column Placeholder
 		isHidden
 		formatString: 0

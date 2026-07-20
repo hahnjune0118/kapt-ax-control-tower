@@ -5,7 +5,7 @@
     "x": 320,
     "y": 112,
     "z": 102,
-    "height": 84,
+    "height": 90,
     "width": 136,
     "tabOrder": 102
   },
@@ -23,10 +23,10 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "조치 과제 수"
+                  "Property": "조치 과제 수 표시"
                 }
               },
-              "queryRef": "_Measures.조치 과제 수",
+              "queryRef": "_Measures.조치 과제 수 표시",
               "nativeQueryRef": "조치 과제",
               "displayName": "조치 과제"
             }

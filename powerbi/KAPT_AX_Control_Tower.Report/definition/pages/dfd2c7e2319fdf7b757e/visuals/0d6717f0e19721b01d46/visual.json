@@ -5,7 +5,7 @@
     "x": 616,
     "y": 112,
     "z": 104,
-    "height": 84,
+    "height": 90,
     "width": 136,
     "tabOrder": 104
   },
@@ -23,10 +23,10 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "사람 승인 필요 과제 수"
+                  "Property": "사람 승인 필요 과제 수 표시"
                 }
               },
-              "queryRef": "_Measures.사람 승인 필요 과제 수",
+              "queryRef": "_Measures.사람 승인 필요 과제 수 표시",
               "nativeQueryRef": "사람 승인 필요",
               "displayName": "사람 승인 필요"
             }

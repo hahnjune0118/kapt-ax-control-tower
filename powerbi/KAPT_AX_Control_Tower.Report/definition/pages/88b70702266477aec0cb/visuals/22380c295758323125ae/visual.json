@@ -5,7 +5,7 @@
     "x": 24,
     "y": 86,
     "z": 100,
-    "height": 84,
+    "height": 90,
     "width": 292,
     "tabOrder": 100
   },
@@ -20,13 +20,13 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimApartmentMaster"
+                      "Entity": "_Measures"
                     }
                   },
-                  "Property": "Apartment Count"
+                  "Property": "서울 단지 수 표시"
                 }
               },
-              "queryRef": "DimApartmentMaster.Apartment Count",
+              "queryRef": "_Measures.서울 단지 수 표시",
               "nativeQueryRef": "서울 단지 수",
               "displayName": "서울 단지 수"
             }

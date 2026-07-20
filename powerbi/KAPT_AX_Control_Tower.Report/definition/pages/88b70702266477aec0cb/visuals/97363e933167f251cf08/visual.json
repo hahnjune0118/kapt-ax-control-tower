@@ -5,7 +5,7 @@
     "x": 332,
     "y": 86,
     "z": 101,
-    "height": 84,
+    "height": 90,
     "width": 292,
     "tabOrder": 101
   },
@@ -20,13 +20,13 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimApartmentMaster"
+                      "Entity": "_Measures"
                     }
                   },
-                  "Property": "District Count"
+                  "Property": "자치구 수 표시"
                 }
               },
-              "queryRef": "DimApartmentMaster.District Count",
+              "queryRef": "_Measures.자치구 수 표시",
               "nativeQueryRef": "자치구 수",
               "displayName": "자치구 수"
             }
