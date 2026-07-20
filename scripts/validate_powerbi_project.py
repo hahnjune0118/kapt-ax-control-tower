@@ -203,6 +203,24 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
                     .get("projections", [])
                 )
                 values = visual_definition.get("objects", {}).get("value", [])
+                labels = visual_definition.get("objects", {}).get("label", [])
+                titles = visual_definition.get("visualContainerObjects", {}).get(
+                    "title", []
+                )
+                qa.require(
+                    bool(labels)
+                    and literal_value(
+                        labels[0].get("properties", {}).get("show")
+                    ) == "false",
+                    f"Card subtitle must use the unclipped container title: {path}",
+                )
+                qa.require(
+                    bool(titles)
+                    and literal_value(
+                        titles[0].get("properties", {}).get("show")
+                    ) == "true",
+                    f"Card container title must be visible: {path}",
+                )
                 if projections and values:
                     measure = projections[0].get("field", {}).get("Measure", {})
                     entity = (

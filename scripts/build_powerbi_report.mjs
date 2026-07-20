@@ -268,6 +268,7 @@ function containerObjects(titleValue, options = {}) {
     border = true,
     shadow = true,
     titleSize = 12,
+    titleBold = true,
   } = options;
   const result = {
     background: [
@@ -323,7 +324,7 @@ function containerObjects(titleValue, options = {}) {
         fontColor: color(COLORS.navy),
         alignment: text("Left"),
         fontSize: number(titleSize),
-        bold: bool(true),
+        bold: bool(titleBold),
         fontFamily: text(FONT),
       },
     },
@@ -457,7 +458,7 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
       label: [
         {
           properties: {
-            show: bool(true),
+            show: bool(false),
             text: text(label),
             fontFamily: text(FONT),
             fontSize: number(8),
@@ -521,7 +522,10 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
         },
       ],
     },
-    visualContainerObjects: containerObjects(null),
+    visualContainerObjects: containerObjects(label, {
+      titleSize: 8,
+      titleBold: false,
+    }),
   });
 }
 
