@@ -47,16 +47,16 @@
             },
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FactAnomalyMonthly"
+                      "Entity": "_Measures"
                     }
                   },
-                  "Property": "target_cost_per_household_krw"
+                  "Property": "대상 월 세대당 비용"
                 }
               },
-              "queryRef": "FactAnomalyMonthly.target_cost_per_household_krw",
+              "queryRef": "_Measures.대상 월 세대당 비용",
               "nativeQueryRef": "대상 세대당 비용",
               "displayName": "대상 세대당 비용"
             },

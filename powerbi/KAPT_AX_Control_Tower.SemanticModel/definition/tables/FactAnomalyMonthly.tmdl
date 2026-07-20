@@ -70,15 +70,12 @@ table FactAnomalyMonthly
 		annotation SummarizationSetBy = Automatic
 
 	column target_cost_per_household_krw
-		dataType: double
-		formatString: "₩"#,0;-"₩"#,0;"₩"#,0
+		dataType: string
 		lineageTag: f7375880-4687-4893-95b4-6a900b1ac56e
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: target_cost_per_household_krw
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"currencyCulture":"ko-KR"}
 
 	column target_data_quality_status
 		dataType: string
@@ -360,18 +357,7 @@ table FactAnomalyMonthly
 				        fnLoadCsv(
 				            "model_anomaly_scores_monthly.csv"
 				        ),
-				    #"Normalized Target Cost" =
-				        Table.TransformColumns(
-				            Source,
-				            {
-				                {
-				                    "target_cost_per_household_krw",
-				                    each try Number.FromText(Text.From(_), "en-US") otherwise null,
-				                    type nullable number
-				                }
-				            }
-				        ),
-			    #"Changed Type" = Table.TransformColumnTypes(#"Normalized Target Cost",{{"month_start_date", type date}, {"peer_count", Int64.Type}, {"effective_sample_size", type number}, {"peer_q3_krw", type number}, {"peer_median_krw", type number}, {"gap_pct", type number}, {"robust_z_score", type number}, {"temporal_change_pct", type number}, {"consecutive_above_range_months", Int64.Type}, {"anomaly_score", type number}, {"confidence_score", type number}, {"low_cost_review_flag", type logical}, {"is_alert", type logical}, {"above_expected_high", type logical}})
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"month_start_date", type date}, {"peer_count", Int64.Type}, {"effective_sample_size", type number}, {"peer_q3_krw", type number}, {"peer_median_krw", type number}, {"gap_pct", type number}, {"robust_z_score", type number}, {"temporal_change_pct", type number}, {"consecutive_above_range_months", Int64.Type}, {"anomaly_score", type number}, {"confidence_score", type number}, {"low_cost_review_flag", type logical}, {"is_alert", type logical}, {"above_expected_high", type logical}})
 				in
 				    #"Changed Type"
 

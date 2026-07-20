@@ -273,9 +273,18 @@ def validate_snapshot(qa: QA) -> None:
         MODEL / "tables" / "FactAnomalyMonthly.tmdl"
     ).read_text(encoding="utf-8-sig")
     qa.require(
-        'try Number.FromText(Text.From(_), "en-US") otherwise null'
+        "\tcolumn target_cost_per_household_krw\n\t\tdataType: string"
         in anomaly_tmdl,
-        "FactAnomalyMonthly must safely convert blank target costs to null",
+        "FactAnomalyMonthly target cost source must remain text-safe",
+    )
+    measures_tmdl = (
+        MODEL / "tables" / "_Measures.tmdl"
+    ).read_text(encoding="utf-8-sig")
+    qa.require(
+        "measure '대상 월 세대당 비용'" in measures_tmdl
+        and "VALUE(RawValue)" in measures_tmdl
+        and "IFERROR(" in measures_tmdl,
+        "A numeric target-cost measure with blank handling is required",
     )
 
 

@@ -1385,7 +1385,7 @@ function buildAnomalyExplorer() {
       fields: [
         { table: "FactAnomalyMonthly", property: "month_start_date", displayName: "기준월" },
         { table: "FactAnomalyMonthly", property: "cost_category_name_ko", displayName: "비용항목" },
-        { table: "FactAnomalyMonthly", property: "target_cost_per_household_krw", displayName: "대상 세대당 비용" },
+        { table: "_Measures", property: "대상 월 세대당 비용", kind: "measure", displayName: "대상 세대당 비용" },
         { table: "FactAnomalyMonthly", property: "peer_median_krw", displayName: "비교군 중앙값" },
         { table: "FactAnomalyMonthly", property: "gap_pct", displayName: "격차율(%)" },
         { table: "FactAnomalyMonthly", property: "anomaly_score", displayName: "이상징후 점수" },

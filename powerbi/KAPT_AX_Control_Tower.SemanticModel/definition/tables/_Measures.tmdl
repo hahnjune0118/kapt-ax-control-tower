@@ -80,6 +80,22 @@ table _Measures
 		formatString: 0.0
 		lineageTag: 9b875166-15dd-4e1a-883f-87323cd4a757
 
+	measure '대상 월 세대당 비용' =
+
+			VAR RawValue =
+			    SELECTEDVALUE(
+			        FactAnomalyMonthly[target_cost_per_household_krw]
+			    )
+			RETURN
+			    IFERROR(
+			        VALUE(RawValue),
+			        BLANK()
+			    )
+		formatString: "₩"#,0;-"₩"#,0;"₩"#,0
+		lineageTag: b882af83-95be-4f47-89f2-b1507f17dcb0
+
+		annotation PBI_FormatHint = {"currencyCulture":"ko-KR"}
+
 	measure 'P1 P2 항목 수' =
 			
 			COALESCE(
