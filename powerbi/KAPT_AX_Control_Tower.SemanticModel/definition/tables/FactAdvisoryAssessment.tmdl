@@ -1,0 +1,275 @@
+table FactAdvisoryAssessment
+	lineageTag: 72cafd1a-f9ad-4034-a8cc-9581c64d4bbd
+
+	column advisory_priority_rank
+		dataType: string
+		lineageTag: 3e2064ac-96d0-4548-ba65-0fcc1f80f1f9
+		summarizeBy: none
+		sourceColumn: advisory_priority_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommendation_id
+		dataType: string
+		lineageTag: 272cdc3f-a81a-44b3-aa8e-bfadd99f51d5
+		summarizeBy: none
+		sourceColumn: recommendation_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column engine_version
+		dataType: string
+		lineageTag: 9e225249-c827-40d9-a6aa-101ad0dedf3a
+		summarizeBy: none
+		sourceColumn: engine_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_id
+		dataType: string
+		isHidden
+		lineageTag: e62739a9-b2d5-44db-bdad-770dc22e8fad
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: 6bf7e937-54de-4347-bce3-3a85daca7200
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category
+		dataType: string
+		isHidden
+		lineageTag: 1902f52e-a6f1-4bc3-8754-ab4c875fd748
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: c6e2a1aa-23e7-4489-b2ae-e1514f390fa2
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column advisory_priority_score
+		dataType: string
+		lineageTag: f16e9737-65d2-4eae-8cfd-d42d24abf7c1
+		summarizeBy: none
+		sourceColumn: advisory_priority_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column advisory_priority
+		dataType: string
+		lineageTag: 01f64d1f-d07a-4702-8bcb-ba80631fc228
+		summarizeBy: none
+		sourceColumn: advisory_priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommendation_status
+		dataType: string
+		lineageTag: df7746ad-653a-4455-9e89-fbd64d83f1d3
+		summarizeBy: none
+		sourceColumn: recommendation_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column screened_pain_point
+		dataType: string
+		lineageTag: 2841e562-f9c1-4a16-b75f-71fb8591150f
+		summarizeBy: none
+		sourceColumn: screened_pain_point
+
+		annotation SummarizationSetBy = Automatic
+
+	column hypothesis_1
+		dataType: string
+		lineageTag: 151e9fc5-20d7-4f4b-9940-573cd88494fc
+		summarizeBy: none
+		sourceColumn: hypothesis_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column hypothesis_2
+		dataType: string
+		lineageTag: e5814f1b-678b-4efa-840c-1365ab260d16
+		summarizeBy: none
+		sourceColumn: hypothesis_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column hypothesis_3
+		dataType: string
+		lineageTag: 8a7a4803-2dff-4155-84a3-7e4685fb1590
+		summarizeBy: none
+		sourceColumn: hypothesis_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_recommended_action
+		dataType: string
+		lineageTag: 36be4794-1c43-4fae-bf00-691e18ccf074
+		summarizeBy: none
+		sourceColumn: primary_recommended_action
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_focus
+		dataType: string
+		lineageTag: 2eb1a81e-dac2-41d5-a8cf-4cb5d9a2f769
+		summarizeBy: none
+		sourceColumn: review_focus
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommendation_basis
+		dataType: string
+		lineageTag: d2d183ea-d784-42b4-ad91-42e14131410c
+		summarizeBy: none
+		sourceColumn: recommendation_basis
+
+		annotation SummarizationSetBy = Automatic
+
+	column anomaly_summary_score
+		dataType: string
+		lineageTag: 3460ff6e-20aa-46d9-9ca9-c8ef60e2d3b8
+		summarizeBy: none
+		sourceColumn: anomaly_summary_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column summary_severity
+		dataType: string
+		lineageTag: 106cb3a6-c19c-46b0-b475-b10023fd35f0
+		summarizeBy: none
+		sourceColumn: summary_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_month_count
+		dataType: string
+		lineageTag: 5b3ee4e9-0e20-4b33-a8eb-f8dc98fdf3ef
+		summarizeBy: none
+		sourceColumn: alert_month_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_gap_pct
+		dataType: string
+		lineageTag: bbc08e76-4a82-4d2c-bf26-932361204490
+		summarizeBy: none
+		sourceColumn: annual_gap_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_range_position
+		dataType: string
+		lineageTag: c4485735-ea30-4792-9653-49f3acbc123e
+		summarizeBy: none
+		sourceColumn: annual_range_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicative_annual_opportunity_krw
+		dataType: int64
+		lineageTag: db71eee1-5373-4365-ab44-4690e20b1840
+		summarizeBy: sum
+		sourceColumn: indicative_annual_opportunity_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column model_peer_count
+		dataType: string
+		lineageTag: 9871a06e-ded0-4b03-969f-1e3cb3d3d572
+		summarizeBy: none
+		sourceColumn: model_peer_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_sample_size
+		dataType: string
+		lineageTag: a6a29f88-3ce9-47fb-83d1-4cde8732080b
+		summarizeBy: none
+		sourceColumn: effective_sample_size
+
+		annotation SummarizationSetBy = Automatic
+
+	column confidence_level
+		dataType: string
+		lineageTag: 6083f27f-3eda-4dac-86e4-f3b1d464ee02
+		summarizeBy: none
+		sourceColumn: confidence_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_status
+		dataType: string
+		lineageTag: 2433229e-0e7c-4e05-a047-2805654f0fba
+		summarizeBy: none
+		sourceColumn: model_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column latest_search_month
+		dataType: string
+		lineageTag: 36a1449d-573c-4fe2-be80-634769605a19
+		summarizeBy: none
+		sourceColumn: latest_search_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column human_validation_required
+		dataType: string
+		lineageTag: 3eb6312e-c500-4a26-8970-b013c6b83216
+		summarizeBy: none
+		sourceColumn: human_validation_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column auto_execution_allowed
+		dataType: string
+		lineageTag: 0eda7346-d947-4891-a461-3754eb3c88ed
+		summarizeBy: none
+		sourceColumn: auto_execution_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column conclusion_status
+		dataType: string
+		lineageTag: 7a0539a6-8965-4433-bf80-e3625e55fe94
+		summarizeBy: none
+		sourceColumn: conclusion_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactAdvisoryAssessment = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "advisory_category_assessment.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"indicative_annual_opportunity_krw", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

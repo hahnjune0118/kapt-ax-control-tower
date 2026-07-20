@@ -1,0 +1,53 @@
+table DimCostCategory
+	lineageTag: c56751e8-7f20-41ec-9d6d-c051607d0964
+
+	column cost_category
+		dataType: string
+		lineageTag: ed75d83c-16fc-4b60-a440-c10fed8bc698
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: 2464c643-e72a-4738-8258-128f0d3eb293
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column display_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cc87a76-7c73-4e56-ba56-1ac4bdb7d741
+		summarizeBy: sum
+		sourceColumn: display_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column component_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ed0910d-58d4-4a65-8e95-db1bb4188fa5
+		summarizeBy: sum
+		sourceColumn: component_count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCostCategory = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "dim_cost_category.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"display_order", Int64.Type}, {"component_count", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

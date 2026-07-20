@@ -1,0 +1,109 @@
+table DimDate
+	lineageTag: 0d85543a-d381-4401-b5be-1acbc57da57e
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 5345f4dd-4284-413f-95eb-f7ed1a9737cb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: f41b9c05-9c01-4d23-9794-36052e088ff9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: ecb82fab-0c73-4fbd-b527-2cbca335563d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNo
+		formatString: 0
+		lineageTag: 08cf666a-8a17-40cc-a2b0-c46016c632ac
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MonthNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		lineageTag: 8ad90c42-b85b-45e1-bf9a-52d0d1bc6c56
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: 5a6277e2-f4f1-408a-83b1-2758705b3d4b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+		sortByColumn: YearMonthSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthSort
+		formatString: 0
+		lineageTag: ae034b80-cfae-4a76-a9e9-a6fddbbc86fc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [YearMonthSort]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDate = calculated
+		mode: import
+		source =
+				
+				VAR MinFactDate =
+				    MINX(
+				        ALL(FactMonthlyCost),
+				        FactMonthlyCost[month_start_date]
+				    )
+				VAR MaxFactDate =
+				    EOMONTH(
+				        MAXX(
+				            ALL(FactMonthlyCost),
+				            FactMonthlyCost[month_start_date]
+				        ),
+				        0
+				    )
+				RETURN
+				    ADDCOLUMNS(
+				        CALENDAR(
+				            MinFactDate,
+				            MaxFactDate
+				        ),
+				        "Year", YEAR([Date]),
+				        "Quarter",
+				            "Q"
+				                & ROUNDUP(
+				                    DIVIDE(
+				                        MONTH([Date]),
+				                        3
+				                    ),
+				                    0
+				                ),
+				        "MonthNo", MONTH([Date]),
+				        "MonthName", FORMAT([Date], "MMM"),
+				        "YearMonth", FORMAT([Date], "yyyy-MM"),
+				        "YearMonthSort",
+				            YEAR([Date]) * 100
+				                + MONTH([Date])
+				    )
+
+	annotation PBI_Id = f25a6730ab834bdca645238312cd70ad
+

@@ -1,0 +1,273 @@
+table _Measures
+	lineageTag: a0d606c6-ef83-44ad-bcd0-48957db24b88
+
+	measure '관리비 총액' =
+			
+			SUM(
+			    FactMonthlyCost[cost_amount_krw]
+			)
+		lineageTag: f454c2ee-c92b-4e70-a263-d18d3009b8f9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '평균 세대당 항목비' =
+			
+			AVERAGE(
+			    FactMonthlyCost[cost_per_household_krw]
+			)
+		formatString: #,0.0%;-#,0.0%;#,0.0%
+		lineageTag: 7dd26a49-9a0d-46ae-bd04-8161dca8bf03
+
+	measure '대상단지 연환산 관리비' =
+			
+			CALCULATE(
+			    SUM(
+			        FactAnnualCost[annualized_total_cost_krw]
+			    ),
+			    DimPilotApartment[cohort_role] = "TARGET"
+			)
+		lineageTag: 5ace08af-04c8-416b-b387-5b0a26516dbb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '지표상 연간 기회금액' =
+			
+			SUM(
+			    FactAdvisoryAssessment[indicative_annual_opportunity_krw]
+			)
+		formatString: 0
+		lineageTag: 33af59b4-c485-429b-88d1-5b8b8bf2b037
+
+	measure 기회금액률 =
+			
+			DIVIDE(
+			    [지표상 연간 기회금액],
+			    [대상단지 연환산 관리비]
+			)
+		lineageTag: 60f39d77-9cdb-422c-b3ef-fc1cbe2b8458
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '경보 월 수' =
+			
+			CALCULATE(
+			    COUNTROWS(
+			        FactAnomalyMonthly
+			    ),
+			    FactAnomalyMonthly[is_alert] = TRUE()
+			)
+		formatString: 0
+		lineageTag: 231893ad-5ad1-43c2-83e1-adff6237255e
+
+	measure '최대 이상징후 점수' =
+			
+			MAX(
+			    FactAnomalyMonthly[anomaly_score]
+			)
+		lineageTag: e807e9d9-accf-4a62-84fe-075a3655a088
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '평균 이상징후 점수' =
+			
+			AVERAGE(
+			    FactAnomalyMonthly[anomaly_score]
+			)
+		lineageTag: 9b875166-15dd-4e1a-883f-87323cd4a757
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'P1 P2 항목 수' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(
+			        FactAdvisoryAssessment[cost_category]
+			    ),
+			    FactAdvisoryAssessment[advisory_priority]
+			        IN {
+			            "P1_CRITICAL",
+			            "P2_HIGH"
+			        }
+			)
+		formatString: 0
+		lineageTag: 80a24a02-12d3-4874-8e61-e1363e9d90f4
+
+	measure '데이터 관측률' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNTROWS(
+			            FactMonthlyCost
+			        ),
+			        FactMonthlyCost[feature_usable] = TRUE()
+			    ),
+			    COUNTROWS(
+			        FactMonthlyCost
+			    )
+			)
+		formatString: 0
+		lineageTag: fb6b8204-a931-4e8e-b255-ca44366e25df
+
+	measure '모델 분석 가능률' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNTROWS(
+			            FactAnomalyMonthly
+			        ),
+			        FactAnomalyMonthly[benchmark_status] = "BENCHMARK_READY"
+			    ),
+			    COUNTROWS(
+			        FactAnomalyMonthly
+			    )
+			)
+		lineageTag: 9dbb5a54-ba0c-4271-a096-95ecfd731986
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '선정 비교단지 수' =
+			
+			CALCULATE(
+			    COUNTROWS(
+			        ModelPeerWeights
+			    ),
+			    ModelPeerWeights[model_selected] = TRUE()
+			)
+		formatString: 0
+		lineageTag: 32b60f85-64d1-4702-b808-eae643c01de8
+
+	measure '가중 평균 유사도' =
+			
+			VAR SelectedPeers =
+			    FILTER(
+			        ModelPeerWeights,
+			        ModelPeerWeights[model_selected] = TRUE()
+			    )
+			RETURN
+			    DIVIDE(
+			        SUMX(
+			            SelectedPeers,
+			            ModelPeerWeights[structural_similarity_score]
+			                * ModelPeerWeights[model_weight]
+			        ),
+			        SUMX(
+			            SelectedPeers,
+			            ModelPeerWeights[model_weight]
+			        )
+			    )
+		lineageTag: 710387c7-ecb1-4be9-80e1-2254f87190ca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '대상 연간 세대당 비용' =
+			
+			MAX(
+			    FactExpectedRange[target_annualized_cost_per_household_krw]
+			)
+		lineageTag: e0804350-fd3f-4d1d-8e76-ff762ba0eb44
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '기대 하단 세대당 비용' =
+			
+			MAX(
+			    FactExpectedRange[expected_low_cost_per_household_krw]
+			)
+		lineageTag: db09068f-dccf-45a3-a181-d9888f5f1725
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '기대 중앙값 세대당 비용' =
+			
+			MAX(
+			    FactExpectedRange[expected_median_cost_per_household_krw]
+			)
+		lineageTag: b73fd262-cd46-4ce0-be32-77e46036c54a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '기대 상단 세대당 비용' =
+			
+			MAX(
+			    FactExpectedRange[expected_high_cost_per_household_krw]
+			)
+		lineageTag: abd348fa-789c-4009-b60f-77c917b99c0c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '연간 비교군 격차율' =
+			
+			DIVIDE(
+			    MAX(
+			        FactExpectedRange[target_gap_pct]
+			    ),
+			    100
+			)
+		lineageTag: 98a719c3-d7d8-4a53-9fae-c3e964683d26
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Advisory 우선순위 점수' =
+			
+			MAX(
+			    FactAdvisoryAssessment[advisory_priority_score]
+			)
+		lineageTag: 80c5e7d5-d73f-435f-b989-28d6573628ed
+
+	measure '대상 단지명' =
+			
+			CALCULATE(
+			    SELECTEDVALUE(
+			        DimPilotApartment[apartment_name],
+			        "대상 단지"
+			    ),
+			    REMOVEFILTERS(
+			        DimPilotApartment
+			    ),
+			    DimPilotApartment[cohort_role] = "TARGET"
+			)
+		lineageTag: 3646c55f-c78b-41c6-89af-c2344a5c8a71
+
+	measure '최근 기준월' =
+			
+			FORMAT(
+			    MAX(
+			        FactAnomalyMonthly[month_start_date]
+			    ),
+			    "yyyy-MM"
+			)
+		lineageTag: 013b2081-460d-435a-952b-5c485d8d5300
+
+	measure '월별 팩트 행 수' =
+			
+			COUNTROWS(
+			    FactMonthlyCost
+			)
+		formatString: 0
+		lineageTag: 58bba3a5-7eb3-44cb-a490-51aa4d76b753
+
+	measure '비용항목 수' =
+			
+			DISTINCTCOUNT(
+			    DimCostCategory[cost_category]
+			)
+		formatString: 0
+		lineageTag: 36dbd107-bf7f-448c-8ea7-f0203e6c9678
+
+	column Placeholder
+		isHidden
+		formatString: 0
+		lineageTag: dd1c2466-ec70-4bc1-b227-924af8506edf
+		summarizeBy: sum
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 4acce5ec702e4f68b14db6e46e1c2c0b
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

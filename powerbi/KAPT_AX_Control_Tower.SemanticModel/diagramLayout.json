@@ -1,0 +1,188 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 487,
+        "y": 6
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1428.8487903350049,
+            "y": 616.81033798370356
+          },
+          "nodeIndex": "DimApartmentMaster",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 966.50564510962477
+          },
+          "nodeIndex": "DimCostCategory",
+          "nodeLineageTag": "c56751e8-7f20-41ec-9d6d-c051607d0964",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 907.80689241395248,
+            "y": 263.37552270833567
+          },
+          "nodeIndex": "DimPilotApartment",
+          "nodeLineageTag": "8c172e31-4f5e-493a-b2d9-7ce43d972625",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 556.24554366949587,
+            "y": 180.4820949123598
+          },
+          "nodeIndex": "FactActionRegister",
+          "nodeLineageTag": "446774aa-7a24-4a55-856a-b9f56d798bb8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 621.48514081481687,
+            "y": 962.93238043667088
+          },
+          "nodeIndex": "FactAdvisoryAssessment",
+          "nodeLineageTag": "72cafd1a-f9ad-4034-a8cc-9581c64d4bbd",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 334.71401812197382,
+            "y": 822.35019356170687
+          },
+          "nodeIndex": "FactAnnualCost",
+          "nodeLineageTag": "82aaab3c-f88c-42e3-b771-f883b61c05d1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 1036.2876364734332,
+            "y": 617.00405693289781
+          },
+          "nodeIndex": "FactAnomalyMonthly",
+          "nodeLineageTag": "3b6ed2e4-058a-4293-9c42-8a7713a6e2c4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 334.48533144765162,
+            "y": 1179.6206759674071
+          },
+          "nodeIndex": "FactEvidenceRequest",
+          "nodeLineageTag": "4f7ec085-cb63-434f-8f7e-a4dd41d36591",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 620.84081562429287,
+            "y": 534.09873542494063
+          },
+          "nodeIndex": "FactExpectedRange",
+          "nodeLineageTag": "d237152c-dd04-46cf-af6e-7e45ce648f29",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1013.7668655630287,
+            "y": 970.6373187578472
+          },
+          "nodeIndex": "FactMonthlyCost",
+          "nodeLineageTag": "4d830ed2-bb6e-4bb5-87e4-9e7273bc3ed2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1194.8487903350049,
+            "y": -50
+          },
+          "nodeIndex": "ModelPeerWeights",
+          "nodeLineageTag": "15ef5e5f-1553-4c74-99fc-51f48dd3b046",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1662.8487903350049,
+            "y": 664.81033798370356
+          },
+          "nodeIndex": "DimDate",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 1896.8487903350049,
+            "y": 664.81033798370356
+          },
+          "nodeIndex": "_Measures",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 12
+        }
+      ],
+      "name": "모든 테이블",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "모든 테이블",
+  "defaultDiagram": "모든 테이블"
+}

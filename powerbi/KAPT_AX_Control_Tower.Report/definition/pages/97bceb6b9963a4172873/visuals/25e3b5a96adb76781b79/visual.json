@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "25e3b5a96adb76781b79",
+  "position": {
+    "x": 1029.0577507598784,
+    "y": 334.58966565349544,
+    "z": 3006,
+    "height": 126.44376899696049,
+    "width": 148.8145896656535,
+    "tabOrder": 3006
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimApartmentMaster"
+                    }
+                  },
+                  "Property": "legal_dong_code"
+                }
+              },
+              "queryRef": "DimApartment.legal_dong_code",
+              "nativeQueryRef": "legal_dong_code"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ef995a10756d66798080",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimApartmentMaster"
+              }
+            },
+            "Property": "legal_dong_code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

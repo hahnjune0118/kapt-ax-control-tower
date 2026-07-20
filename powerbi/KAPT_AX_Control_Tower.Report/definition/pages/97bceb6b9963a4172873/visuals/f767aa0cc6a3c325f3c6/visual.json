@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "f767aa0cc6a3c325f3c6",
+  "position": {
+    "x": 1029,
+    "y": 461,
+    "z": 3007,
+    "height": 150,
+    "width": 150,
+    "tabOrder": 3007
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimApartmentMaster"
+                    }
+                  },
+                  "Property": "apartment_id"
+                }
+              },
+              "queryRef": "DimApartment.apartment_id",
+              "nativeQueryRef": "apartment_id"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "46ee38096231913d2d14",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimApartmentMaster"
+              }
+            },
+            "Property": "apartment_id"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

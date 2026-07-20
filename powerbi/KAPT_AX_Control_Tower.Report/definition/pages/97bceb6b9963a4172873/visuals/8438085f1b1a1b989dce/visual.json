@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "8438085f1b1a1b989dce",
+  "position": {
+    "x": 9.72644376899696,
+    "y": 320,
+    "z": 1000,
+    "height": 141.03343465045594,
+    "width": 203.28267477203647,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimApartmentMaster"
+                    }
+                  },
+                  "Property": "Town Count"
+                }
+              },
+              "queryRef": "DimApartment.Town Count",
+              "nativeQueryRef": "Town Count"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimApartmentMaster"
+                  }
+                },
+                "Property": "Town Count"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7a1eeaff703e21d41880",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimApartmentMaster"
+              }
+            },
+            "Property": "Town Count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "KAPT_AX_Control_Tower"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6fcc9cd3-a189-4284-8c39-d70e98e3bce5"
+  }
+}

@@ -1,0 +1,73 @@
+relationship 587f1770-b3c3-469f-bbaf-81252c331947
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimApartmentMaster.approval_date
+	toColumn: LocalDateTable_f359ab7e-fadb-4e4d-aa05-87c1458c7ddb.Date
+
+relationship AutoDetected_92a7a190-247d-43fc-9a4d-f7b3f40e4540
+	fromColumn: FactMonthlyCost.cost_category
+	toColumn: DimCostCategory.cost_category
+
+relationship AutoDetected_662ce31d-b2d2-4830-b6b1-0dcdd86f3e41
+	fromColumn: FactAnnualCost.cost_category
+	toColumn: DimCostCategory.cost_category
+
+relationship AutoDetected_2b4bfe23-1409-4228-a0ae-2fcedd66b201
+	fromColumn: FactAnomalyMonthly.cost_category
+	toColumn: DimCostCategory.cost_category
+
+relationship AutoDetected_13c63afc-d2f5-4bf7-959c-70ee8b4e6a01
+	fromColumn: FactExpectedRange.cost_category
+	toColumn: DimCostCategory.cost_category
+
+relationship AutoDetected_25490ef8-8a2f-40b7-8696-64a3fc4924db
+	fromColumn: FactAdvisoryAssessment.cost_category
+	toColumn: DimCostCategory.cost_category
+
+relationship AutoDetected_c61bcb9f-c1cc-4954-9830-5a13b90df50c
+	fromColumn: FactActionRegister.cost_category
+	toColumn: DimCostCategory.cost_category
+
+relationship AutoDetected_acda2ea4-e896-4916-86d8-559e2c611f17
+	fromColumn: FactEvidenceRequest.cost_category
+	toColumn: DimCostCategory.cost_category
+
+relationship e6191349-61f3-1458-b0ff-8601ee864392
+	fromColumn: FactAnomalyMonthly.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+
+relationship 8bf96b5c-b250-d178-ff6e-15b28bde3901
+	fromColumn: FactExpectedRange.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+
+relationship 876cd3e9-f4e4-bb0b-aa7a-4241240e4d82
+	fromColumn: FactAdvisoryAssessment.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+
+relationship e17cfb98-8ee7-cafe-49c8-a9f8e99af878
+	fromColumn: FactActionRegister.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+
+relationship a38c95ca-5194-ae8e-287e-b86d0d9a1cc0
+	fromColumn: FactEvidenceRequest.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+
+relationship 12dbdb24-de28-5554-a863-73ea31c7bd60
+	fromColumn: FactMonthlyCost.month_start_date
+	toColumn: DimDate.Date
+
+relationship 04f97157-e678-caeb-d17e-aa7dcd8f06d6
+	fromColumn: FactAnomalyMonthly.month_start_date
+	toColumn: DimDate.Date
+
+relationship 026afd48-af18-671f-a9bc-c82f81d1bb45
+	fromColumn: FactAnnualCost.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+
+relationship 5137a248-4402-c129-a049-0e91ce3dbf0a
+	fromColumn: FactMonthlyCost.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+
+relationship 386c9b45-cd0c-5ae1-d6fa-140123e85f83
+	fromColumn: ModelPeerWeights.apartment_id
+	toColumn: DimPilotApartment.apartment_id
+

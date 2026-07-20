@@ -1,0 +1,201 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "562b9d1c9b7846cf6f56",
+  "position": {
+    "x": 317.58591785414922,
+    "y": 518.22296730930429,
+    "z": 9,
+    "height": 201.709974853311,
+    "width": 818.642078792959,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimCostCategory"
+                    }
+                  },
+                  "Property": "cost_category_name_ko"
+                }
+              },
+              "queryRef": "DimCostCategory.cost_category_name_ko",
+              "nativeQueryRef": "cost_category_name_ko",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "대상 연간 세대당 비용"
+                }
+              },
+              "queryRef": "_Measures.대상 연간 세대당 비용",
+              "nativeQueryRef": "대상 연간 세대당 비용"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "기대 중앙값 세대당 비용"
+                }
+              },
+              "queryRef": "_Measures.기대 중앙값 세대당 비용",
+              "nativeQueryRef": "기대 중앙값 세대당 비용"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "연간 비교군 격차율"
+                }
+              },
+              "queryRef": "_Measures.연간 비교군 격차율",
+              "nativeQueryRef": "연간 비교군 격차율"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "최대 이상징후 점수"
+                }
+              },
+              "queryRef": "_Measures.최대 이상징후 점수",
+              "nativeQueryRef": "최대 이상징후 점수"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Advisory 우선순위 점수"
+                }
+              },
+              "queryRef": "_Measures.Advisory 우선순위 점수",
+              "nativeQueryRef": "Advisory 우선순위 점수"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "73a4b746bf8dc1f9b641",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimCostCategory"
+              }
+            },
+            "Property": "cost_category_name_ko"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1673438c801b9e689e2c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "대상 연간 세대당 비용"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "038208a688506f50c213",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "기대 중앙값 세대당 비용"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5273bdc32940d06a6031",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "연간 비교군 격차율"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6d950ef4e27c590cb10f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "최대 이상징후 점수"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "04da11d29b1b08f0e153",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Advisory 우선순위 점수"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

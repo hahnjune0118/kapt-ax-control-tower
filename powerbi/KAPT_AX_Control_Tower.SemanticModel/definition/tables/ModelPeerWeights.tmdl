@@ -1,0 +1,276 @@
+table ModelPeerWeights
+	lineageTag: 15ef5e5f-1553-4c74-99fc-51f48dd3b046
+
+	column peer_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 434d81f1-e937-480a-a791-a7f2de05fff0
+		summarizeBy: sum
+		sourceColumn: peer_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_version
+		dataType: string
+		lineageTag: 3e8f8a7a-1a67-46a9-b3c4-a81b78f263a0
+		summarizeBy: none
+		sourceColumn: model_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_apartment_id
+		dataType: string
+		lineageTag: 7ec917bf-9f5e-4123-af50-1cd94fd84a77
+		summarizeBy: none
+		sourceColumn: target_apartment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_apartment_name
+		dataType: string
+		lineageTag: c8680b9a-39d7-40e1-ab36-fbdc4114cdb9
+		summarizeBy: none
+		sourceColumn: target_apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_id
+		dataType: string
+		lineageTag: 2f5f67ce-d4ac-40a4-8943-71d14501703a
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: da731f63-c4c1-4696-9167-19883696b28c
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_district
+		dataType: string
+		lineageTag: 8495a97f-1896-4e7b-97c5-b22d491455bb
+		summarizeBy: none
+		sourceColumn: city_district
+
+		annotation SummarizationSetBy = Automatic
+
+	column household_count
+		dataType: int64
+		formatString: 0
+		lineageTag: d09ada56-5047-4ba5-8632-03403dd0b076
+		summarizeBy: sum
+		sourceColumn: household_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column approval_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 28dbc449-f14a-4248-b99e-824070073dbd
+		summarizeBy: sum
+		sourceColumn: approval_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column heating_type
+		dataType: string
+		lineageTag: cf8f81df-b911-403d-bca2-d0435450fe64
+		summarizeBy: none
+		sourceColumn: heating_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column management_type
+		dataType: string
+		lineageTag: 8a45c5f5-639b-4761-8006-e3bac3f176de
+		summarizeBy: none
+		sourceColumn: management_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column structural_similarity_score
+		dataType: double
+		lineageTag: 3d9b3073-4848-49a0-bd80-ac4d2ff59ba1
+		summarizeBy: sum
+		sourceColumn: structural_similarity_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column similarity_evidence_coverage_pct
+		dataType: double
+		lineageTag: 363bc72a-897a-45d3-9fed-76225c028320
+		summarizeBy: sum
+		sourceColumn: similarity_evidence_coverage_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost_data_coverage_pct
+		dataType: double
+		lineageTag: 816477dd-cba5-4a56-9cc3-b2dbb06f9bdf
+		summarizeBy: sum
+		sourceColumn: cost_data_coverage_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column valid_cost_category_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c1be9d1-3d99-412d-b8e5-5c7929cc5d3e
+		summarizeBy: sum
+		sourceColumn: valid_cost_category_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column peer_suitability_score
+		dataType: double
+		lineageTag: ea8f9183-1288-4031-ba54-4579d271a91c
+		summarizeBy: sum
+		sourceColumn: peer_suitability_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column household_count_similarity_pct
+		dataType: string
+		lineageTag: 73555d76-6388-4d7f-9df7-c4fd0e6b6f02
+		summarizeBy: none
+		sourceColumn: household_count_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column approval_year_similarity_pct
+		dataType: string
+		lineageTag: aec6bd33-83c3-4ca7-a6a1-8c8b38cbb896
+		summarizeBy: none
+		sourceColumn: approval_year_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column management_area_per_household_similarity_pct
+		dataType: string
+		lineageTag: b73a41d3-4845-401d-b2e0-7526bfc26d20
+		summarizeBy: none
+		sourceColumn: management_area_per_household_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column building_count_similarity_pct
+		dataType: string
+		lineageTag: 5b51a3cc-138c-4add-ad79-c4c81991c490
+		summarizeBy: none
+		sourceColumn: building_count_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_district_similarity_pct
+		dataType: string
+		lineageTag: 42ff1e3e-81ed-4a06-82ac-c236e076d303
+		summarizeBy: none
+		sourceColumn: city_district_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column heating_type_similarity_pct
+		dataType: string
+		lineageTag: 2e9d4724-2bca-4e7b-936a-4df8725f9cb6
+		summarizeBy: none
+		sourceColumn: heating_type_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column management_type_similarity_pct
+		dataType: string
+		lineageTag: 89886968-e67a-4a9d-9253-5c625bcdae2c
+		summarizeBy: none
+		sourceColumn: management_type_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column hall_type_similarity_pct
+		dataType: string
+		lineageTag: 25e89a2a-2b4d-45ec-8030-b24330024362
+		summarizeBy: none
+		sourceColumn: hall_type_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_type_similarity_pct
+		dataType: string
+		lineageTag: ee9b078c-2122-425d-b899-142866403028
+		summarizeBy: none
+		sourceColumn: sale_type_similarity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column peer_group_class
+		dataType: string
+		lineageTag: 8c1d335b-1ef6-478a-a309-a21efa414229
+		summarizeBy: none
+		sourceColumn: peer_group_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_selected
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 80e6296b-8c75-4d19-8e87-b0280716e755
+		summarizeBy: none
+		sourceColumn: model_selected
+
+		annotation SummarizationSetBy = Automatic
+
+	column selection_policy
+		dataType: string
+		lineageTag: f68866ae-7f13-4675-8c5e-c19c80639280
+		summarizeBy: none
+		sourceColumn: selection_policy
+
+		annotation SummarizationSetBy = Automatic
+
+	column raw_model_weight
+		dataType: double
+		lineageTag: 80509ec7-f8dd-40d4-8261-8d6a0c8fdf44
+		summarizeBy: sum
+		sourceColumn: raw_model_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column model_weight
+		dataType: double
+		lineageTag: c3ab3bbc-02c5-4318-99b3-41ce5a8837d9
+		summarizeBy: sum
+		sourceColumn: model_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition ModelPeerWeights = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "model_peer_weights.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"peer_rank", Int64.Type}, {"household_count", Int64.Type}, {"approval_year", Int64.Type}, {"structural_similarity_score", type number}, {"similarity_evidence_coverage_pct", type number}, {"cost_data_coverage_pct", type number}, {"valid_cost_category_count", Int64.Type}, {"peer_suitability_score", type number}, {"model_selected", type logical}, {"raw_model_weight", type number}, {"model_weight", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,178 @@
+table FactAnnualCost
+	lineageTag: 82aaab3c-f88c-42e3-b771-f883b61c05d1
+
+	column apartment_id
+		dataType: string
+		isHidden
+		lineageTag: 5e65f3dd-4961-49b3-bdbf-185c9bcbdbae
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: 530800a9-5e9f-4b08-8055-ca2dcd33e583
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cohort_role
+		dataType: string
+		lineageTag: 7659b6f4-6356-4bcd-91da-8d683df2ebb4
+		summarizeBy: none
+		sourceColumn: cohort_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category
+		dataType: string
+		isHidden
+		lineageTag: 1ca122cb-7a54-49a7-ac3f-f524e22c093d
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: 4e0191a1-1c61-41e0-b268-b0c395e0989b
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column household_count
+		dataType: int64
+		formatString: 0
+		lineageTag: fbb20d1d-a242-42f8-b591-2d7110b48fee
+		summarizeBy: sum
+		sourceColumn: household_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column management_area_m2
+		dataType: double
+		lineageTag: db045445-a301-4c26-aae3-2c010ddafe98
+		summarizeBy: sum
+		sourceColumn: management_area_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_month_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 1392cdd0-8ae5-4c73-89d0-ff0906d05d6e
+		summarizeBy: sum
+		sourceColumn: source_month_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column observed_month_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 0956fe7b-97da-4b8d-a048-e8af183daf37
+		summarizeBy: sum
+		sourceColumn: observed_month_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column reliable_month_count
+		dataType: int64
+		formatString: 0
+		lineageTag: fa0cc956-afa9-4859-88b2-46c9b14e6702
+		summarizeBy: sum
+		sourceColumn: reliable_month_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column partial_month_count
+		dataType: int64
+		formatString: 0
+		lineageTag: d9bda484-fb38-4fe4-a508-de04e197c4d5
+		summarizeBy: sum
+		sourceColumn: partial_month_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage_pct
+		dataType: double
+		lineageTag: 5a018397-7e4c-4e3b-8a3f-75fd4d64ce20
+		summarizeBy: sum
+		sourceColumn: coverage_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column average_quality_weight
+		dataType: double
+		lineageTag: 001cc4e2-f5b4-4326-ad6e-6a22334f093d
+		summarizeBy: sum
+		sourceColumn: average_quality_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column annualized_total_cost_krw
+		dataType: double
+		lineageTag: fae79f08-7cec-4678-a30f-e53ea54b5004
+		summarizeBy: sum
+		sourceColumn: annualized_total_cost_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column annualized_cost_per_household_krw
+		dataType: double
+		lineageTag: 60a3baf4-cd29-473f-b231-cbe7500163cb
+		summarizeBy: sum
+		sourceColumn: annualized_cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column annualized_cost_per_management_m2_krw
+		dataType: double
+		lineageTag: d8c7ffb3-acb4-4577-aa18-c31f08a8f9b1
+		summarizeBy: sum
+		sourceColumn: annualized_cost_per_management_m2_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column annual_quality_status
+		dataType: string
+		lineageTag: 8b0c4bd4-e1df-4654-b541-77218820599b
+		summarizeBy: none
+		sourceColumn: annual_quality_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactAnnualCost = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "fact_apartment_cost_annual.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"household_count", Int64.Type}, {"management_area_m2", type number}, {"source_month_count", Int64.Type}, {"observed_month_count", Int64.Type}, {"reliable_month_count", Int64.Type}, {"partial_month_count", Int64.Type}, {"coverage_pct", type number}, {"average_quality_weight", type number}, {"annualized_total_cost_krw", type number}, {"annualized_cost_per_household_krw", type number}, {"annualized_cost_per_management_m2_krw", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

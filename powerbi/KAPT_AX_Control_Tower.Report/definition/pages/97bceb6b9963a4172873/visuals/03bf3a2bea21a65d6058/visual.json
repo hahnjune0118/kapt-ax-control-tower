@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "03bf3a2bea21a65d6058",
+  "position": {
+    "x": 880.243161094225,
+    "y": 320.97264437689972,
+    "z": 3004,
+    "height": 109.90881458966565,
+    "width": 148.8145896656535,
+    "tabOrder": 3004
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimApartmentMaster"
+                    }
+                  },
+                  "Property": "city_district"
+                }
+              },
+              "queryRef": "DimApartment.city_district",
+              "nativeQueryRef": "city_district"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fa85e68c219131bab6d7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimApartmentMaster"
+              }
+            },
+            "Property": "city_district"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

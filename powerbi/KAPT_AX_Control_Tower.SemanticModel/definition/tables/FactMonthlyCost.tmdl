@@ -1,0 +1,280 @@
+table FactMonthlyCost
+	lineageTag: 4d830ed2-bb6e-4bb5-87e4-9e7273bc3ed2
+
+	column apartment_id
+		dataType: string
+		isHidden
+		lineageTag: 0403b592-166b-43cf-ab7c-e60cc689f3d9
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: f25d8611-b02b-42e2-8bc4-0fa3be0bb569
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cohort_role
+		dataType: string
+		lineageTag: 544d0fd9-d5b8-4e15-9576-7310456f5e86
+		summarizeBy: none
+		sourceColumn: cohort_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column search_month
+		dataType: string
+		isHidden
+		lineageTag: 9d1cec13-dd78-4c5c-b2c4-9ac0f204191e
+		summarizeBy: none
+		sourceColumn: search_month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a54436c0-25ac-4bdd-9504-ad25dd3e90b8
+		summarizeBy: none
+		sourceColumn: month_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c904e3a-67f1-4030-84aa-a62cdf83c828
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: 502f373c-691f-4cbd-888c-226e9fa4eb0e
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category
+		dataType: string
+		isHidden
+		lineageTag: 53590ba7-bb51-44e6-8460-e97b7dcb9619
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: 1d1880af-f591-4619-be64-277d1236a1dd
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_amount_krw
+		dataType: double
+		lineageTag: 07732f6e-e17d-4a17-8bc1-976d4b7a75d6
+		summarizeBy: sum
+		sourceColumn: cost_amount_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column collection_status
+		dataType: string
+		lineageTag: f36ea63f-e514-44f5-97d6-f19ebe37d0ba
+		summarizeBy: none
+		sourceColumn: collection_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_quality_status
+		dataType: string
+		lineageTag: bc376a51-db84-4488-8027-24dda0c42b91
+		summarizeBy: none
+		sourceColumn: data_quality_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_observed
+		dataType: string
+		lineageTag: af4f5ef4-3fa5-4fc0-9815-e026117f571c
+		summarizeBy: none
+		sourceColumn: is_observed
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_negative_amount
+		dataType: string
+		lineageTag: 86c63a5e-47fb-4fca-9a67-ddee1efbd2fa
+		summarizeBy: none
+		sourceColumn: is_negative_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_component_count
+		dataType: string
+		lineageTag: c78d55d5-e6a5-46be-a2f1-da2f43987ba4
+		summarizeBy: none
+		sourceColumn: expected_component_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column observed_component_count
+		dataType: string
+		lineageTag: 7f6473fd-2dc7-4735-99a4-14cd2dbd8ef2
+		summarizeBy: none
+		sourceColumn: observed_component_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_key_match
+		dataType: string
+		lineageTag: b98c1708-209a-40fb-aadd-f290be7a2ce2
+		summarizeBy: none
+		sourceColumn: source_key_match
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 796247aa-4286-47b6-9a76-f045808c2ead
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column operation
+		dataType: string
+		lineageTag: 80593406-d67c-439d-96d9-16113a6d78e1
+		summarizeBy: none
+		sourceColumn: operation
+
+		annotation SummarizationSetBy = Automatic
+
+	column collected_at_kst
+		dataType: string
+		lineageTag: ec52ea4b-8bb3-42fb-9530-0ef53aff5bb5
+		summarizeBy: none
+		sourceColumn: collected_at_kst
+
+		annotation SummarizationSetBy = Automatic
+
+	column household_count
+		dataType: int64
+		formatString: 0
+		lineageTag: ef878ff9-05b1-4c04-a2cd-1acddce44108
+		summarizeBy: sum
+		sourceColumn: household_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column management_area_m2
+		dataType: double
+		lineageTag: b71602d2-86fc-482b-868a-8522402b281d
+		summarizeBy: sum
+		sourceColumn: management_area_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column feature_usable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cc7c20d9-f4c9-4fd8-8034-b9fde6b69fa1
+		summarizeBy: none
+		sourceColumn: feature_usable
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_reliable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0c942e5c-7048-4297-b168-968989ef449e
+		summarizeBy: none
+		sourceColumn: feature_reliable
+
+		annotation SummarizationSetBy = Automatic
+
+	column per_household_available
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a94ecc11-1e58-4d2d-a2fd-7974b62a622c
+		summarizeBy: none
+		sourceColumn: per_household_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column per_m2_available
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f6ee01de-4902-45f4-95b3-25449a1bdc25
+		summarizeBy: none
+		sourceColumn: per_m2_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_per_household_krw
+		dataType: double
+		lineageTag: be71f70e-5033-4b8d-9069-5ddeab1ddaf5
+		summarizeBy: sum
+		sourceColumn: cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost_per_management_m2_krw
+		dataType: double
+		lineageTag: 169adf1f-89ef-42fc-9a92-529355a3b861
+		summarizeBy: sum
+		sourceColumn: cost_per_management_m2_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_quality_weight
+		dataType: double
+		lineageTag: 9d73c70f-e986-4749-a153-64d55cfc2629
+		summarizeBy: sum
+		sourceColumn: source_quality_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FactMonthlyCost = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "fact_cost_features_monthly.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"month_start_date", type date}, {"year", Int64.Type}, {"month", Int64.Type}, {"cost_amount_krw", type number}, {"household_count", Int64.Type}, {"management_area_m2", type number}, {"cost_per_household_krw", type number}, {"cost_per_management_m2_krw", type number}, {"source_quality_weight", type number}, {"per_m2_available", type logical}, {"per_household_available", type logical}, {"feature_reliable", type logical}, {"feature_usable", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

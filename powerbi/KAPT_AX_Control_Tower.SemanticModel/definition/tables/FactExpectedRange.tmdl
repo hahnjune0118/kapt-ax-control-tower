@@ -1,0 +1,220 @@
+table FactExpectedRange
+	lineageTag: d237152c-dd04-46cf-af6e-7e45ce648f29
+
+	column model_version
+		dataType: string
+		lineageTag: 18620927-5d8d-4531-8a87-5801a1507718
+		summarizeBy: none
+		sourceColumn: model_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_id
+		dataType: string
+		isHidden
+		lineageTag: 7848a61e-6756-406b-be1b-d3d586f89428
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: 514c541c-c528-47f5-a0d4-024d9cc6455c
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category
+		dataType: string
+		isHidden
+		lineageTag: 4af478f7-c778-44c5-86a5-8316916614a5
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: 98b6bb78-6c29-4061-a5b8-f1cb803f771c
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_peer_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 840235c9-cdb0-4b78-8c67-466e1085ad05
+		summarizeBy: sum
+		sourceColumn: model_peer_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_sample_size
+		dataType: double
+		lineageTag: 94fd5834-0ba0-464c-89d2-ffa52ca6547c
+		summarizeBy: sum
+		sourceColumn: effective_sample_size
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column available_model_weight_pct
+		dataType: double
+		lineageTag: 0130e67e-dd08-4e91-8a0a-370cd96afe4b
+		summarizeBy: sum
+		sourceColumn: available_model_weight_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_annualized_cost_per_household_krw
+		dataType: double
+		lineageTag: 65d976cb-a8c2-4dda-b203-a907ff18b6c4
+		summarizeBy: sum
+		sourceColumn: target_annualized_cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expected_low_cost_per_household_krw
+		dataType: double
+		lineageTag: d96cfec8-3933-4708-8645-b4b734332cc3
+		summarizeBy: sum
+		sourceColumn: expected_low_cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expected_median_cost_per_household_krw
+		dataType: double
+		lineageTag: 95780aa3-ee18-453f-aa2e-7bebc6a52a4f
+		summarizeBy: sum
+		sourceColumn: expected_median_cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expected_high_cost_per_household_krw
+		dataType: double
+		lineageTag: da0ce2b0-6eb4-4d65-81b2-eda46147476e
+		summarizeBy: sum
+		sourceColumn: expected_high_cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expected_mean_cost_per_household_krw
+		dataType: double
+		lineageTag: 422c86d0-e8cb-47c9-af15-ef85c40c211c
+		summarizeBy: sum
+		sourceColumn: expected_mean_cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_gap_per_household_krw
+		dataType: string
+		lineageTag: c5412652-e856-4b1f-8858-e7cfc80874f7
+		summarizeBy: none
+		sourceColumn: target_gap_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_gap_pct
+		dataType: double
+		lineageTag: 8e642e28-3a2b-4009-95e0-4c689aa26145
+		summarizeBy: sum
+		sourceColumn: target_gap_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_range_position
+		dataType: string
+		lineageTag: 7bbfff75-4bc1-44d7-81ea-45970e9eaa1e
+		summarizeBy: none
+		sourceColumn: target_range_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_low_total_cost_krw
+		dataType: string
+		lineageTag: f7a92a7c-5ed1-4a9c-a002-ca842074555c
+		summarizeBy: none
+		sourceColumn: expected_low_total_cost_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_median_total_cost_krw
+		dataType: string
+		lineageTag: 69ff2ea3-9b1e-4566-91a2-16a8924fa8e8
+		summarizeBy: none
+		sourceColumn: expected_median_total_cost_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_high_total_cost_krw
+		dataType: string
+		lineageTag: 6b5204ff-63e4-4a27-bf2d-b5ae32d77108
+		summarizeBy: none
+		sourceColumn: expected_high_total_cost_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicative_annual_excess_cost_krw
+		dataType: double
+		lineageTag: 3b08ac18-7d7f-4132-8698-26fd38348f2d
+		summarizeBy: sum
+		sourceColumn: indicative_annual_excess_cost_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column confidence_level
+		dataType: string
+		lineageTag: 3c528f69-4e1e-44bf-8bba-bf67a36ccb8a
+		summarizeBy: none
+		sourceColumn: confidence_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_status
+		dataType: string
+		lineageTag: 251be00d-909b-4f0b-b6d2-8967342468da
+		summarizeBy: none
+		sourceColumn: model_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactExpectedRange = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "model_expected_cost_range.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"model_peer_count", Int64.Type}, {"effective_sample_size", type number}, {"available_model_weight_pct", type number}, {"target_annualized_cost_per_household_krw", type number}, {"expected_low_cost_per_household_krw", type number}, {"expected_median_cost_per_household_krw", type number}, {"expected_high_cost_per_household_krw", type number}, {"expected_mean_cost_per_household_krw", type number}, {"target_gap_pct", type number}, {"indicative_annual_excess_cost_krw", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

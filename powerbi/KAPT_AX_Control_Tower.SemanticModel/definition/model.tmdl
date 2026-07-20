@@ -1,0 +1,32 @@
+model Model
+	culture: ko-KR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: ko-KR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DimApartmentMaster","pDataRoot","fnLoadCsv","DimPilotApartment","DimCostCategory","FactMonthlyCost","FactAnnualCost","FactAnomalyMonthly","FactExpectedRange","FactAdvisoryAssessment","FactActionRegister","FactEvidenceRequest","ModelPeerWeights"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimApartmentMaster
+ref table DateTableTemplate_2a60a558-0e38-453b-bc86-d859d8c6a236
+ref table DimPilotApartment
+ref table DimCostCategory
+ref table FactMonthlyCost
+ref table FactAnnualCost
+ref table FactAnomalyMonthly
+ref table FactExpectedRange
+ref table FactAdvisoryAssessment
+ref table FactActionRegister
+ref table FactEvidenceRequest
+ref table ModelPeerWeights
+ref table LocalDateTable_f359ab7e-fadb-4e4d-aa05-87c1458c7ddb
+ref table DimDate
+ref table _Measures
+
+ref cultureInfo ko-KR
+

@@ -1,0 +1,364 @@
+table FactAnomalyMonthly
+	lineageTag: 3b6ed2e4-058a-4293-9c42-8a7713a6e2c4
+
+	column model_version
+		dataType: string
+		lineageTag: 82d58afd-f681-4245-93a7-449bd5bddc27
+		summarizeBy: none
+		sourceColumn: model_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_id
+		dataType: string
+		isHidden
+		lineageTag: 690070d1-9e2b-4edd-a20f-708de7016ccd
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: 021b3479-bd93-4361-9d07-335675498dba
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column search_month
+		dataType: string
+		isHidden
+		lineageTag: 58671a92-a6fd-46eb-b791-d9bca9351b12
+		summarizeBy: none
+		sourceColumn: search_month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 75aa93c5-a4bb-48f8-8769-f7c8c6937fa1
+		summarizeBy: none
+		sourceColumn: month_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column cost_category
+		dataType: string
+		isHidden
+		lineageTag: efcd8964-4db6-4522-baba-7549dbeade5c
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: 25313b4d-4bd0-4981-9df7-eecf3f274112
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_cost_per_household_krw
+		dataType: string
+		lineageTag: f7375880-4687-4893-95b4-6a900b1ac56e
+		summarizeBy: none
+		sourceColumn: target_cost_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_data_quality_status
+		dataType: string
+		lineageTag: dc9131c5-a241-4645-8ef2-8c2ec2201273
+		summarizeBy: none
+		sourceColumn: target_data_quality_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column peer_count
+		dataType: int64
+		formatString: 0
+		lineageTag: c43a4ba1-b289-4051-9852-97473e8001ed
+		summarizeBy: sum
+		sourceColumn: peer_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_sample_size
+		dataType: double
+		lineageTag: fe07ab99-0952-4a4d-93b5-9878fb3f7934
+		summarizeBy: sum
+		sourceColumn: effective_sample_size
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column available_model_weight_pct
+		dataType: string
+		lineageTag: 0465e479-6cbb-476a-b128-9d64caaf29e9
+		summarizeBy: none
+		sourceColumn: available_model_weight_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column peer_weighted_mean_krw
+		dataType: string
+		lineageTag: 12bfcbef-3adc-4463-a106-452275b991a3
+		summarizeBy: none
+		sourceColumn: peer_weighted_mean_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column peer_q1_krw
+		dataType: string
+		lineageTag: 5584bcb1-737b-4a3d-af62-e13b7867d8bb
+		summarizeBy: none
+		sourceColumn: peer_q1_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column peer_median_krw
+		dataType: double
+		lineageTag: 6ef8bcaf-af86-49f6-8ef0-820a306d1177
+		summarizeBy: sum
+		sourceColumn: peer_median_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column peer_q3_krw
+		dataType: double
+		lineageTag: a3b23471-7c58-44de-914f-a01c5f6f7a0a
+		summarizeBy: sum
+		sourceColumn: peer_q3_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column peer_iqr_krw
+		dataType: string
+		lineageTag: 45120df4-ee12-4112-a531-ebc327c884c4
+		summarizeBy: none
+		sourceColumn: peer_iqr_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column weighted_mad_krw
+		dataType: string
+		lineageTag: 351753d2-bb32-41b6-b381-0de2d6ced920
+		summarizeBy: none
+		sourceColumn: weighted_mad_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column gap_per_household_krw
+		dataType: string
+		lineageTag: 242c4f83-d348-458c-b245-659a6c318fa7
+		summarizeBy: none
+		sourceColumn: gap_per_household_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column gap_pct
+		dataType: double
+		lineageTag: 2a6377ea-ff1b-4a04-b9e5-0a16f00c2df9
+		summarizeBy: sum
+		sourceColumn: gap_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column robust_z_score
+		dataType: double
+		lineageTag: c7dfa69a-a5ea-48dd-9095-a3d1186547d8
+		summarizeBy: sum
+		sourceColumn: robust_z_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column range_exceedance_ratio
+		dataType: string
+		lineageTag: 3676b7e7-0dae-442c-a2f4-f0cd93501c8a
+		summarizeBy: none
+		sourceColumn: range_exceedance_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column above_expected_high
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 795cc6b1-5d75-40b2-aaad-fe15b3cd9f49
+		summarizeBy: none
+		sourceColumn: above_expected_high
+
+		annotation SummarizationSetBy = Automatic
+
+	column confidence_score
+		dataType: double
+		lineageTag: 01f4bbdc-7e9b-4cb2-ad0f-eaffe3ac7634
+		summarizeBy: sum
+		sourceColumn: confidence_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column benchmark_status
+		dataType: string
+		lineageTag: 1485df3a-748c-4846-ae66-bacd6c6a9e35
+		summarizeBy: none
+		sourceColumn: benchmark_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailing_3m_target_median_krw
+		dataType: string
+		lineageTag: 007554fc-29d2-48fa-aca3-14db9bd1d2c5
+		summarizeBy: none
+		sourceColumn: trailing_3m_target_median_krw
+
+		annotation SummarizationSetBy = Automatic
+
+	column consecutive_above_range_months
+		dataType: int64
+		formatString: 0
+		lineageTag: cef2fec0-2cff-4899-ab02-bc462c8662d9
+		summarizeBy: sum
+		sourceColumn: consecutive_above_range_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column temporal_change_pct
+		dataType: double
+		lineageTag: c1400e5b-ca0b-4e37-9713-1f873511f15a
+		summarizeBy: sum
+		sourceColumn: temporal_change_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cross_sectional_signal_score
+		dataType: string
+		lineageTag: b088d140-5995-42b2-8919-d0146fc0fa8c
+		summarizeBy: none
+		sourceColumn: cross_sectional_signal_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_range_signal_score
+		dataType: string
+		lineageTag: 3955352a-2a03-45af-8a68-4ff280bb6560
+		summarizeBy: none
+		sourceColumn: expected_range_signal_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column temporal_signal_score
+		dataType: string
+		lineageTag: 17d7e75d-05b4-490e-8967-f0e15fc43ca4
+		summarizeBy: none
+		sourceColumn: temporal_signal_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column persistence_signal_score
+		dataType: string
+		lineageTag: 642113f8-5202-4883-ae59-8ba3d50f2981
+		summarizeBy: none
+		sourceColumn: persistence_signal_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column raw_anomaly_score
+		dataType: string
+		lineageTag: 493820c4-f5d9-4104-a704-7e687daac712
+		summarizeBy: none
+		sourceColumn: raw_anomaly_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column anomaly_score
+		dataType: double
+		lineageTag: 8e96ba1f-8608-4af4-91cf-4096d54a3f05
+		summarizeBy: sum
+		sourceColumn: anomaly_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column anomaly_severity
+		dataType: string
+		lineageTag: 254f9dce-aa32-4331-89d9-1ecb0c1ef907
+		summarizeBy: none
+		sourceColumn: anomaly_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column low_cost_review_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4f6731d2-871e-418a-b94a-629523f04be9
+		summarizeBy: none
+		sourceColumn: low_cost_review_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column anomaly_reason
+		dataType: string
+		lineageTag: 6e8637a5-2783-4b00-9070-39e5bde296f2
+		summarizeBy: none
+		sourceColumn: anomaly_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_alert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 780b3943-38ee-49d8-8425-3f20e33baa5a
+		summarizeBy: none
+		sourceColumn: is_alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_focus
+		dataType: string
+		lineageTag: 81fed157-e1ae-46f2-a266-5f1f23fb87f2
+		summarizeBy: none
+		sourceColumn: review_focus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactAnomalyMonthly = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "model_anomaly_scores_monthly.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"month_start_date", type date}, {"peer_count", Int64.Type}, {"effective_sample_size", type number}, {"peer_q3_krw", type number}, {"peer_median_krw", type number}, {"gap_pct", type number}, {"robust_z_score", type number}, {"temporal_change_pct", type number}, {"consecutive_above_range_months", Int64.Type}, {"anomaly_score", type number}, {"confidence_score", type number}, {"low_cost_review_flag", type logical}, {"is_alert", type logical}, {"above_expected_high", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

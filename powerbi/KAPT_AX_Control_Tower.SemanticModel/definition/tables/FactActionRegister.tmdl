@@ -1,0 +1,191 @@
+table FactActionRegister
+	lineageTag: 446774aa-7a24-4a55-856a-b9f56d798bb8
+
+	column action_id
+		dataType: string
+		lineageTag: 2be87e17-2b91-4ecc-8bf6-fe079d730586
+		summarizeBy: none
+		sourceColumn: action_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommendation_id
+		dataType: string
+		lineageTag: 7589c7ca-ac1c-4954-a1d4-2a040eeb4910
+		summarizeBy: none
+		sourceColumn: recommendation_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_id
+		dataType: string
+		isHidden
+		lineageTag: 9d25dc59-859d-442d-bf18-ded1323d8485
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: 273fc774-51d4-42eb-81f2-faaafb5a3669
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category
+		dataType: string
+		isHidden
+		lineageTag: e2848ccf-5c90-499e-9e64-a0a6d68572af
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: f06289a6-7f05-40e3-945d-2aed41237b36
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_priority_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: f359cb54-c8a5-476c-a6b3-d1080ab10149
+		summarizeBy: sum
+		sourceColumn: category_priority_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column advisory_priority
+		dataType: string
+		lineageTag: 5f5f1de8-acb5-414a-ab46-ea4f03f1b2a5
+		summarizeBy: none
+		sourceColumn: advisory_priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column action_sequence
+		dataType: int64
+		formatString: 0
+		lineageTag: e6b94bca-325a-4653-b98b-ead93dbf54d8
+		summarizeBy: sum
+		sourceColumn: action_sequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column action_type
+		dataType: string
+		lineageTag: 8238aa2b-23ce-4631-b232-a8bdf396e402
+		summarizeBy: none
+		sourceColumn: action_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column action_title
+		dataType: string
+		lineageTag: c2cde339-0812-49f5-9773-460c3c314de6
+		summarizeBy: none
+		sourceColumn: action_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column action_detail
+		dataType: string
+		lineageTag: 43539897-e01a-447f-84b8-2078d83fe30f
+		summarizeBy: none
+		sourceColumn: action_detail
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_owner
+		dataType: string
+		lineageTag: 06da7d0b-42b5-47e6-ae7a-a94c8fb07258
+		summarizeBy: none
+		sourceColumn: business_owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_horizon
+		dataType: string
+		lineageTag: 983dc2e6-43ce-4f30-9a24-8255dccad39a
+		summarizeBy: none
+		sourceColumn: time_horizon
+
+		annotation SummarizationSetBy = Automatic
+
+	column success_kpi
+		dataType: string
+		lineageTag: 951baca1-0010-46f5-9c24-afa8c3420030
+		summarizeBy: none
+		sourceColumn: success_kpi
+
+		annotation SummarizationSetBy = Automatic
+
+	column digital_enablement
+		dataType: string
+		lineageTag: 6d5bb593-7d54-4dff-b7f0-2ff34c758fd9
+		summarizeBy: none
+		sourceColumn: digital_enablement
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicative_opportunity_krw
+		dataType: double
+		lineageTag: ab8330a2-4489-47e4-b675-2b890ab0a595
+		summarizeBy: sum
+		sourceColumn: indicative_opportunity_krw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column action_status
+		dataType: string
+		lineageTag: 8afd16e2-79ca-488c-9a1a-9b0a692c2b0e
+		summarizeBy: none
+		sourceColumn: action_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column human_approval_required
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: af91d068-63a3-402a-adc7-2ef6626ee82f
+		summarizeBy: none
+		sourceColumn: human_approval_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column auto_execution_allowed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 45f377f2-2f28-4f50-8e4d-4959763cdfc5
+		summarizeBy: none
+		sourceColumn: auto_execution_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactActionRegister = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "advisory_action_register.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"category_priority_rank", Int64.Type}, {"action_sequence", Int64.Type}, {"indicative_opportunity_krw", type number}, {"human_approval_required", type logical}, {"auto_execution_allowed", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

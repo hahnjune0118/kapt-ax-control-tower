@@ -1,0 +1,334 @@
+table DimApartmentMaster
+	lineageTag: 1a39c3d9-be87-444c-846b-55f52aa7fa5e
+
+	measure 'Apartment Count' =
+			
+			DISTINCTCOUNT(DimApartmentMaster[apartment_id])
+		formatString: 0
+		lineageTag: b81ae532-e59a-4f55-8d2b-3e8147f95f43
+
+	measure 'District Count' =
+			
+			DISTINCTCOUNT(DimApartmentMaster[city_district])
+		formatString: 0
+		lineageTag: e3a72197-c9dd-4df9-a70e-330164e06331
+
+	measure 'Town Count' =
+			
+			DISTINCTCOUNT(DimApartmentMaster[town])
+		formatString: 0
+		lineageTag: 80ac19da-a415-469e-b536-6311ffe80d72
+
+	column apartment_id
+		dataType: string
+		lineageTag: 11d83d6c-3488-43f4-940b-bf3dbb2816c8
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_name
+		dataType: string
+		lineageTag: 8c9fec2d-38bc-45ac-8c7b-6dcbec166fff
+		summarizeBy: none
+		sourceColumn: apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column province
+		dataType: string
+		lineageTag: 23d8753b-7df2-4f4b-ac25-3b753a682294
+		summarizeBy: none
+		sourceColumn: province
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_district
+		dataType: string
+		lineageTag: 8bc33b06-fd37-41c1-8a96-d604847177eb
+		summarizeBy: none
+		sourceColumn: city_district
+
+		annotation SummarizationSetBy = Automatic
+
+	column town
+		dataType: string
+		lineageTag: f123c0f8-fdad-404f-ad87-2a8fdae6fcd9
+		summarizeBy: none
+		sourceColumn: town
+
+		annotation SummarizationSetBy = Automatic
+
+	column village
+		dataType: string
+		lineageTag: 1c51bd93-1502-41af-9e45-e5df660cbbf7
+		summarizeBy: none
+		sourceColumn: village
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_dong_code
+		dataType: string
+		lineageTag: 94a43041-9f04-4819-9359-2f1c24d472e7
+		summarizeBy: none
+		sourceColumn: legal_dong_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: dbd2f8eb-3d2c-4e52-94bb-688900fa78ca
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_at_kst
+		dataType: string
+		lineageTag: 3504f1fe-8fdc-43c5-9d39-c4ec7f1acbce
+		summarizeBy: none
+		sourceColumn: loaded_at_kst
+
+		annotation SummarizationSetBy = Automatic
+
+	column profile_apartment_name
+		dataType: string
+		lineageTag: c563cfba-1500-4e90-a08d-f4cabd158255
+		summarizeBy: none
+		sourceColumn: profile_apartment_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column lot_address
+		dataType: string
+		lineageTag: 17632de8-c210-48ae-8957-99542f576e2f
+		summarizeBy: none
+		sourceColumn: lot_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_address
+		dataType: string
+		lineageTag: 4f5fb5e9-b301-4545-813b-98ce7735f779
+		summarizeBy: none
+		sourceColumn: road_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_type
+		dataType: string
+		lineageTag: 3672d796-fe99-4dbb-9a26-894c3ca68245
+		summarizeBy: none
+		sourceColumn: sale_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column heating_type
+		dataType: string
+		lineageTag: b5d106c4-3e03-4c29-bf45-ffa84a2e1bab
+		summarizeBy: none
+		sourceColumn: heating_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column management_type
+		dataType: string
+		lineageTag: a0698181-52e7-46b1-96c5-eb6e041bcf6c
+		summarizeBy: none
+		sourceColumn: management_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column hall_type
+		dataType: string
+		lineageTag: 22164a0f-4c7b-4fbf-a2f7-17b9660de5a7
+		summarizeBy: none
+		sourceColumn: hall_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_area_m2
+		dataType: double
+		lineageTag: f80045aa-b512-4c79-b0dd-45e172a5a58d
+		summarizeBy: sum
+		sourceColumn: total_area_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column management_area_m2
+		dataType: double
+		lineageTag: 0fcc3bf6-9720-4308-afce-cffc82f7694c
+		summarizeBy: sum
+		sourceColumn: management_area_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column private_area_m2
+		dataType: double
+		lineageTag: 2a1581a8-717b-4882-bbfa-7038f1fbd0fd
+		summarizeBy: sum
+		sourceColumn: private_area_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column building_count
+		dataType: int64
+		formatString: 0
+		lineageTag: f540cdaa-3fa3-4686-aeb6-847d8cd8f115
+		summarizeBy: sum
+		sourceColumn: building_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column household_count
+		dataType: int64
+		formatString: 0
+		lineageTag: e11e900e-6a36-411d-9712-dc111ebbb4d9
+		summarizeBy: sum
+		sourceColumn: household_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column households_under_60m2
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b22f258-2a49-44d0-afa9-55c9d79991e8
+		summarizeBy: sum
+		sourceColumn: households_under_60m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column households_60_to_85m2
+		dataType: int64
+		formatString: 0
+		lineageTag: 26c2aea9-1df4-4035-af8f-b4087fc36b54
+		summarizeBy: sum
+		sourceColumn: households_60_to_85m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column households_85_to_135m2
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ba1e757-6154-42b2-af0e-715de818aa41
+		summarizeBy: sum
+		sourceColumn: households_85_to_135m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column households_over_135m2
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f478353-881e-408f-b203-6f4af8abb38c
+		summarizeBy: sum
+		sourceColumn: households_over_135m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column approval_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9a4e155a-8735-4f7f-a85f-1114ebe7a595
+		summarizeBy: none
+		sourceColumn: approval_date
+
+		variation Variation
+			isDefault
+			relationship: 587f1770-b3c3-469f-bbaf-81252c331947
+			defaultHierarchy: LocalDateTable_f359ab7e-fadb-4e4d-aa05-87c1458c7ddb.'날짜 계층'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column max_floor
+		dataType: int64
+		formatString: 0
+		lineageTag: 9159a03b-cd8e-48e7-8729-7f6a7d1c2362
+		summarizeBy: sum
+		sourceColumn: max_floor
+
+		annotation SummarizationSetBy = Automatic
+
+	column basement_floor
+		dataType: int64
+		formatString: 0
+		lineageTag: 838f6a11-4b15-4c2c-aae2-fb6384433333
+		summarizeBy: sum
+		sourceColumn: basement_floor
+
+		annotation SummarizationSetBy = Automatic
+
+	column construction_company
+		dataType: string
+		lineageTag: 523005f1-4d51-4ff5-901e-3c616789cd4d
+		summarizeBy: none
+		sourceColumn: construction_company
+
+		annotation SummarizationSetBy = Automatic
+
+	column management_company
+		dataType: string
+		lineageTag: 7fa2147f-f906-49d1-8592-478291975a10
+		summarizeBy: none
+		sourceColumn: management_company
+
+		annotation SummarizationSetBy = Automatic
+
+	column profile_available
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9768c5b2-1efb-4504-b894-aa13b3e44a3c
+		summarizeBy: none
+		sourceColumn: profile_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column profile_source_system
+		dataType: string
+		lineageTag: e1dbc29f-f775-434e-a60b-751c9ce2a2bc
+		summarizeBy: none
+		sourceColumn: profile_source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column profile_loaded_at_kst
+		dataType: string
+		lineageTag: b81d756e-6fa6-4131-9d46-a727d54e29c3
+		summarizeBy: none
+		sourceColumn: profile_loaded_at_kst
+
+		annotation SummarizationSetBy = Automatic
+
+	column approval_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 2fc8ce99-4e6c-4383-909d-a0b4d1d7161c
+		summarizeBy: sum
+		sourceColumn: approval_year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimApartmentMaster = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "dim_apartment_profile_base.csv"
+				        ),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"apartment_id", "apartment_name", "province", "city_district", "town", "village", "legal_dong_code", "source_system", "loaded_at_kst", "profile_apartment_name", "lot_address", "road_address", "sale_type", "heating_type", "management_type", "hall_type", "total_area_m2", "management_area_m2", "private_area_m2", "building_count", "household_count", "households_under_60m2", "households_60_to_85m2", "households_85_to_135m2", "households_over_135m2", "approval_date", "max_floor", "basement_floor", "construction_company", "management_company", "profile_available", "profile_source_system", "profile_loaded_at_kst", "approval_year"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"apartment_id", type text}, {"approval_date", type date}, {"approval_year", Int64.Type}, {"household_count", Int64.Type}, {"households_under_60m2", Int64.Type}, {"households_60_to_85m2", Int64.Type}, {"households_85_to_135m2", Int64.Type}, {"households_over_135m2", Int64.Type}, {"building_count", Int64.Type}, {"max_floor", Int64.Type}, {"basement_floor", Int64.Type}, {"total_area_m2", type number}, {"management_area_m2", type number}, {"private_area_m2", type number}, {"profile_available", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = 탐색
+
+	annotation PBI_ResultType = Table
+

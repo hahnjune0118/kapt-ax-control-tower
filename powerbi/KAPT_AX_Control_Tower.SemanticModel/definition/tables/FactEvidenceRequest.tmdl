@@ -1,0 +1,114 @@
+table FactEvidenceRequest
+	lineageTag: 4f7ec085-cb63-434f-8f7e-a4dd41d36591
+
+	column evidence_request_id
+		dataType: string
+		lineageTag: 61d20299-b1e7-4390-aecd-949c75a961d6
+		summarizeBy: none
+		sourceColumn: evidence_request_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommendation_id
+		dataType: string
+		lineageTag: 5e43c583-0cbb-47df-b654-42a03fccc966
+		summarizeBy: none
+		sourceColumn: recommendation_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column apartment_id
+		dataType: string
+		isHidden
+		lineageTag: 6531aa25-d246-4824-b213-6ab2815704c2
+		summarizeBy: none
+		sourceColumn: apartment_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category
+		dataType: string
+		isHidden
+		lineageTag: 9070c5b8-4ffc-4950-b3e7-cd5e9435e7e9
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category_name_ko
+		dataType: string
+		lineageTag: acb0cac4-8364-4e7a-b5a4-5698bff46606
+		summarizeBy: none
+		sourceColumn: cost_category_name_ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column evidence_priority
+		dataType: string
+		lineageTag: eea46bec-3628-49f3-a01d-7e9c1e232ac8
+		summarizeBy: none
+		sourceColumn: evidence_priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_name
+		dataType: string
+		lineageTag: b364c4f4-593a-4141-92a9-c0dda7ee532d
+		summarizeBy: none
+		sourceColumn: document_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column request_purpose
+		dataType: string
+		lineageTag: b633d305-8be9-47d0-9c0e-e1389329fd44
+		summarizeBy: none
+		sourceColumn: request_purpose
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_provider
+		dataType: string
+		lineageTag: 2d803fae-1047-4e9f-b5f9-cc729ac1c4e5
+		summarizeBy: none
+		sourceColumn: expected_provider
+
+		annotation SummarizationSetBy = Automatic
+
+	column request_status
+		dataType: string
+		lineageTag: d929a8df-e12e-4a6a-ae7f-446896197048
+		summarizeBy: none
+		sourceColumn: request_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column contains_personal_data_review
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 991ace89-b98d-442f-94ad-282051108145
+		summarizeBy: none
+		sourceColumn: contains_personal_data_review
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactEvidenceRequest = m
+		mode: import
+		source =
+				let
+				    Source =
+				        fnLoadCsv(
+				            "advisory_evidence_requests.csv"
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"contains_personal_data_review", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
