@@ -157,6 +157,7 @@ table _Measures
 			            ModelPeerWeights[model_weight]
 			        )
 			    )
+		formatString: 0.0
 		lineageTag: 710387c7-ecb1-4be9-80e1-2254f87190ca
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -343,4 +344,3 @@ table _Measures
 	annotation PBI_Id = 4acce5ec702e4f68b14db6e46e1c2c0b
 
 	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
-

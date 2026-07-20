@@ -18,5 +18,27 @@
   "bad": "#C0392B",
   "minimum": "#2E7D32",
   "center": "#F4F6F8",
-  "maximum": "#C0392B"
+  "maximum": "#C0392B",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI",
+      "fontSize": 24,
+      "color": "#142A43"
+    },
+    "title": {
+      "fontFace": "Segoe UI",
+      "fontSize": 12,
+      "color": "#142A43"
+    },
+    "header": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#1F2937"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 9,
+      "color": "#64748B"
+    }
+  }
 }
