@@ -1,0 +1,40 @@
+{
+  "project": "K-APT AX Control Tower",
+  "generated_at_kst": "2026-07-20T10:41:49+09:00",
+  "end_month": "202606",
+  "months": [
+    "202507",
+    "202508",
+    "202509",
+    "202510",
+    "202511",
+    "202512",
+    "202601",
+    "202602",
+    "202603",
+    "202604",
+    "202605",
+    "202606"
+  ],
+  "month_count": 12,
+  "apartment_count": 50,
+  "category_count": 6,
+  "expected_request_count": 3600,
+  "categories": {
+    "labor": "getHsmpLaborCostInfoV2",
+    "cleaning": "getHsmpCleaningCostInfoV2",
+    "guard": "getHsmpGuardCostInfoV2",
+    "elevator": "getHsmpElevatorMntncCostInfoV2",
+    "repairs": "getHsmpRepairsCostInfoV2",
+    "facility": "getHsmpFacilityMntncCostInfoV2"
+  },
+  "request_policy": {
+    "max_retries": 4,
+    "resume_enabled": true,
+    "no_data_is_completed": true
+  },
+  "cohort": {
+    "target_count": 1,
+    "peer_count": 49
+  }
+}
