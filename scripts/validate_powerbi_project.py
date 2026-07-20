@@ -126,6 +126,7 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
     page_names: list[str] = []
     visual_count = 0
     field_ref_count = 0
+    filter_names: set[str] = set()
     for page_id in page_order:
         page_dir = REPORT / "definition" / "pages" / page_id
         page_path = page_dir / "page.json"
@@ -142,6 +143,18 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
         visual_count += len(visual_paths)
         for path in visual_paths:
             visual = json.loads(path.read_text(encoding="utf-8"))
+            qa.require(
+                "filterConfig" not in visual.get("visual", {}),
+                f"filterConfig must be a visual-container property: {path}",
+            )
+            for item in visual.get("filterConfig", {}).get("filters", []):
+                filter_name = item.get("name")
+                qa.require(bool(filter_name), f"Filter name missing: {path}")
+                qa.require(
+                    filter_name not in filter_names,
+                    f"Duplicate report filter name {filter_name}: {path}",
+                )
+                filter_names.add(filter_name)
             position = visual.get("position", {})
             x, y = position.get("x", 0), position.get("y", 0)
             width, height = position.get("width", 0), position.get("height", 0)

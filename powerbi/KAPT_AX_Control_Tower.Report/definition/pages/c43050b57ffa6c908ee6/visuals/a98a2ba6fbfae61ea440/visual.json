@@ -553,64 +553,64 @@
         }
       ]
     },
-    "filterConfig": {
-      "filters": [
-        {
-          "name": "Filter6a8e58845782aec610ea285e",
-          "field": {
-            "Column": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "ModelPeerWeights"
-                }
-              },
-              "Property": "model_selected"
-            }
-          },
-          "type": "Categorical",
-          "filter": {
-            "Version": 2,
-            "From": [
-              {
-                "Name": "3",
-                "Entity": "ModelPeerWeights",
-                "Type": 0
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter11543f54386a2f0173966e35",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ModelPeerWeights"
               }
-            ],
-            "Where": [
-              {
-                "Condition": {
-                  "In": {
-                    "Expressions": [
+            },
+            "Property": "model_selected"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "8",
+              "Entity": "ModelPeerWeights",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "8"
+                          }
+                        },
+                        "Property": "model_selected"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
                       {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "3"
-                            }
-                          },
-                          "Property": "model_selected"
+                        "Literal": {
+                          "Value": "true"
                         }
                       }
-                    ],
-                    "Values": [
-                      [
-                        {
-                          "Literal": {
-                            "Value": "true"
-                          }
-                        }
-                      ]
                     ]
-                  }
+                  ]
                 }
               }
-            ]
-          },
-          "howCreated": "User"
-        }
-      ]
-    },
-    "drillFilterOtherVisuals": true
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

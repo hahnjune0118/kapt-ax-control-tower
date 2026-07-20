@@ -299,9 +299,9 @@ function containerObjects(titleValue, options = {}) {
   return result;
 }
 
-function visualShell(pageKey, key, type, position, visual) {
+function visualShell(pageKey, key, type, position, visual, filters = []) {
   const name = visualId(pageKey, key);
-  return {
+  const shell = {
     $schema: VISUAL_SCHEMA,
     name,
     position: {
@@ -318,6 +318,8 @@ function visualShell(pageKey, key, type, position, visual) {
       drillFilterOtherVisuals: true,
     },
   };
+  if (filters.length) shell.filterConfig = { filters };
+  return shell;
 }
 
 function shapeVisual(pageKey, key, position, shapeType, fillColor) {
@@ -672,8 +674,7 @@ function chartVisual({
     objects,
     visualContainerObjects: containerObjects(titleValue),
   };
-  if (filters.length) visual.filterConfig = { filters };
-  return visualShell(pageKey, key, type, position, visual);
+  return visualShell(pageKey, key, type, position, visual, filters);
 }
 
 function tableFormatting() {
@@ -745,8 +746,7 @@ function tableVisual({
     objects: tableFormatting(),
     visualContainerObjects: containerObjects(titleValue),
   };
-  if (filters.length) visual.filterConfig = { filters };
-  return visualShell(pageKey, key, "tableEx", position, visual);
+  return visualShell(pageKey, key, "tableEx", position, visual, filters);
 }
 
 function matrixVisual({
@@ -786,8 +786,7 @@ function matrixVisual({
   };
   if (!rows.length) delete visual.query.queryState.Rows;
   if (!columns.length) delete visual.query.queryState.Columns;
-  if (filters.length) visual.filterConfig = { filters };
-  return visualShell(pageKey, key, "pivotTable", position, visual);
+  return visualShell(pageKey, key, "pivotTable", position, visual, filters);
 }
 
 function addHeader(page, pageKey, pageTitle, subtitle, includeNavigator = true) {
@@ -1017,13 +1016,6 @@ function buildPeerBenchmark() {
     ),
   );
 
-  const selectedFilter = categoricalFilter(
-    pageKey,
-    "selected_peers",
-    "ModelPeerWeights",
-    "model_selected",
-    true,
-  );
   const peerName = projection({
     table: "ModelPeerWeights",
     property: "apartment_name",
@@ -1076,7 +1068,15 @@ function buildPeerBenchmark() {
         },
       },
       colors: [{ color: COLORS.blue }],
-      filters: [selectedFilter],
+      filters: [
+        categoricalFilter(
+          pageKey,
+          "peer_scatter_selected_peers",
+          "ModelPeerWeights",
+          "model_selected",
+          true,
+        ),
+      ],
     }),
     chartVisual({
       pageKey,
@@ -1123,7 +1123,15 @@ function buildPeerBenchmark() {
         { table: "ModelPeerWeights", property: "selection_policy", displayName: "선정 정책" },
       ],
       sort: { field: column("ModelPeerWeights", "peer_rank"), direction: "Ascending" },
-      filters: [selectedFilter],
+      filters: [
+        categoricalFilter(
+          pageKey,
+          "peer_detail_selected_peers",
+          "ModelPeerWeights",
+          "model_selected",
+          true,
+        ),
+      ],
     }),
   );
   return page;
