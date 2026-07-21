@@ -19,12 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "Responsible AI · 본 결과는 공개데이터 기반의 검토 우선순위와 가설을 제시하며 부정행위나 확정 절감액을 판정하지 않습니다. 조치 전 원문 증빙과 담당자 승인이 필요합니다.",
+                    "value": "검토 시 유의사항 | 본 분석은 공개데이터 기반의 우선 검토 신호와 가설을 제공합니다. 부정행위 여부 또는 확정 절감액을 판단하지 않으며, 원문 증빙과 담당자 검토가 필요합니다.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontWeight": "bold",
                       "fontSize": "9pt",
-                      "color": "#142A43"
+                      "color": "#2D2D2D"
                     }
                   }
                 ]
@@ -50,7 +50,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFF7ED'"
+                      "Value": "'#FFF1E8'"
                     }
                   }
                 }
@@ -81,7 +81,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E67E22'"
+                      "Value": "'#D04A02'"
                     }
                   }
                 }
@@ -90,7 +90,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -133,7 +133,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -142,7 +142,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -226,7 +226,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

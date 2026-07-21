@@ -72,8 +72,8 @@
                 }
               },
               "queryRef": "FactAdvisoryAssessment.screened_pain_point",
-              "nativeQueryRef": "검토 Pain Point",
-              "displayName": "검토 Pain Point"
+              "nativeQueryRef": "주요 Pain Point",
+              "displayName": "주요 Pain Point"
             },
             {
               "field": {
@@ -87,8 +87,8 @@
                 }
               },
               "queryRef": "FactAdvisoryAssessment.primary_recommended_action",
-              "nativeQueryRef": "권고 조치",
-              "displayName": "권고 조치"
+              "nativeQueryRef": "우선 검토 조치",
+              "displayName": "우선 검토 조치"
             },
             {
               "field": {
@@ -102,8 +102,8 @@
                 }
               },
               "queryRef": "FactAdvisoryAssessment.indicative_annual_opportunity_krw",
-              "nativeQueryRef": "지표상 기회금액",
-              "displayName": "지표상 기회금액"
+              "nativeQueryRef": "지표상 절감 검토액(원)",
+              "displayName": "지표상 절감 검토액(원)"
             },
             {
               "field": {
@@ -117,8 +117,8 @@
                 }
               },
               "queryRef": "FactAdvisoryAssessment.confidence_level",
-              "nativeQueryRef": "신뢰수준",
-              "displayName": "신뢰수준"
+              "nativeQueryRef": "분석 신뢰도",
+              "displayName": "분석 신뢰도"
             },
             {
               "field": {
@@ -132,8 +132,8 @@
                 }
               },
               "queryRef": "FactAdvisoryAssessment.human_validation_required",
-              "nativeQueryRef": "사람 검증",
-              "displayName": "사람 검증"
+              "nativeQueryRef": "담당자 검토",
+              "displayName": "담당자 검토"
             }
           ]
         }
@@ -153,7 +153,8 @@
             },
             "direction": "Ascending"
           }
-        ]
+        ],
+        "isDefaultSort": false
       }
     },
     "objects": {
@@ -197,7 +198,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -256,7 +257,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1F2937'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -278,7 +279,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1F2937'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -289,7 +290,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F8FAFC'"
+                      "Value": "'#F3F3F3'"
                     }
                   }
                 }
@@ -327,7 +328,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E5E7EB'"
+                      "Value": "'#E6E6E6'"
                     }
                   }
                 }
@@ -398,7 +399,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -407,7 +408,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -427,7 +428,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -450,7 +451,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -459,7 +460,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -520,7 +521,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Advisory 진단 및 우선순위'"
+                  "Value": "'우선 검토 과제'"
                 }
               }
             },
@@ -543,7 +544,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

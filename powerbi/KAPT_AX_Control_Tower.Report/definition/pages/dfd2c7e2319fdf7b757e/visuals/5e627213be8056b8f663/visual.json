@@ -87,8 +87,8 @@
                 }
               },
               "queryRef": "FactActionRegister.business_owner",
-              "nativeQueryRef": "담당",
-              "displayName": "담당"
+              "nativeQueryRef": "Owner",
+              "displayName": "Owner"
             },
             {
               "field": {
@@ -102,8 +102,8 @@
                 }
               },
               "queryRef": "FactActionRegister.time_horizon",
-              "nativeQueryRef": "기간",
-              "displayName": "기간"
+              "nativeQueryRef": "Time horizon",
+              "displayName": "Time horizon"
             },
             {
               "field": {
@@ -117,8 +117,8 @@
                 }
               },
               "queryRef": "FactActionRegister.success_kpi",
-              "nativeQueryRef": "성공 KPI",
-              "displayName": "성공 KPI"
+              "nativeQueryRef": "Success metric",
+              "displayName": "Success metric"
             },
             {
               "field": {
@@ -162,8 +162,8 @@
                 }
               },
               "queryRef": "FactActionRegister.human_approval_required",
-              "nativeQueryRef": "사람 승인",
-              "displayName": "사람 승인"
+              "nativeQueryRef": "승인 필요",
+              "displayName": "승인 필요"
             }
           ]
         }
@@ -183,7 +183,8 @@
             },
             "direction": "Ascending"
           }
-        ]
+        ],
+        "isDefaultSort": false
       }
     },
     "objects": {
@@ -227,7 +228,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -286,7 +287,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1F2937'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -308,7 +309,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1F2937'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -319,7 +320,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F8FAFC'"
+                      "Value": "'#F3F3F3'"
                     }
                   }
                 }
@@ -357,7 +358,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E5E7EB'"
+                      "Value": "'#E6E6E6'"
                     }
                   }
                 }
@@ -428,7 +429,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -437,7 +438,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -457,7 +458,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -480,7 +481,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -489,7 +490,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -550,7 +551,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'AX 조치 과제 Register'"
+                  "Value": "'Action Agenda'"
                 }
               }
             },
@@ -573,7 +574,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

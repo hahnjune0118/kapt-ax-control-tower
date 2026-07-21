@@ -24,6 +24,28 @@ const reportDir = path.join(
 );
 const definitionDir = path.join(reportDir, "definition");
 const pagesDir = path.join(definitionDir, "pages");
+const modelPeerPath = path.join(
+  repoRoot,
+  "powerbi",
+  "data",
+  "model_peer_weights.csv",
+);
+
+function readTargetApartmentName() {
+  const [headerLine, firstDataLine] = fs
+    .readFileSync(modelPeerPath, "utf8")
+    .replace(/^\uFEFF/, "")
+    .split(/\r?\n/);
+  const headers = headerLine.split(",");
+  const values = firstDataLine.split(",");
+  const targetIndex = headers.indexOf("target_apartment_name");
+  if (targetIndex < 0 || !values[targetIndex]) {
+    throw new Error("Model output is missing target_apartment_name.");
+  }
+  return values[targetIndex];
+}
+
+const TARGET_APARTMENT_NAME = readTargetApartmentName();
 
 const VISUAL_SCHEMA =
   "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json";
@@ -35,36 +57,29 @@ const PBIR_SCHEMA =
   "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/1.0.0/schema.json";
 
 const COLORS = {
-  navy: "#142A43",
-  navyLight: "#1F466C",
-  orange: "#E67E22",
-  blue: "#2F80ED",
+  navy: "#2D2D2D",
+  navyLight: "#4A4A4A",
+  orange: "#D04A02",
+  orangeLight: "#EB8C00",
+  blue: "#6D6E71",
   green: "#2E7D32",
-  red: "#C0392B",
-  yellow: "#F2C94C",
-  purple: "#7B61A8",
-  teal: "#00A6A6",
-  text: "#1F2937",
-  textSecondary: "#64748B",
-  muted: "#8A94A6",
-  border: "#D9E0E7",
-  grid: "#E5E7EB",
-  page: "#F4F6F8",
+  red: "#E0301E",
+  yellow: "#FFB600",
+  purple: "#A32020",
+  teal: "#DB536A",
+  text: "#2D2D2D",
+  textSecondary: "#5B5B5B",
+  muted: "#8C8C8C",
+  border: "#D6D6D6",
+  grid: "#E6E6E6",
+  page: "#F5F5F5",
   white: "#FFFFFF",
-  band: "#F8FAFC",
-  headerText: "#D7E0EA",
-  note: "#FFF7ED",
+  band: "#F3F3F3",
+  headerText: "#5B5B5B",
+  note: "#FFF1E8",
 };
 
 const FONT = "Segoe UI";
-
-const CARD_AUTO_UNIT_MEASURES = new Set([
-  "대상단지 연환산 관리비",
-  "지표상 연간 기회금액",
-  "대상 관리비 총액",
-  "대상 월평균 세대당 항목비",
-  "비교군 월평균 세대당 항목비",
-]);
 
 const CARD_INTEGER_MEASURES = new Set([
   "서울 단지 수 표시",
@@ -80,6 +95,11 @@ const CARD_INTEGER_MEASURES = new Set([
 ]);
 
 const CARD_DISPLAY_MEASURES = new Map([
+  ["대상단지 연환산 관리비", "대상단지 연환산 관리비 표시"],
+  ["지표상 연간 절감 검토액", "지표상 연간 절감 검토액 표시"],
+  ["대상 관리비 총액", "대상 관리비 총액 표시"],
+  ["대상 월평균 세대당 항목비", "대상 월평균 세대당 항목비 표시"],
+  ["비교군 월평균 세대당 항목비", "비교군 월평균 세대당 항목비 표시"],
   ["월별 팩트 행 수", "월별 팩트 행 수 표시"],
   ["비용항목 수", "비용항목 수 표시"],
   ["선정 비교단지 수", "선정 비교단지 수 표시"],
@@ -266,7 +286,7 @@ function containerObjects(titleValue, options = {}) {
   const {
     background = true,
     border = true,
-    shadow = true,
+    shadow = false,
     titleSize = 12,
     titleBold = true,
   } = options;
@@ -285,7 +305,7 @@ function containerObjects(titleValue, options = {}) {
         properties: {
           show: bool(border),
           color: color(COLORS.border),
-          radius: number(8),
+          radius: number(2),
           width: number(1),
         },
       },
@@ -296,8 +316,8 @@ function containerObjects(titleValue, options = {}) {
           show: bool(shadow),
           preset: text("BottomRight"),
           position: text("Outer"),
-          color: color("#AAB4C0"),
-          transparency: number(78),
+          color: color("#9A9A9A"),
+          transparency: number(88),
           shadowSpread: number(0),
           shadowBlur: number(6),
           angle: number(45),
@@ -321,7 +341,7 @@ function containerObjects(titleValue, options = {}) {
         text: text(titleValue ?? ""),
         heading: text("Normal"),
         titleWrap: bool(true),
-        fontColor: color(COLORS.navy),
+        fontColor: color(COLORS.text),
         alignment: text("Left"),
         fontSize: number(titleSize),
         bold: bool(titleBold),
@@ -426,7 +446,7 @@ function textboxVisual(pageKey, key, position, runs, options = {}) {
 }
 
 function cardVisual(pageKey, key, position, measureName, label, accent) {
-  const displayUnits = CARD_AUTO_UNIT_MEASURES.has(measureName) ? 0 : -1;
+  const displayUnits = -1;
   const precision = CARD_INTEGER_MEASURES.has(measureName) ? 0 : 1;
   const visualMeasureName = CARD_DISPLAY_MEASURES.get(measureName) ?? measureName;
   const p = projection({
@@ -486,7 +506,7 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
         {
           properties: {
             tileShape: text("rectangleRoundedByPixel"),
-            rectangleRoundedCurve: integer(8),
+            rectangleRoundedCurve: integer(2),
           },
           selector: { id: "default" },
         },
@@ -529,8 +549,17 @@ function cardVisual(pageKey, key, position, measureName, label, accent) {
   });
 }
 
-function slicerVisual(pageKey, key, position, table, property, label) {
+function slicerVisual(
+  pageKey,
+  key,
+  position,
+  table,
+  property,
+  label,
+  options = {},
+) {
   const p = projection({ table, property, active: true, displayName: label });
+  const singleSelect = options.singleSelect ?? false;
   return visualShell(pageKey, key, "slicer", position, {
     query: { queryState: { Values: { projections: [p] } } },
     objects: {
@@ -538,16 +567,16 @@ function slicerVisual(pageKey, key, position, table, property, label) {
       selection: [
         {
           properties: {
-            selectAllCheckboxEnabled: bool(true),
-            singleSelect: bool(false),
-            strictSingleSelect: bool(false),
+            selectAllCheckboxEnabled: bool(options.showSelectAll ?? !singleSelect),
+            singleSelect: bool(singleSelect),
+            strictSingleSelect: bool(singleSelect),
           },
         },
       ],
       header: [
         {
           properties: {
-            show: bool(true),
+            show: bool(options.showHeader ?? true),
             text: text(label),
             fontFamily: text(FONT),
             textSize: number(9),
@@ -560,7 +589,7 @@ function slicerVisual(pageKey, key, position, table, property, label) {
       ],
     },
     visualContainerObjects: containerObjects(null, { shadow: false }),
-  });
+  }, options.filters ?? []);
 }
 
 function navigatorVisual(pageKey, position) {
@@ -590,8 +619,8 @@ function navigatorVisual(pageKey, position) {
       selector: { id },
     },
   });
-  const defaultState = state("default", COLORS.navy, COLORS.white);
-  const hoverState = state("hover", COLORS.navyLight, COLORS.white);
+  const defaultState = state("default", COLORS.white, COLORS.text);
+  const hoverState = state("hover", COLORS.band, COLORS.text);
   const selectedState = state("selected", COLORS.orange, COLORS.white, true);
   const disabledState = state("disabled", COLORS.muted, COLORS.headerText);
   return visualShell(pageKey, "page_navigator", "pageNavigator", position, {
@@ -650,7 +679,7 @@ function navigatorVisual(pageKey, position) {
         {
           properties: {
             show: bool(true),
-            color: color(COLORS.navy),
+            color: color(COLORS.white),
             transparency: number(0),
           },
         },
@@ -682,6 +711,8 @@ function chartVisual({
       isDefaultSort: false,
     };
   }
+  const hasCategoricalSeries = Boolean(roles.Series?.projections?.length);
+  const explicitSeriesColors = colors.filter((item) => item.queryRef);
   const objects = {
     legend: [
       {
@@ -699,15 +730,19 @@ function chartVisual({
       { properties: { showAxisTitle: bool(showAxisTitles) } },
     ],
     valueAxis: [
-      { properties: { showAxisTitle: bool(showAxisTitles) } },
-    ],
-    dataPoint: [
       {
         properties: {
-          defaultColor: color(colors[0]?.color ?? COLORS.orange),
+          showAxisTitle: bool(showAxisTitles),
+          labelDisplayUnits: number(-1),
+          labelPrecision: integer(0),
         },
       },
-      ...colors.map((item) => ({
+    ],
+    dataPoint: [
+      ...(!hasCategoricalSeries && colors[0]
+        ? [{ properties: { defaultColor: color(colors[0].color) } }]
+        : []),
+      ...explicitSeriesColors.map((item) => ({
         properties: { fill: color(item.color) },
         selector: { metadata: item.queryRef },
       })),
@@ -716,6 +751,7 @@ function chartVisual({
   if (type !== "scatterChart") {
     objects.labels = [{ properties: { show: bool(false) } }];
   }
+  if (!objects.dataPoint.length) delete objects.dataPoint;
   if (line) {
     objects.lineStyles = [
       {
@@ -741,9 +777,6 @@ function chartVisual({
           markerShape: text("circle"),
         },
       },
-    ];
-    objects.colorByCategory = [
-      { properties: { show: bool(false) } },
     ];
   }
   const visual = {
@@ -867,32 +900,46 @@ function matrixVisual({
 }
 
 function addHeader(page, pageKey, pageTitle, subtitle, includeNavigator = true) {
+  const titleMatch = pageTitle.match(/^(\d{2})\s+(.+)$/);
+  const titleRuns = titleMatch
+    ? [
+        { value: `${titleMatch[1]}  `, size: 20, bold: false, color: COLORS.orange },
+        { value: titleMatch[2], size: 18, bold: true, color: COLORS.text },
+      ]
+    : [{ value: pageTitle, size: 18, bold: true, color: COLORS.text }];
+  const subtitleRuns = includeNavigator
+    ? [
+        { value: "분석 대상 | ", size: 9, color: COLORS.textSecondary },
+        { value: TARGET_APARTMENT_NAME, size: 11, bold: true, color: COLORS.text },
+        { value: `  ·  ${subtitle}`, size: 9, color: COLORS.textSecondary },
+      ]
+    : [{ value: subtitle, size: 9, color: COLORS.textSecondary }];
   page.visuals.push(
     shapeVisual(
       pageKey,
       "header_background",
       { x: 0, y: 0, z: 1, height: 70, width: 1280 },
       "rectangle",
-      COLORS.navy,
+      COLORS.white,
     ),
     shapeVisual(
       pageKey,
       "header_accent",
-      { x: 0, y: 64, z: 2, height: 12, width: 1280 },
-      "line",
+      { x: 0, y: 67, z: 2, height: 3, width: 1280 },
+      "rectangle",
       COLORS.orange,
     ),
     textboxVisual(
       pageKey,
       "header_title",
-      { x: 24, y: 0, z: 3, height: 45, width: 700 },
-      [{ value: pageTitle, size: 18, bold: true, color: COLORS.white }],
+      { x: 24, y: 0, z: 3, height: 42, width: 900 },
+      titleRuns,
     ),
     textboxVisual(
       pageKey,
       "header_subtitle",
-      { x: 24, y: 34, z: 4, height: 34, width: 900 },
-      [{ value: `K-APT AX Control Tower · ${subtitle}`, size: 9, color: COLORS.headerText }],
+      { x: 24, y: 34, z: 4, height: 32, width: 1200 },
+      subtitleRuns,
     ),
   );
   if (includeNavigator) {
@@ -920,21 +967,21 @@ function newPage(key, displayName, options = {}) {
 
 function buildExecutiveOverview() {
   const pageKey = "executive-overview";
-  const page = newPage(pageKey, "01 Executive Overview");
+  const page = newPage(pageKey, "01 Management Overview");
   addHeader(
     page,
     pageKey,
-    "01 Executive Overview",
-    "경영진 요약 및 Advisory 우선순위 진단",
+    "01 Management Overview",
+    "검토 결과 및 주요 시사점",
   );
 
   const cardY = 112;
   const cards = [
-    ["annual_cost", "대상단지 연환산 관리비", "연환산 관리비", COLORS.navy],
-    ["opportunity", "지표상 연간 기회금액", "지표상 기회금액", COLORS.orange],
-    ["opportunity_rate", "기회금액률", "기회금액률", COLORS.orange],
-    ["priority_count", "P1 P2 항목 수", "P1·P2 항목", COLORS.red],
-    ["alert_months", "경보 월 수", "경보 월", COLORS.red],
+    ["annual_cost", "대상단지 연환산 관리비", "대상 연환산 관리비", COLORS.navy],
+    ["opportunity", "지표상 연간 절감 검토액", "지표상 절감 검토액", COLORS.orange],
+    ["opportunity_rate", "절감 검토액 비율", "절감 검토액 비율", COLORS.orange],
+    ["priority_count", "P1 P2 항목 수", "우선 검토 항목", COLORS.red],
+    ["alert_months", "경보 월 수", "경보 발생 월", COLORS.red],
   ];
   cards.forEach(([key, metric, label, accent], index) => {
     page.visuals.push(
@@ -981,7 +1028,7 @@ function buildExecutiveOverview() {
       key: "target_vs_expected",
       type: "clusteredBarChart",
       position: { x: 24, y: 210, z: 120, height: 252, width: 600 },
-      title: "비용항목별 대상단지 vs 기대 중앙값",
+      title: "비용항목별 대상 수준 및 비교군 기준",
       roles: {
         Category: { projections: [category] },
         Y: { projections: [targetAnnual, expectedMedian] },
@@ -1004,7 +1051,7 @@ function buildExecutiveOverview() {
       key: "anomaly_trend",
       type: "lineChart",
       position: { x: 640, y: 210, z: 121, height: 252, width: 616 },
-      title: "월별 비용항목 이상징후 추이",
+      title: "월별 이상징후 추이",
       roles: {
         Category: {
           projections: [
@@ -1019,7 +1066,7 @@ function buildExecutiveOverview() {
         },
       },
       sort: { field: column("DimDate", "YearMonth"), direction: "Ascending" },
-      colors: [{ color: COLORS.orange }],
+      colors: [],
       line: true,
     }),
   );
@@ -1029,7 +1076,7 @@ function buildExecutiveOverview() {
       pageKey,
       key: "priority_matrix",
       position: { x: 24, y: 478, z: 130, height: 164, width: 1232 },
-      title: "비용항목별 Advisory 진단 요약",
+      title: "비용항목별 검토 결과 및 시사점",
       rows: [
         { table: "DimCostCategory", property: "cost_category_name_ko", displayName: "비용항목" },
       ],
@@ -1037,7 +1084,7 @@ function buildExecutiveOverview() {
         { table: "_Measures", property: "연간 비교군 격차율", kind: "measure" },
         { table: "_Measures", property: "최대 이상징후 점수", kind: "measure" },
         { table: "_Measures", property: "Advisory 우선순위 점수", kind: "measure" },
-        { table: "_Measures", property: "지표상 연간 기회금액", kind: "measure" },
+        { table: "_Measures", property: "지표상 연간 절감 검토액", kind: "measure" },
         { table: "_Measures", property: "경보 월 수", kind: "measure" },
       ],
     }),
@@ -1048,7 +1095,7 @@ function buildExecutiveOverview() {
       [
         {
           value:
-            "Responsible AI · 본 결과는 공개데이터 기반의 검토 우선순위와 가설을 제시하며 부정행위나 확정 절감액을 판정하지 않습니다. 조치 전 원문 증빙과 담당자 승인이 필요합니다.",
+            "검토 시 유의사항 | 본 분석은 공개데이터 기반의 우선 검토 신호와 가설을 제공합니다. 부정행위 여부 또는 확정 절감액을 판단하지 않으며, 원문 증빙과 담당자 검토가 필요합니다.",
           size: 9,
           bold: true,
           color: COLORS.navy,
@@ -1063,12 +1110,12 @@ function buildExecutiveOverview() {
 function buildPeerBenchmark() {
   const pageKey = "peer-benchmark";
   const page = newPage(pageKey, "02 Peer Benchmark");
-  addHeader(page, pageKey, "02 Peer Benchmark", "비교단지 선정 근거 및 기대구간 검토");
+  addHeader(page, pageKey, "02 Peer Benchmark", "비교군 선정 기준 및 기대구간");
   const cards = [
-    ["peer_count", "선정 비교단지 수", "선정 비교단지", COLORS.navy],
-    ["similarity", "가중 평균 유사도", "가중 평균 유사도", COLORS.blue],
+    ["peer_count", "선정 비교단지 수", "선정 비교군", COLORS.navy],
+    ["similarity", "가중 평균 유사도", "평균 구조 유사도", COLORS.orange],
     ["coverage", "데이터 관측률", "데이터 관측률", COLORS.green],
-    ["readiness", "모델 분석 가능률", "모델 분석 가능률", COLORS.green],
+    ["readiness", "모델 분석 가능률", "분석 커버리지", COLORS.green],
   ];
   cards.forEach(([key, metric, label, accent], index) => {
     page.visuals.push(
@@ -1125,12 +1172,16 @@ function buildPeerBenchmark() {
       key: "peer_scatter",
       type: "scatterChart",
       position: { x: 24, y: 210, z: 120, height: 294, width: 610 },
-      title: "선정 비교단지 유사도·적합도 분포",
+      title: "비교군 유사도 및 적합도",
       roles: {
         Category: { projections: [peerName] },
         Series: {
           projections: [
-            projection({ table: "ModelPeerWeights", property: "peer_group_class", displayName: "Peer Group" }),
+            projection({
+              table: "DimPilotApartment",
+              property: "match_tier",
+              displayName: "비교군 매칭 단계",
+            }),
           ],
         },
         X: { projections: [similarity] },
@@ -1144,7 +1195,7 @@ function buildPeerBenchmark() {
           ],
         },
       },
-      colors: [{ color: COLORS.blue }],
+      colors: [],
       showAxisTitles: true,
       filters: [
         categoricalFilter(
@@ -1161,7 +1212,7 @@ function buildPeerBenchmark() {
       key: "expected_range",
       type: "clusteredBarChart",
       position: { x: 650, y: 210, z: 121, height: 294, width: 606 },
-      title: "비용항목별 대상값 및 기대구간",
+      title: "비용항목별 대상 수준 및 비교군 기대구간",
       roles: {
         Category: {
           projections: [
@@ -1188,7 +1239,7 @@ function buildPeerBenchmark() {
       pageKey,
       key: "peer_detail",
       position: { x: 24, y: 520, z: 130, height: 180, width: 1232 },
-      title: "선정 비교단지 상세 근거",
+      title: "비교군 선정 근거",
       fields: [
         { table: "ModelPeerWeights", property: "peer_rank", displayName: "순위" },
         { table: "ModelPeerWeights", property: "apartment_name", displayName: "비교단지" },
@@ -1217,13 +1268,13 @@ function buildPeerBenchmark() {
 
 function buildCostDriverTrend() {
   const pageKey = "cost-driver-trend";
-  const page = newPage(pageKey, "03 Cost Driver & Trend");
-  addHeader(page, pageKey, "03 Cost Driver & Trend", "대상단지·비교군 관리비 추이와 비용동인 분석");
+  const page = newPage(pageKey, "03 Cost Driver Analysis");
+  addHeader(page, pageKey, "03 Cost Driver Analysis", "관리비 추이 및 주요 Cost Driver");
   const cards = [
-    ["target_total", "대상 관리비 총액", "대상 관리비 총액", COLORS.orange],
+    ["target_total", "대상 관리비 총액", "대상 관리비", COLORS.orange],
     ["target_avg", "대상 월평균 세대당 항목비", "대상 월평균 세대당", COLORS.orange],
     ["peer_avg", "비교군 월평균 세대당 항목비", "비교군 월평균 세대당", COLORS.navy],
-    ["gap", "연간 비교군 격차율", "연간 비교군 격차율", COLORS.red],
+    ["gap", "연간 비교군 격차율", "비교군 대비 격차율", COLORS.red],
   ];
   cards.forEach(([key, metric, label, accent], index) => {
     page.visuals.push(
@@ -1272,7 +1323,7 @@ function buildCostDriverTrend() {
       key: "monthly_target_peer",
       type: "lineChart",
       position: { x: 24, y: 210, z: 120, height: 294, width: 760 },
-      title: "월별 대상단지 vs 비교군 세대당 관리비",
+      title: "월별 대상 수준 및 비교군 기준",
       roles: {
         Category: {
           projections: [
@@ -1293,7 +1344,7 @@ function buildCostDriverTrend() {
       key: "category_gap",
       type: "clusteredBarChart",
       position: { x: 800, y: 210, z: 121, height: 294, width: 456 },
-      title: "비용항목별 연간 대상값·기대값",
+      title: "비용항목별 연간 대상 수준 및 비교군 기준",
       roles: {
         Category: {
           projections: [
@@ -1316,7 +1367,7 @@ function buildCostDriverTrend() {
       pageKey,
       key: "cost_heatmap",
       position: { x: 24, y: 520, z: 130, height: 180, width: 1232 },
-      title: "비용항목·기준월별 대상단지 세대당 관리비",
+      title: "비용항목·기준월별 대상 세대당 비용",
       rows: [
         { table: "DimCostCategory", property: "cost_category_name_ko", displayName: "비용항목" },
       ],
@@ -1331,13 +1382,13 @@ function buildCostDriverTrend() {
 
 function buildAnomalyExplorer() {
   const pageKey = "anomaly-explorer";
-  const page = newPage(pageKey, "04 Anomaly Explorer");
-  addHeader(page, pageKey, "04 Anomaly Explorer", "월별 이상징후 강도·지속성·근거 탐색");
+  const page = newPage(pageKey, "04 Anomaly Review");
+  addHeader(page, pageKey, "04 Anomaly Review", "이상징후 수준·지속성 및 검토 근거");
   const cards = [
-    ["alerts", "경보 월 수", "경보 월", COLORS.red],
+    ["alerts", "경보 월 수", "경보 발생 월", COLORS.red],
     ["max_score", "최대 이상징후 점수", "최대 이상징후", COLORS.red],
     ["avg_score", "평균 이상징후 점수", "평균 이상징후", COLORS.orange],
-    ["readiness", "모델 분석 가능률", "모델 분석 가능률", COLORS.green],
+    ["readiness", "모델 분석 가능률", "분석 커버리지", COLORS.green],
   ];
   cards.forEach(([key, metric, label, accent], index) => {
     page.visuals.push(
@@ -1383,7 +1434,7 @@ function buildAnomalyExplorer() {
       key: "anomaly_line",
       type: "lineChart",
       position: { x: 24, y: 210, z: 120, height: 294, width: 760 },
-      title: "비용항목별 월간 이상징후 점수",
+      title: "비용항목별 월간 이상징후",
       roles: {
         Category: {
           projections: [
@@ -1402,14 +1453,14 @@ function buildAnomalyExplorer() {
         },
       },
       sort: { field: column("DimDate", "YearMonth"), direction: "Ascending" },
-      colors: [{ color: COLORS.red }],
+      colors: [],
       line: true,
     }),
     matrixVisual({
       pageKey,
       key: "anomaly_heatmap",
       position: { x: 800, y: 210, z: 121, height: 294, width: 456 },
-      title: "이상징후 Heatmap",
+      title: "이상징후 분포",
       rows: [
         { table: "DimCostCategory", property: "cost_category_name_ko", displayName: "비용항목" },
       ],
@@ -1420,7 +1471,7 @@ function buildAnomalyExplorer() {
       pageKey,
       key: "anomaly_detail",
       position: { x: 24, y: 520, z: 130, height: 180, width: 1232 },
-      title: "월별 이상징후 상세 근거",
+      title: "월별 이상징후 및 검토 근거",
       fields: [
         { table: "FactAnomalyMonthly", property: "month_start_date", displayName: "기준월" },
         { table: "FactAnomalyMonthly", property: "cost_category_name_ko", displayName: "비용항목" },
@@ -1440,14 +1491,14 @@ function buildAnomalyExplorer() {
 
 function buildActionCenter() {
   const pageKey = "action-center";
-  const page = newPage(pageKey, "05 Advisory Action Center");
-  addHeader(page, pageKey, "05 Advisory Action Center", "AX 과제·증빙 요청·사람 승인 중심 실행관리");
+  const page = newPage(pageKey, "05 Action Agenda");
+  addHeader(page, pageKey, "05 Action Agenda", "우선 검토 과제·증빙 및 Governance");
   const cards = [
-    ["opportunity", "지표상 연간 기회금액", "기회금액", COLORS.orange],
-    ["p12", "P1 P2 항목 수", "P1·P2 항목", COLORS.red],
-    ["actions", "조치 과제 수", "조치 과제", COLORS.navy],
+    ["opportunity", "지표상 연간 절감 검토액", "지표상 절감 검토액", COLORS.orange],
+    ["p12", "P1 P2 항목 수", "우선 검토 항목", COLORS.red],
+    ["actions", "조치 과제 수", "Action Item", COLORS.navy],
     ["evidence", "증빙 요청 수", "증빙 요청", COLORS.blue],
-    ["approval", "사람 승인 필요 과제 수", "사람 승인 필요", COLORS.red],
+    ["approval", "사람 승인 필요 과제 수", "승인 필요", COLORS.red],
   ];
   cards.forEach(([key, metric, label, accent], index) => {
     page.visuals.push(
@@ -1484,16 +1535,16 @@ function buildActionCenter() {
       pageKey,
       key: "assessment_table",
       position: { x: 24, y: 210, z: 120, height: 150, width: 1232 },
-      title: "Advisory 진단 및 우선순위",
+      title: "우선 검토 과제",
       fields: [
         { table: "FactAdvisoryAssessment", property: "advisory_priority", displayName: "우선순위" },
         { table: "FactAdvisoryAssessment", property: "advisory_priority_score", displayName: "점수" },
         { table: "FactAdvisoryAssessment", property: "cost_category_name_ko", displayName: "비용항목" },
-        { table: "FactAdvisoryAssessment", property: "screened_pain_point", displayName: "검토 Pain Point" },
-        { table: "FactAdvisoryAssessment", property: "primary_recommended_action", displayName: "권고 조치" },
-        { table: "FactAdvisoryAssessment", property: "indicative_annual_opportunity_krw", displayName: "지표상 기회금액" },
-        { table: "FactAdvisoryAssessment", property: "confidence_level", displayName: "신뢰수준" },
-        { table: "FactAdvisoryAssessment", property: "human_validation_required", displayName: "사람 검증" },
+        { table: "FactAdvisoryAssessment", property: "screened_pain_point", displayName: "주요 Pain Point" },
+        { table: "FactAdvisoryAssessment", property: "primary_recommended_action", displayName: "우선 검토 조치" },
+        { table: "FactAdvisoryAssessment", property: "indicative_annual_opportunity_krw", displayName: "지표상 절감 검토액(원)" },
+        { table: "FactAdvisoryAssessment", property: "confidence_level", displayName: "분석 신뢰도" },
+        { table: "FactAdvisoryAssessment", property: "human_validation_required", displayName: "담당자 검토" },
       ],
       sort: { field: column("FactAdvisoryAssessment", "advisory_priority_rank"), direction: "Ascending" },
     }),
@@ -1501,18 +1552,18 @@ function buildActionCenter() {
       pageKey,
       key: "action_register",
       position: { x: 24, y: 374, z: 121, height: 150, width: 1232 },
-      title: "AX 조치 과제 Register",
+      title: "Action Agenda",
       fields: [
         { table: "FactActionRegister", property: "advisory_priority", displayName: "우선순위" },
         { table: "FactActionRegister", property: "action_sequence", displayName: "순서" },
         { table: "FactActionRegister", property: "cost_category_name_ko", displayName: "비용항목" },
         { table: "FactActionRegister", property: "action_title", displayName: "조치 과제" },
-        { table: "FactActionRegister", property: "business_owner", displayName: "담당" },
-        { table: "FactActionRegister", property: "time_horizon", displayName: "기간" },
-        { table: "FactActionRegister", property: "success_kpi", displayName: "성공 KPI" },
+        { table: "FactActionRegister", property: "business_owner", displayName: "Owner" },
+        { table: "FactActionRegister", property: "time_horizon", displayName: "Time horizon" },
+        { table: "FactActionRegister", property: "success_kpi", displayName: "Success metric" },
         { table: "FactActionRegister", property: "digital_enablement", displayName: "Digital Enablement" },
         { table: "FactActionRegister", property: "action_status", displayName: "상태" },
-        { table: "FactActionRegister", property: "human_approval_required", displayName: "사람 승인" },
+        { table: "FactActionRegister", property: "human_approval_required", displayName: "승인 필요" },
       ],
       sort: { field: column("FactActionRegister", "category_priority_rank"), direction: "Ascending" },
     }),
@@ -1520,7 +1571,7 @@ function buildActionCenter() {
       pageKey,
       key: "evidence_requests",
       position: { x: 24, y: 538, z: 122, height: 118, width: 1232 },
-      title: "증빙 요청 및 개인정보 검토",
+      title: "요청 증빙 및 개인정보 검토",
       fields: [
         { table: "FactEvidenceRequest", property: "evidence_priority", displayName: "우선순위" },
         { table: "FactEvidenceRequest", property: "cost_category_name_ko", displayName: "비용항목" },
@@ -1538,7 +1589,7 @@ function buildActionCenter() {
       [
         {
           value:
-            "Human-in-the-loop · 모든 권고는 증빙 수집 → 담당자 검토 → 입주자대표회의/관리주체 승인 후 실행합니다. 자동 집행은 허용하지 않습니다.",
+            "Governance 원칙 | 모든 권고는 증빙 수집 → 담당자 검토 → 입주자대표회의/관리주체 승인 후 실행합니다. 자동 집행은 허용하지 않습니다.",
           size: 9,
           bold: true,
           color: COLORS.red,
@@ -1553,7 +1604,7 @@ function buildActionCenter() {
 function buildModelQa() {
   const pageKey = "model-qa";
   const page = newPage(pageKey, "00 Model QA", { hidden: true });
-  addHeader(page, pageKey, "00 Model QA", "데이터 커버리지·모델 입력·지표 정합성 검증", false);
+  addHeader(page, pageKey, "00 Model QA", "Data coverage·모델 입력·지표 정합성 검증", false);
   const cards = [
     ["apartments", "서울 단지 수 표시", "서울 단지 수", COLORS.navy, "_Measures"],
     ["districts", "자치구 수 표시", "자치구 수", COLORS.navy, "_Measures"],
@@ -1590,7 +1641,7 @@ function buildModelQa() {
       pageKey,
       key: "qa_matrix",
       position: { x: 24, y: 294, z: 120, height: 340, width: 1232 },
-      title: "비용항목별 모델 결과 Reconciliation",
+      title: "비용항목별 모델 결과 정합성",
       rows: [
         { table: "DimCostCategory", property: "cost_category_name_ko", displayName: "비용항목" },
       ],
@@ -1611,7 +1662,7 @@ function buildModelQa() {
       [
         {
           value:
-            "QA 기준 · 50개 Pilot 단지 × 12개월 × 6개 비용항목 = 3,600행. 비용항목별 기대구간·이상징후·Advisory 결과가 모두 조회되어야 합니다.",
+            "QA 기준 | 50개 Pilot 단지 × 12개월 × 6개 비용항목 = 3,600행. 비용항목별 기대구간·이상징후·Advisory 결과가 모두 조회되어야 합니다.",
           size: 9,
           bold: true,
           color: COLORS.navy,
@@ -1690,15 +1741,17 @@ function updateThemes() {
     resourceName,
   );
   const baseTheme = {
-    name: "K-APT AX Advisory",
+    name: "K-APT AX Advisory - Consulting Report",
     dataColors: [
       COLORS.orange,
-      COLORS.navy,
-      COLORS.blue,
-      COLORS.green,
+      COLORS.orangeLight,
       COLORS.red,
-      COLORS.purple,
       COLORS.teal,
+      COLORS.purple,
+      COLORS.yellow,
+      COLORS.blue,
+      COLORS.navy,
+      COLORS.green,
       COLORS.muted,
     ],
     background: COLORS.page,

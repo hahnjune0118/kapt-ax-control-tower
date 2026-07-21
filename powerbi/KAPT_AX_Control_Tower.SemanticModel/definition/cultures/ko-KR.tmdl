@@ -36,7 +36,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "P1·P2 항목": {
+			          "우선 검토 항목": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -54,19 +54,7 @@ cultureInfo ko-KR
 			          "ConceptualProperty": "기회금액률"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "기회금액률": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "table_measures.column1": {
 			      "Definition": {
@@ -78,7 +66,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "경보 월": {
+			          "경보 발생 월": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -96,19 +84,7 @@ cultureInfo ko-KR
 			          "ConceptualProperty": "대상단지 연환산 관리비"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "연환산 관리비": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "table_measures.column3": {
 			      "Definition": {
@@ -117,29 +93,7 @@ cultureInfo ko-KR
 			          "ConceptualProperty": "지표상 연간 기회금액"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "지표상 기회금액": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "기회금액": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "table_measures.column4": {
 			      "Definition": {
@@ -151,7 +105,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "가중 평균 유사도": {
+			          "평균 구조 유사도": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -171,6 +125,16 @@ cultureInfo ko-KR
 			      },
 			      "State": "Generated",
 			      "Terms": [
+			        {
+			          "분석 커버리지": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
 			        {
 			          "모델 분석 가능률": {
 			            "State": "Suggested",
@@ -214,6 +178,16 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
+			          "선정 비교군": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "선정 비교단지": {
 			            "State": "Suggested",
 			            "Source": {
@@ -232,19 +206,7 @@ cultureInfo ko-KR
 			          "ConceptualProperty": "대상 관리비 총액"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "대상 관리비 총액": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "table_measures.column9": {
 			      "Definition": {
@@ -256,7 +218,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "연간 비교군 격차율": {
+			          "비교군 대비 격차율": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -274,19 +236,7 @@ cultureInfo ko-KR
 			          "ConceptualProperty": "대상 월평균 세대당 항목비"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "대상 월평균 세대당": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "table_measures.column11": {
 			      "Definition": {
@@ -295,19 +245,7 @@ cultureInfo ko-KR
 			          "ConceptualProperty": "비교군 월평균 세대당 항목비"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "비교군 월평균 세대당": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "table_measures.column12": {
 			      "Definition": {
@@ -382,7 +320,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "사람 승인 필요": {
+			          "승인 필요": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -423,6 +361,16 @@ cultureInfo ko-KR
 			      },
 			      "State": "Generated",
 			      "Terms": [
+			        {
+			          "Action Item": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
 			        {
 			          "조치 과제": {
 			            "State": "Suggested",
@@ -736,19 +684,7 @@ cultureInfo ko-KR
 			          "ConceptualProperty": "peer_group_class"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Peer Group": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "factanomalymonthly.month_start_date": {
 			      "Definition": {
@@ -1001,7 +937,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "검토 Pain Point": {
+			          "주요 Pain Point": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1022,7 +958,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "권고 조치": {
+			          "우선 검토 조치": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1043,7 +979,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "지표상 기회금액": {
+			          "지표상 절감 검토액(원)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1064,7 +1000,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "신뢰수준": {
+			          "분석 신뢰도": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1085,7 +1021,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "사람 검증": {
+			          "담당자 검토": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1347,7 +1283,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "담당": {
+			          "Owner": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1368,7 +1304,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "기간": {
+			          "Time horizon": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1389,7 +1325,7 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "성공 KPI": {
+			          "Success metric": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1462,7 +1398,163 @@ cultureInfo ko-KR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "사람 승인": {
+			          "승인 필요": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column22": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "절감 검토액 비율"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "절감 검토액 비율": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column23": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "대상단지 연환산 관리비 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "대상 연환산 관리비": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column24": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "지표상 연간 절감 검토액 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "지표상 절감 검토액": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column25": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "대상 관리비 총액 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "대상 관리비": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column26": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "대상 월평균 세대당 항목비 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "대상 월평균 세대당": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column27": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "비교군 월평균 세대당 항목비 표시"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비교군 월평균 세대당": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "modelpeerweights.target_apartment_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ModelPeerWeights",
+			          "ConceptualProperty": "target_apartment_name"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "dimpilotapartment.match_tier": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPilotApartment",
+			          "ConceptualProperty": "match_tier"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "비교군 매칭 단계": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

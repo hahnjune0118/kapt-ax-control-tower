@@ -28,7 +28,6 @@
               },
               "queryRef": "ModelPeerWeights.apartment_name",
               "nativeQueryRef": "비교단지",
-              "active": true,
               "displayName": "비교단지"
             }
           ]
@@ -40,15 +39,63 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "ModelPeerWeights"
+                      "Entity": "DimPilotApartment"
                     }
                   },
-                  "Property": "peer_group_class"
+                  "Property": "match_tier"
                 }
               },
-              "queryRef": "ModelPeerWeights.peer_group_class",
-              "nativeQueryRef": "Peer Group",
-              "displayName": "Peer Group"
+              "queryRef": "DimPilotApartment.match_tier",
+              "nativeQueryRef": "비교군 매칭 단계",
+              "displayName": "비교군 매칭 단계"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ModelPeerWeights"
+                        }
+                      },
+                      "Property": "structural_similarity_score"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Max(ModelPeerWeights.structural_similarity_score)",
+              "nativeQueryRef": "구조 유사도",
+              "displayName": "구조 유사도"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ModelPeerWeights"
+                        }
+                      },
+                      "Property": "peer_suitability_score"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Max(ModelPeerWeights.peer_suitability_score)",
+              "nativeQueryRef": "비교 적합도",
+              "displayName": "비교 적합도"
             }
           ]
         },
@@ -139,55 +186,6 @@
               "displayName": "모델 가중치"
             }
           ]
-        },
-        "X": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "ModelPeerWeights"
-                        }
-                      },
-                      "Property": "structural_similarity_score"
-                    }
-                  },
-                  "Function": 4
-                }
-              },
-              "queryRef": "Max(ModelPeerWeights.structural_similarity_score)",
-              "nativeQueryRef": "구조 유사도",
-              "active": true,
-              "displayName": "구조 유사도"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "ModelPeerWeights"
-                        }
-                      },
-                      "Property": "peer_suitability_score"
-                    }
-                  },
-                  "Function": 4
-                }
-              },
-              "queryRef": "Max(ModelPeerWeights.peer_suitability_score)",
-              "nativeQueryRef": "비교 적합도",
-              "displayName": "비교 적합도"
-            }
-          ]
         }
       }
     },
@@ -235,7 +233,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#64748B'"
+                      "Value": "'#5B5B5B'"
                     }
                   }
                 }
@@ -266,41 +264,22 @@
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "defaultColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#2F80ED'"
-                    }
-                  }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "-1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             }
           }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#2F80ED'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {}
         }
       ],
       "bubbles": [
@@ -331,19 +310,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'circle'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "colorByCategory": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -398,7 +364,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -407,7 +373,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -427,7 +393,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -450,7 +416,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -459,7 +425,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -520,7 +486,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'선정 비교단지 유사도·적합도 분포'"
+                  "Value": "'비교군 유사도 및 적합도'"
                 }
               }
             },
@@ -543,7 +509,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

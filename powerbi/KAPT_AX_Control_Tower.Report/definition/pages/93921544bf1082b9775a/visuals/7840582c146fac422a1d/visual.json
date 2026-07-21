@@ -5,8 +5,8 @@
     "x": 24,
     "y": 34,
     "z": 4,
-    "height": 34,
-    "width": 900,
+    "height": 32,
+    "width": 1200,
     "tabOrder": 4
   },
   "visual": {
@@ -19,12 +19,30 @@
               {
                 "textRuns": [
                   {
-                    "value": "K-APT AX Control Tower · 경영진 요약 및 Advisory 우선순위 진단",
+                    "value": "분석 대상 | ",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontWeight": "normal",
                       "fontSize": "9pt",
-                      "color": "#D7E0EA"
+                      "color": "#5B5B5B"
+                    }
+                  },
+                  {
+                    "value": "마곡현대아파트",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2D2D2D"
+                    }
+                  },
+                  {
+                    "value": "  ·  검토 결과 및 주요 시사점",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "normal",
+                      "fontSize": "9pt",
+                      "color": "#5B5B5B"
                     }
                   }
                 ]
@@ -81,7 +99,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -90,7 +108,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -133,7 +151,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -142,7 +160,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -226,7 +244,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

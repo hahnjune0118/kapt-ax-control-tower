@@ -19,12 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "Human-in-the-loop · 모든 권고는 증빙 수집 → 담당자 검토 → 입주자대표회의/관리주체 승인 후 실행합니다. 자동 집행은 허용하지 않습니다.",
+                    "value": "Governance 원칙 | 모든 권고는 증빙 수집 → 담당자 검토 → 입주자대표회의/관리주체 승인 후 실행합니다. 자동 집행은 허용하지 않습니다.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontWeight": "bold",
                       "fontSize": "9pt",
-                      "color": "#C0392B"
+                      "color": "#E0301E"
                     }
                   }
                 ]
@@ -81,7 +81,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0392B'"
+                      "Value": "'#E0301E'"
                     }
                   }
                 }
@@ -90,7 +90,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -133,7 +133,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -142,7 +142,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -226,7 +226,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

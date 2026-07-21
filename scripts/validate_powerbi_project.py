@@ -22,11 +22,11 @@ MODEL = ROOT / "powerbi" / "KAPT_AX_Control_Tower.SemanticModel" / "definition"
 DATA = ROOT / "powerbi" / "data"
 
 EXPECTED_PAGES = [
-    "01 Executive Overview",
+    "01 Management Overview",
     "02 Peer Benchmark",
-    "03 Cost Driver & Trend",
-    "04 Anomaly Explorer",
-    "05 Advisory Action Center",
+    "03 Cost Driver Analysis",
+    "04 Anomaly Review",
+    "05 Action Agenda",
     "00 Model QA",
 ]
 
@@ -63,6 +63,14 @@ INTEGER_CARD_MEASURES = {
     ("_Measures", "조치 과제 수 표시"),
     ("_Measures", "증빙 요청 수 표시"),
     ("_Measures", "사람 승인 필요 과제 수 표시"),
+}
+
+KOREAN_AMOUNT_CARD_MEASURES = {
+    ("_Measures", "대상단지 연환산 관리비 표시"),
+    ("_Measures", "지표상 연간 절감 검토액 표시"),
+    ("_Measures", "대상 관리비 총액 표시"),
+    ("_Measures", "대상 월평균 세대당 항목비 표시"),
+    ("_Measures", "비교군 월평균 세대당 항목비 표시"),
 }
 
 
@@ -164,6 +172,11 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
         visual_count += len(visual_paths)
         for path in visual_paths:
             visual = json.loads(path.read_text(encoding="utf-8"))
+            serialized_visual = json.dumps(visual, ensure_ascii=False)
+            qa.require(
+                "기회금액" not in serialized_visual,
+                f"Deprecated opportunity wording remains in the report: {path}",
+            )
             qa.require(
                 "filterConfig" not in visual.get("visual", {}),
                 f"filterConfig must be a visual-container property: {path}",
@@ -191,6 +204,67 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
                                f"Unknown {kind.lower()} {entity}[{prop}]: {path}")
 
             visual_definition = visual.get("visual", {})
+            if visual_definition.get("visualType") == "textbox":
+                paragraphs = (
+                    visual_definition.get("objects", {})
+                    .get("general", [{}])[0]
+                    .get("properties", {})
+                    .get("paragraphs", [])
+                )
+                for paragraph in paragraphs:
+                    runs = paragraph.get("textRuns", [])
+                    for index, run in enumerate(runs[:-1]):
+                        if run.get("value") != "분석 대상 | ":
+                            continue
+                        target_style = runs[index + 1].get("textStyle", {})
+                        qa.require(
+                            target_style.get("fontWeight") == "bold"
+                            and target_style.get("fontSize") == "11pt",
+                            f"Analysis target must be bold 11pt: {path}",
+                        )
+                        qa.stats["analysis_target_labels"] += 1
+            query_refs = {
+                (kind, entity, prop)
+                for kind, entity, prop in iter_field_refs(
+                    visual_definition.get("query", {})
+                )
+            }
+            if (
+                visual_definition.get("visualType") == "slicer"
+                and (
+                    "Column",
+                    "ModelPeerWeights",
+                    "target_apartment_name",
+                ) in query_refs
+            ):
+                qa.stats["analysis_target_slicers"] += 1
+                selection = visual_definition.get("objects", {}).get(
+                    "selection", []
+                )
+                qa.require(
+                    bool(selection)
+                    and literal_value(
+                        selection[0].get("properties", {}).get("singleSelect")
+                    ) == "true",
+                    f"Analysis target slicer must be single-select: {path}",
+                )
+
+            series = (
+                visual_definition.get("query", {})
+                .get("queryState", {})
+                .get("Series", {})
+                .get("projections", [])
+            )
+            if series and visual_definition.get("visualType") in {
+                "lineChart",
+                "scatterChart",
+            }:
+                qa.require(
+                    "dataPoint" not in visual_definition.get("objects", {}),
+                    f"Categorical series must use the distinct theme palette: {path}",
+                )
+                qa.stats["categorical_palette_charts"] += 1
+
             if visual_definition.get("visualType") == "cardVisual":
                 qa.require(
                     height >= 90,
@@ -229,8 +303,8 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
                         .get("Entity")
                     )
                     prop = measure.get("Property")
+                    properties = values[0].get("properties", {})
                     if (entity, prop) in INTEGER_CARD_MEASURES:
-                        properties = values[0].get("properties", {})
                         qa.require(
                             literal_value(properties.get("labelDisplayUnits")) == "-1D",
                             f"Integer card must not abbreviate units: {entity}[{prop}] {path}",
@@ -240,12 +314,35 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
                             f"Integer card must use zero decimals: {entity}[{prop}] {path}",
                         )
                         qa.stats["integer_cards"] += 1
+                    if (entity, prop) in KOREAN_AMOUNT_CARD_MEASURES:
+                        qa.require(
+                            literal_value(properties.get("labelDisplayUnits"))
+                            == "-1D",
+                            f"Korean amount card must disable auto units: {entity}[{prop}] {path}",
+                        )
+                        qa.stats["korean_amount_cards"] += 1
 
     qa.require(page_names == EXPECTED_PAGES,
                f"Unexpected page order/names: {page_names}")
     qa.require(
         qa.stats["integer_cards"] == 14,
         f"Expected 14 text-safe integer cards, found {qa.stats['integer_cards']}",
+    )
+    qa.require(
+        qa.stats["analysis_target_slicers"] == 0,
+        "The single-target report must not include a redundant target slicer",
+    )
+    qa.require(
+        qa.stats["analysis_target_labels"] == 5,
+        "Each visible page must show one bold 11pt analysis-target label",
+    )
+    qa.require(
+        qa.stats["categorical_palette_charts"] == 3,
+        "Expected three categorical charts to use the distinct theme palette",
+    )
+    qa.require(
+        qa.stats["korean_amount_cards"] == 6,
+        f"Expected 6 Korean-unit amount cards, found {qa.stats['korean_amount_cards']}",
     )
     qa.require(metadata.get("activePageName") == page_order[0],
                "The first page is not the active page")
@@ -259,6 +356,7 @@ def validate_report(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:
     qa.stats["report_pages"] = len(page_names)
     qa.stats["report_visuals"] = visual_count
     qa.stats["field_references"] = field_ref_count
+    qa.require(visual_count == 89, f"Expected 89 report visuals, found {visual_count}")
 
 
 def validate_relationships(qa: QA, entities: dict[str, dict[str, set[str]]]) -> None:

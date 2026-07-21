@@ -1032,14 +1032,14 @@ def write_advisory_brief(
 - 검토 비용항목: 6개
 - P1·P2 우선검토 항목: {int(summary["high_priority_category_count"])}개
 - 모델 경보 월: {int(summary["total_alert_month_count"])}건
-- 지표상 연간 기회금액: **{format_won(summary["total_indicative_opportunity_krw"])}**
+- 지표상 연간 절감 검토액: **{format_won(summary["total_indicative_opportunity_krw"])}**
 - 의사결정 상태: **HUMAN REVIEW REQUIRED**
 
-기회금액은 비교단지 가중 중앙값을 기준으로 계산한 참고값이며 확정 절감액이 아닙니다.
+지표상 절감 검토액은 비교단지 가중 중앙값을 기준으로 계산한 선별 참고값이며, 실현 가능성이 검증된 절감액이나 확정 절감액이 아닙니다.
 
 ## 2. Priority Assessment
 
-| 순위 | 비용항목 | 우선순위 | 점수 | 비교군 격차 | 지표상 기회금액 | 상태 |
+| 순위 | 비용항목 | 우선순위 | 점수 | 비교군 격차 | 지표상 절감 검토액 | 상태 |
 |---:|---|---|---:|---:|---:|---|
 {chr(10).join(table_rows)}
 
@@ -1234,7 +1234,7 @@ def validate_and_save(
         f"{high_priority_count:,}"
     )
     print(
-        f"[OK] 지표상 기회금액 합계: "
+        f"[OK] 지표상 절감 검토액 합계: "
         f"{total_opportunity:,.0f}원"
     )
     print(

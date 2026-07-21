@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "_Measures.모델 분석 가능률",
-              "nativeQueryRef": "모델 분석 가능률",
-              "displayName": "모델 분석 가능률"
+              "nativeQueryRef": "분석 커버리지",
+              "displayName": "분석 커버리지"
             }
           ]
         }
@@ -131,7 +131,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'모델 분석 가능률'"
+                  "Value": "'분석 커버리지'"
                 }
               }
             },
@@ -161,7 +161,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#64748B'"
+                      "Value": "'#5B5B5B'"
                     }
                   }
                 }
@@ -248,7 +248,7 @@
             "rectangleRoundedCurve": {
               "expr": {
                 "Literal": {
-                  "Value": "8L"
+                  "Value": "2L"
                 }
               }
             }
@@ -410,7 +410,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -419,7 +419,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -439,7 +439,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -462,7 +462,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -471,7 +471,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -532,7 +532,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'모델 분석 가능률'"
+                  "Value": "'분석 커버리지'"
                 }
               }
             },
@@ -555,7 +555,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
