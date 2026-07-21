@@ -9,8 +9,6 @@ K-APT 공개데이터를 활용해 관리비 이상징후를 찾고,
 - [Live Power BI](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
 - [Notion Case Page](https://zinc-profit-14c.notion.site/K-APT-AX-Control-Tower-3a394df2b3b281c083ebd9306fe6ced5)
 
-![Management Overview](docs/images/management_overview.png)
-
 [![K-APT AX Control Tower Management Overview](docs/assets/powerbi/01_executive_overview.png)](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
 
 > 공개 데모는 로그인 없이 사용할 수 있습니다. 이미지 또는 위 링크를 클릭하면 비교단지, 비용 추이, 이상징후 및 AX 조치 과제를 직접 탐색할 수 있습니다.
