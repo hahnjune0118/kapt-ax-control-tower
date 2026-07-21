@@ -1,10 +1,15 @@
-# K-APT AX Control Tower
+# K-APT 관리비 AX Control Tower
 
-공동주택 관리비 공개데이터를 **비교 가능한 지표 → 이상징후 → 검토 가설 → 실행 과제 → 증빙 요청**으로 전환하는 AX Advisory 포트폴리오 프로젝트입니다. Python 분석 파이프라인과 Power BI 의사결정 대시보드를 결합했습니다.
+K-APT 공개데이터를 활용해 관리비 이상징후를 찾고,
+필요한 자료의 검토와 승인 절차로 연결하는 의사결정 지원 시스템입니다.
 
-## 바로 보기
+## Project Links
 
-**[▶ Power BI 인터랙티브 대시보드 실행](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)**
+- [제안서 PDF](docs/KAPT_AX_Control_Tower_Proposal_Portfolio_20260721.pdf)
+- [Live Power BI](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
+- [Notion Case Page](https://zinc-profit-14c.notion.site/K-APT-AX-Control-Tower-3a394df2b3b281c083ebd9306fe6ced5)
+
+![Management Overview](docs/images/management_overview.png)
 
 [![K-APT AX Control Tower Management Overview](docs/assets/powerbi/01_executive_overview.png)](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
 
