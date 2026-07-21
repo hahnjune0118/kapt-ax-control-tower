@@ -3,9 +3,9 @@
   "name": "9b10375d2061598cc5d8",
   "position": {
     "x": 0,
-    "y": 64,
+    "y": 67,
     "z": 2,
-    "height": 12,
+    "height": 3,
     "width": 1280,
     "tabOrder": 2
   },
@@ -18,7 +18,7 @@
             "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "'line'"
+                  "Value": "'rectangle'"
                 }
               }
             }
@@ -53,7 +53,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E67E22'"
+                      "Value": "'#D04A02'"
                     }
                   }
                 }

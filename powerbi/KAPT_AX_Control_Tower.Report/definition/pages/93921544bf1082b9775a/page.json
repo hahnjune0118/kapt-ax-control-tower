@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "93921544bf1082b9775a",
-  "displayName": "01 Executive Overview",
+  "displayName": "01 Management Overview",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
@@ -14,7 +14,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#F4F6F8'"
+                    "Value": "'#F5F5F5'"
                   }
                 }
               }
@@ -38,7 +38,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#F4F6F8'"
+                    "Value": "'#F5F5F5'"
                   }
                 }
               }

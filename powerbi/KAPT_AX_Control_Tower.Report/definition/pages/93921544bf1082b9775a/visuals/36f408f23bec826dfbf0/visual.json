@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "_Measures.P1 P2 항목 수 표시",
-              "nativeQueryRef": "P1·P2 항목",
-              "displayName": "P1·P2 항목"
+              "nativeQueryRef": "우선 검토 항목",
+              "displayName": "우선 검토 항목"
             }
           ]
         }
@@ -71,7 +71,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0392B'"
+                      "Value": "'#E0301E'"
                     }
                   }
                 }
@@ -131,7 +131,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'P1·P2 항목'"
+                  "Value": "'우선 검토 항목'"
                 }
               }
             },
@@ -161,7 +161,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#64748B'"
+                      "Value": "'#5B5B5B'"
                     }
                   }
                 }
@@ -216,7 +216,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0392B'"
+                      "Value": "'#E0301E'"
                     }
                   }
                 }
@@ -248,7 +248,7 @@
             "rectangleRoundedCurve": {
               "expr": {
                 "Literal": {
-                  "Value": "8L"
+                  "Value": "2L"
                 }
               }
             }
@@ -410,7 +410,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -419,7 +419,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -439,7 +439,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -462,7 +462,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -471,7 +471,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -532,7 +532,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'P1·P2 항목'"
+                  "Value": "'우선 검토 항목'"
                 }
               }
             },
@@ -555,7 +555,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

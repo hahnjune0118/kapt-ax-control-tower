@@ -194,7 +194,7 @@ table FactAdvisoryAssessment
 
 	column indicative_annual_opportunity_krw
 		dataType: int64
-		formatString: "₩"#,0;-"₩"#,0;"₩"#,0
+		formatString: #,0"원";-#,0"원";0"원"
 		lineageTag: db71eee1-5373-4365-ab44-4690e20b1840
 		summarizeBy: sum
 		sourceColumn: indicative_annual_opportunity_krw

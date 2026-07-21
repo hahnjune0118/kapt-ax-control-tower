@@ -5,8 +5,8 @@
     "x": 24,
     "y": 0,
     "z": 3,
-    "height": 45,
-    "width": 700,
+    "height": 42,
+    "width": 900,
     "tabOrder": 3
   },
   "visual": {
@@ -19,12 +19,21 @@
               {
                 "textRuns": [
                   {
-                    "value": "03 Cost Driver & Trend",
+                    "value": "03  ",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "normal",
+                      "fontSize": "20pt",
+                      "color": "#D04A02"
+                    }
+                  },
+                  {
+                    "value": "Cost Driver Analysis",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontWeight": "bold",
                       "fontSize": "18pt",
-                      "color": "#FFFFFF"
+                      "color": "#2D2D2D"
                     }
                   }
                 ]
@@ -81,7 +90,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -90,7 +99,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -133,7 +142,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -142,7 +151,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -226,7 +235,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

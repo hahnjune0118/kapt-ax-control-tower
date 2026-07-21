@@ -5,8 +5,8 @@
     "x": 24,
     "y": 34,
     "z": 4,
-    "height": 34,
-    "width": 900,
+    "height": 32,
+    "width": 1200,
     "tabOrder": 4
   },
   "visual": {
@@ -19,12 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "K-APT AX Control Tower · 데이터 커버리지·모델 입력·지표 정합성 검증",
+                    "value": "Data coverage·모델 입력·지표 정합성 검증",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontWeight": "normal",
                       "fontSize": "9pt",
-                      "color": "#D7E0EA"
+                      "color": "#5B5B5B"
                     }
                   }
                 ]
@@ -81,7 +81,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -90,7 +90,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -133,7 +133,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -142,7 +142,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -226,7 +226,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

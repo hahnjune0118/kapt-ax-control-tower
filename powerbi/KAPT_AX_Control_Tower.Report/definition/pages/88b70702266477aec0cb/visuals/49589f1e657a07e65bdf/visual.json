@@ -19,12 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "QA 기준 · 50개 Pilot 단지 × 12개월 × 6개 비용항목 = 3,600행. 비용항목별 기대구간·이상징후·Advisory 결과가 모두 조회되어야 합니다.",
+                    "value": "QA 기준 | 50개 Pilot 단지 × 12개월 × 6개 비용항목 = 3,600행. 비용항목별 기대구간·이상징후·Advisory 결과가 모두 조회되어야 합니다.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontWeight": "bold",
                       "fontSize": "9pt",
-                      "color": "#142A43"
+                      "color": "#2D2D2D"
                     }
                   }
                 ]
@@ -81,7 +81,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2F80ED'"
+                      "Value": "'#6D6E71'"
                     }
                   }
                 }
@@ -90,7 +90,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -133,7 +133,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -142,7 +142,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -226,7 +226,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

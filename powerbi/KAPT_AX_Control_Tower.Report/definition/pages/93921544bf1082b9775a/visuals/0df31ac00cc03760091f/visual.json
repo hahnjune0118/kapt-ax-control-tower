@@ -28,7 +28,6 @@
               },
               "queryRef": "DimCostCategory.cost_category_name_ko",
               "nativeQueryRef": "비용항목",
-              "active": true,
               "displayName": "비용항목"
             }
           ]
@@ -85,11 +84,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "지표상 연간 기회금액"
+                  "Property": "지표상 연간 절감 검토액"
                 }
               },
-              "queryRef": "_Measures.지표상 연간 기회금액",
-              "nativeQueryRef": "지표상 연간 기회금액"
+              "queryRef": "_Measures.지표상 연간 절감 검토액",
+              "nativeQueryRef": "지표상 연간 절감 검토액"
             },
             {
               "field": {
@@ -150,7 +149,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -209,7 +208,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1F2937'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -231,7 +230,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1F2937'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -242,7 +241,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F8FAFC'"
+                      "Value": "'#F3F3F3'"
                     }
                   }
                 }
@@ -280,7 +279,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E5E7EB'"
+                      "Value": "'#E6E6E6'"
                     }
                   }
                 }
@@ -332,7 +331,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1F2937'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
@@ -343,7 +342,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F8FAFC'"
+                      "Value": "'#F3F3F3'"
                     }
                   }
                 }
@@ -414,7 +413,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -423,7 +422,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -443,7 +442,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -466,7 +465,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -475,7 +474,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -536,7 +535,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'비용항목별 Advisory 진단 요약'"
+                  "Value": "'비용항목별 검토 결과 및 시사점'"
                 }
               }
             },
@@ -559,7 +558,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }

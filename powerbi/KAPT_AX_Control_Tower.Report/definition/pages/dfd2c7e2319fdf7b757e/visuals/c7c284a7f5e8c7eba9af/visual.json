@@ -23,12 +23,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "지표상 연간 기회금액"
+                  "Property": "지표상 연간 절감 검토액 표시"
                 }
               },
-              "queryRef": "_Measures.지표상 연간 기회금액",
-              "nativeQueryRef": "기회금액",
-              "displayName": "기회금액"
+              "queryRef": "_Measures.지표상 연간 절감 검토액 표시",
+              "nativeQueryRef": "지표상 절감 검토액",
+              "displayName": "지표상 절감 검토액"
             }
           ]
         }
@@ -71,7 +71,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E67E22'"
+                      "Value": "'#D04A02'"
                     }
                   }
                 }
@@ -94,7 +94,7 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "-1D"
                 }
               }
             },
@@ -131,7 +131,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'기회금액'"
+                  "Value": "'지표상 절감 검토액'"
                 }
               }
             },
@@ -161,7 +161,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#64748B'"
+                      "Value": "'#5B5B5B'"
                     }
                   }
                 }
@@ -216,7 +216,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E67E22'"
+                      "Value": "'#D04A02'"
                     }
                   }
                 }
@@ -248,7 +248,7 @@
             "rectangleRoundedCurve": {
               "expr": {
                 "Literal": {
-                  "Value": "8L"
+                  "Value": "2L"
                 }
               }
             }
@@ -410,7 +410,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9E0E7'"
+                      "Value": "'#D6D6D6'"
                     }
                   }
                 }
@@ -419,7 +419,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "2D"
                 }
               }
             },
@@ -439,7 +439,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -462,7 +462,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAB4C0'"
+                      "Value": "'#9A9A9A'"
                     }
                   }
                 }
@@ -471,7 +471,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "88D"
                 }
               }
             },
@@ -532,7 +532,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'기회금액'"
+                  "Value": "'지표상 절감 검토액'"
                 }
               }
             },
@@ -555,7 +555,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#142A43'"
+                      "Value": "'#2D2D2D'"
                     }
                   }
                 }
