@@ -6,7 +6,7 @@
 
 **[▶ Power BI 인터랙티브 대시보드 실행](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)**
 
-[![K-APT AX Control Tower Executive Overview](docs/assets/powerbi/01_executive_overview.png)](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
+[![K-APT AX Control Tower Management Overview](docs/assets/powerbi/01_executive_overview.png)](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
 
 > 공개 데모는 로그인 없이 사용할 수 있습니다. 이미지 또는 위 링크를 클릭하면 비교단지, 비용 추이, 이상징후 및 AX 조치 과제를 직접 탐색할 수 있습니다.
 
@@ -133,7 +133,7 @@ Power BI Desktop의 로컬 사용자 설정 파일은 저장소에 포함하지 
 <details>
 <summary>01 Management Overview</summary>
 
-![Executive Overview](docs/assets/powerbi/01_executive_overview.png)
+![Management Overview](docs/assets/powerbi/01_executive_overview.png)
 
 </details>
 
@@ -147,21 +147,21 @@ Power BI Desktop의 로컬 사용자 설정 파일은 저장소에 포함하지 
 <details>
 <summary>03 Cost Driver Analysis</summary>
 
-![Cost Driver and Trend](docs/assets/powerbi/03_cost_driver_trend.png)
+![Cost Driver Analysis](docs/assets/powerbi/03_cost_driver_trend.png)
 
 </details>
 
 <details>
 <summary>04 Anomaly Review</summary>
 
-![Anomaly Explorer](docs/assets/powerbi/04_anomaly_explorer.png)
+![Anomaly Review](docs/assets/powerbi/04_anomaly_explorer.png)
 
 </details>
 
 <details>
 <summary>05 Action Agenda</summary>
 
-![Advisory Action Center](docs/assets/powerbi/05_advisory_action_center.png)
+![Action Agenda](docs/assets/powerbi/05_advisory_action_center.png)
 
 </details>
 
@@ -206,7 +206,7 @@ python src\reporting\export_powerbi_snapshot.py
 
 API 재수집은 공공데이터포털 호출 제한과 K-APT 응답 상태의 영향을 받습니다. 실패 파일과 체크포인트를 보존하므로 동일 명령으로 실패 건만 재시도할 수 있습니다.
 
-## 8. Stage 18 보고서 일괄 재생성·검증
+## 8. 보고서 자동 생성 및 품질검증
 
 Power BI Desktop에서 도형과 시각화를 하나씩 배치하지 않아도 되도록 보고서 정의를 코드로 생성합니다.
 
