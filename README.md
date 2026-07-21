@@ -7,7 +7,7 @@ K-APT 공개데이터를 활용해 관리비 이상징후를 찾고,
 
 - [제안서 PDF](docs/KAPT_AX_Control_Tower_Proposal_Portfolio_20260721.pdf)
 - [Live Power BI](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
-- [Notion Case Page](https://zinc-profit-14c.notion.site/K-APT-AX-Control-Tower-3a394df2b3b281c083ebd9306fe6ced5)
+- [Notion Page](https://zinc-profit-14c.notion.site/K-APT-AX-Control-Tower-3a394df2b3b281c083ebd9306fe6ced5)
 
 [![K-APT AX Control Tower Management Overview](docs/assets/powerbi/01_executive_overview.png)](https://app.powerbi.com/view?r=eyJrIjoiZmI3MzRiN2MtM2UxZC00NjI1LWFmZGUtNTY5YmRlNjAxMWViIiwidCI6IjNkMTJhMjg3LWI5N2QtNGMwZC05OTczLWY4YmY5ODAyNGQ4OSJ9&embedImagePlaceholder=true&pageName=93921544bf1082b9775a)
 
